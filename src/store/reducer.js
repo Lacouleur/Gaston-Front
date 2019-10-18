@@ -6,10 +6,10 @@ const initialState = {
   // https://github.com/uber/react-map-gl/blob/master/docs/advanced/viewport-transition.md
   viewport: {
     // ATTENTION Garder L'ordre Latitude Longitude !!!!
+    // width: '100%',
+    // height: '100vh',
     latitude: 45.4211,
     longitude: -75.6903,
-    width: '100%',
-    height: '100vh',
     zoom: 10,
   },
   // Token pour mapboxApi

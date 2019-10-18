@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'
+import { Container, Image, Menu } from 'semantic-ui-react';
 
 // DATA EN DUR
 import * as parkDate from '../../data/skateboard-parks.json'
@@ -9,7 +10,34 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import './map.scss'
 
 const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
+  // IMPORT DES DATA EN DUR
   const [selectedPark, setSelectedPark] = useState(null)
+
+
+  //  Fonction pour calculer la taille du Navigateur
+    const [windowWidth, setWindowWidth] = useState(0);
+    const [windowHeight, setWindowHeight] = useState(0);
+    let resizeWindow = () => {
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
+    };
+    //SUPRIMER LA HAUTEUR DE LA NAV POUR VOIR 100% DE LA CARTE
+    // const [navBarSize, setnavBarSize] = useState(0);
+    // let navBarSize = () => {
+    //   setnavBarSize(window.innerWidth);
+    // };
+    // // let navBar=
+
+
+
+    useEffect(() => {
+      resizeWindow();
+      window.addEventListener("resize", resizeWindow);
+      // console.log(document.querySelector('.ui .container'));
+      // console.log(document.querySelector('.ui .container').offsetHeight);
+      return () => window.removeEventListener("resize", resizeWindow);
+    }, []);
+  // FIN DE LA FONCTION
 
   useEffect(() => {
     const listener = (e) => {
@@ -24,16 +52,25 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
     }
   }, [])
   const handleChange = (mapChange) => {
-    // console.log(mapChange)
-    // event.preventDefault();
-    // sendMessage();
     updateViewport(mapChange)
   }
+  // const handleResize = (event)=>{
+  //   console.log('--------')
+  //   console.log(event)
+  //   console.log(event.height)
+  //   // setViewportsize(event);
+  //   console.log('--------')
+  // }
+
 
   return (
-    <div>
       <ReactMapGL
-        {...viewport}
+      {...viewport}
+              width={windowWidth}
+              height={windowHeight}
+        
+        // onResize={handleResize}
+        transitionDuration={100}
         mapboxApiAccessToken={mapboxApiAccessToken}
         mapStyle={mapStyle}
         // Animation sur le changement :  Viewport Transition
@@ -80,7 +117,7 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
           </Popup>
         ) : null}
       </ReactMapGL>
-    </div>
+
   )
 }
 Map.propTypes = {
