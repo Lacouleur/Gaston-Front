@@ -11,6 +11,10 @@ import FooterNav from 'src/components/FooterNav';
 // == Composant
 const App = () => (
   <div id="app">
+    <div className="leftNav-container">
+      // ajouter un CSS sur leftNav-container pour coller ce truc là à gauche, fixer la taille, et c'est plié ^^
+      // On aura plus qu'à coder nos composants de navigation à l'intérieur
+    </div>
     <NavBar />
     <Map />
     <Tresors />

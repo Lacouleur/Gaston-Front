@@ -11,14 +11,14 @@ import Welcome from './Welcome';
 // == Composant
 const Logs = () => {
 
-    const view = 'Login'
+    const view = 'welcome'
 
     return (
-  <div id="app">
-    <Welcome />
-    <Login />
-    <Inscription />
-    <Forgot />
+  <div className="logs">
+    {view === 'welcome' && <Welcome />}
+    {view === 'login' &&<Login />}
+    {view === 'inscription' &&<Inscription />}
+    {view === 'forgot' &&<Forgot />}
   </div>
 );
     }
