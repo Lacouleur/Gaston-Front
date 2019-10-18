@@ -13,7 +13,6 @@ import FooterNav from 'src/components/FooterNav';
 // == Composant
 const App = () => (
   <div id="app">
-
     <div className='navBar'>
       
     {/* <NavBar /> */}
