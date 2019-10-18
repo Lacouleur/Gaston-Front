@@ -1,6 +1,6 @@
 // == Import : npm
 import React from 'react';
-import { Container} from 'semantic-ui-react';
+// import { Container} from 'semantic-ui-react';
 
 // == Import : local
 import './app.scss';
@@ -18,11 +18,11 @@ const App = () => (
     {/* <NavBar /> */}
     </div>
 
-    <div className='mainContainer'>
+    <div className='maincontainer'>
     
       <div className="contentContainer">
         {/*<Content/> */}
-       
+       qsddqsdqsdqsdsqdsq
       </div>
 
       <div className='mapContainer'>
