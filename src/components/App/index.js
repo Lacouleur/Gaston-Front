@@ -1,6 +1,6 @@
 // == Import : npm
 import React from 'react';
-import { Container} from 'semantic-ui-react';
+// import { Container} from 'semantic-ui-react';
 
 // == Import : local
 import 'src/styles/_vars.scss'
@@ -25,7 +25,7 @@ const App = () => {
     {/* <NavBar /> */}
     </div>
 
-    <div className='mainContainer'>
+    <div className='maincontainer'>
     
       <div className="contentContainer">
         {/*<Content/> */}

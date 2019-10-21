@@ -1,0 +1,27 @@
+.button,
+.button--add,
+.button--connexion,
+.button--inscription,
+.button--forgot {
+  border: 4px solid #529af3;
+  border-radius: 50px;
+  padding: 0.3em 1em 0.3em 1em;
+  background-color: #fffbf8;
+  font-size: 500;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+.button--add {
+  border-color: #529af3;
+}
+.button--connexion {
+  border-color: #5ac3ff;
+}
+.button--inscription {
+  border-color: #ffdb26;
+}
+.button--forgot {
+  border-color: #bbe41d;
+}
