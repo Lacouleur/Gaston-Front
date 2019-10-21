@@ -1,11 +1,16 @@
 @import 'src/styles/_vars'; 
 
+b {
+    font-weight: $medium;
+  }
+
 .welcome {
 
     &-text {
         font-family: $typo;
+        font-size: $regular;
         color : $black-text-color; 
-        padding : 0 1em 0 1em;
+        padding : 0 $gutter 0 1em;
         line-height : 1.5em;
 
         &-list {
@@ -42,8 +47,9 @@
     }
 
     &-buttonStart {
-       
-            @extend .button--add 
+        margin : auto;
+            @extend .button--add ;
 
     }
+
 }
