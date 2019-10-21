@@ -32,6 +32,12 @@ $border-medium: 1px;
 $border-regular: 2px;
 $border-thick: 4px;
 //LOGOS
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
 //BOUTONS
 .button {
   border: $border-thick solid $add-button-color;

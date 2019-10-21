@@ -1,3 +1,9 @@
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
 .button,
 .button--add,
 .button--connexion,
