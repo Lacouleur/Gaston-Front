@@ -8,8 +8,6 @@ import './welcome.scss';
 // == Composant
 const Welcome = () => {
 
-    const view = 'welcome'
-
     return (
    <div className="welcome">
       <img className="welcome-logo" src="public\DumpsterLogos.svg" alt="Logo Gaston Racoon"></img>
