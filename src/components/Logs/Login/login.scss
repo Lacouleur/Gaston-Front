@@ -42,13 +42,6 @@ b {
 
     }
 
-    &-appTitle {
-        font-size: 2.5em;
-        //text-transform : uppercase;
-        font-weight: $bold;
-        text-align : center;
-    }
-
     &-subTitle {
         font-size: 1.5em;
         //text-transform : uppercase;
@@ -59,18 +52,7 @@ b {
         margin-bottom : 2em;
     }
 
-    &-form{
-    
-        &-field {
-           
-            &-input {
-                width : 80%;
-                height : 2.5em; 
-                margin : 2rem auto 1em auto;
-                @extend .button--connexion;
-            }
-        } 
-    }
+
 
     &-form-submit--login {
         margin : auto;

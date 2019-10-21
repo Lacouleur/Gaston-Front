@@ -2,21 +2,28 @@
 import React from 'react';
 
 // == Import : local
-import './login.scss';
+import './field.scss';
 
 
 // == Composant
-const Login = () => {
+const Field = ({
+  name,
+  placeholder,
+  type, 
+  style
+}) => {
+
+  const className = `field-input-${style}`
 
     return (
-        <div className="login-form-field">
+        <div className="field">
         <input
-            className= 'login-form-field-input'
-            name='Pseudo'
-            type='email'
+            className= {className}
+            name={name}
+            type={type}
             required 
             autoComplete="new-password"
-            placeholder= 'Courriel' 
+            placeholder= {placeholder } 
           /*id= */
           // https://fr.reactjs.org/docs/events.html
           /* onChange={this.changeHandler} */
@@ -28,7 +35,4 @@ const Login = () => {
     }
 
 // == Export
-export default Login;
-
-
-
+export default Field;

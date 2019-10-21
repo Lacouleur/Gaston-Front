@@ -42,11 +42,16 @@ $border-thick: 4px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+    &:hover {
+        opacity: .8;
+        cursor: pointer;
+    }
   
 }
 .button--add {
     @extend .button;
     border-color: $add-button-color;
+    
 }
 .button--connexion {
     @extend .button;
@@ -54,10 +59,10 @@ $border-thick: 4px;
 }
 .button--inscription {
     @extend .button;
-    border-color: $cat-event-don;
+    border-color: $cat-event-color;
 }
 
 .button--forgot {
     @extend .button;
-    border-color: $cat-event-color;
+    border-color:$cat-event-don;
 }
