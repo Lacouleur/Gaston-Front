@@ -1,3 +1,5 @@
+@import '../../styles/vars';
+
 #app {
   font-size: 1.2em;
   //text-align: center;
@@ -35,17 +37,18 @@ code {
 
 //Container Les Pages
 .contentContainer{
-  
-  width : 25%;
+  display: flex;
+  flex-direction: column;
+  width : 30%;
   height : 100vh;
   margin-left: 0em!important;
   margin-right: 0em!important;
-  background-color: red;
-  display:inline-block;
+  background-color: $white-backgroud-color;
 }
 
+  
 .mapContainer {
-  width : 75%;
+  width : 70%;
   height : 100vh; 
   background-color : blue;
   display: inline-block;

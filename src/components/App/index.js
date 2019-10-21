@@ -13,28 +13,19 @@ import FooterNav from 'src/components/FooterNav';
 // == Composant
 const App = () => (
   <div id="app">
-    <div className='navBar'>
-      
-    {/* <NavBar /> */}
-    </div>
+    <div className="navBar">{/* <NavBar /> */}</div>
 
-    <div className='maincontainer'>
-    
+    <div className="maincontainer">
       <div className="contentContainer">
         {/*<Content/> */}
-       qsddqsdqsdqsdsqdsq
+        <Tresors />
       </div>
 
-      <div className='mapContainer'>
-     
-      <Map />
+      <div className="mapContainer">
+        <Map />
       </div>
-
-          {/* <Tresors /> */}
-
-
-          {/* <FooterNav /> */}
-        </div>
+      {/* <FooterNav /> */}
+    </div>
   </div>
 );
 

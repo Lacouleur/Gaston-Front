@@ -1,37 +1,69 @@
 //TEXT COLORS
-$black-text-color:#262020;
-$dark-grey-text-color:#707070;
-$medium-grey-text-color:#707070;
-$grey-text-color:#8D8B8B;
-$light-grey-text-color: #C2C2C2;
+$black-text-color: #262020;
+$dark-grey-text-color: #707070;
+$medium-grey-text-color: #707070;
+$grey-text-color: #8d8b8b;
+$light-grey-text-color: #c2c2c2;
 
 //BACKGROUND COLORS
-$white-backgroud-color:#FFFBF8;
+$white-backgroud-color: #fffbf8;
+
+//MARGES
+$gutter: 1em;
 
 //INTERFACE COLORS
-$toolbar-color: #041F31;
-$error-color: #FF401B;
-$add-button-color:#529AF3;
+$toolbar-color: #041f31;
+$error-color: #ff401b;
+$add-button-color: #529af3;
 
 //CATEGORY COLORS
-$cat-event-color:#BBE41D;
-$cat-help-color:#5AC3FF;
-$cat-treasure-color:#FF4D4D;
-
+$cat-event-don: #FFDB26;
+$cat-event-color: #bbe41d;
+$cat-help-color: #5ac3ff;
+$cat-treasure-color: #ff4d4d;
 //TYPOGRAPHY
-// all typos can be italic, just add "font-style: italic;" in your CSS sheet. 
-$typo-size : 16px;
-$typo : 'Montserrat', sans-serif;
-$light : 300;
+// all typos can be italic, just add "font-style: italic;" in your CSS sheet.
+$typo-size: 16px;
+$typo: 'Montserrat', sans-serif;
+$light: 300;
 $regular: 400;
 $medium: 500;
 $semi-bold: 600;
-$bold: 700; 
+$bold: 700;
 
 //BORDERS
-$border-thin : .5px ;
-$border-medium : 1px ;
-$border-regular : 2px;
-$border-thick : 4px; 
+$border-thin: 0.5px;
+$border-medium: 1px;
+$border-regular: 2px;
+$border-thick: 4px;
 
 //LOGOS
+
+//BOUTONS
+
+.button {
+  border: $border-thick solid $add-button-color;
+  border-radius: 50px;
+  padding: 0.3em 1em 0.3em 1em;
+  background-color: $white-backgroud-color;
+  font-size: $medium;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+
+.button--add {
+  @extend .button;
+  border-color: $add-button-color;
+}
+
+.button--connexion {
+  @extend .button;
+  border-color: $connexion-button-color;
+}
+
+.button--inscription {
+  @extend .button;
+  border-color: $inscription-button-color;
+}
