@@ -1,4 +1,4 @@
-@import 'src/styles/_vars'; 
+@import 'src/styles/vars'; 
 
 b {
     font-weight: $medium;
@@ -54,7 +54,6 @@ b {
             @extend .button--add ;
 
     }
-
 
 
     &-form-submit {

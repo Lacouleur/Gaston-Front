@@ -3,7 +3,6 @@ import React from 'react';
 // import { Container} from 'semantic-ui-react';
 
 // == Import : local
-import 'src/styles/_vars.scss'
 import './app.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
@@ -22,7 +21,6 @@ const App = () => {
   <div id="app">
     <div className='navBar'>
       Navigation
-    {/* <NavBar /> */}
     </div>
 
     <div className="maincontainer">
@@ -34,7 +32,6 @@ const App = () => {
       <div className="mapContainer">
         <Map />
       </div>
-      {/* <FooterNav /> */}
     </div>
   </div>
 );

@@ -3,7 +3,7 @@ dist/
 .vs/
 .vs-code/
 _vars.css
-
+vars.css
 .DS_Store
 Thumbs.db
 
