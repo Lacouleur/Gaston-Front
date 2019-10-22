@@ -9,7 +9,7 @@ import fieldsData from './fieldsData'
 
 // == Composant
 
-const Inscription = ({value, changeHandler}) => {
+const Inscription = ({changeHandler}) => {
   
   const datasFields = fieldsData.fields;
 
@@ -24,6 +24,7 @@ const Inscription = ({value, changeHandler}) => {
       {datasFields.map((field) => (
           <Field
             key={field.name}
+            changeHandler={changeHandler}
             {...field}
           />
         ))}

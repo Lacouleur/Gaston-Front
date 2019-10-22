@@ -10,7 +10,10 @@ import PostsList from 'src/containers/PostsList';
 
 // == Composant
 class App extends React.Component {
-  state = {}
+  state = { }
+
+
+// == Functions 
 
   changeHandler = (event) => {
     const { name, value } = event.target;
@@ -23,7 +26,8 @@ class App extends React.Component {
 
  // Modifier la valeur pour changer l'affichage
  const view = "logs"
-
+    
+ console.log( "Current State", this.state);
 
   return (
 
@@ -34,8 +38,9 @@ class App extends React.Component {
     <div className="maincontainer">
       <div className="contentContainer">
         {view === 'PostsList' && <PostsList />}
-
-        {view === 'logs' && <Logs />}
+        {view === 'logs' && <Logs 
+        changeHandler={this.changeHandler}
+        />}
       </div>
       <div className="mapContainer">
         <Map />

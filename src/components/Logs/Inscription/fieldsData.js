@@ -31,6 +31,12 @@ export default {
       style:"incription",
     },  
     {
+      name:"password-confirm",
+      placeholder:"confirmez votre Mot de passe",
+      type:"password",
+      style:"incription",
+    },
+    {
       name:"adresse",
       placeholder:"adresse (zone de recherche par défaut)",
       type:"text",
@@ -48,10 +54,5 @@ export default {
       type:"image",
       style:"incription",
     },
-    {
-      name:"password",
-      placeholder:"Mot de passe",
-      type:"password",
-      style:"incription",
-    }
+
     ]};
