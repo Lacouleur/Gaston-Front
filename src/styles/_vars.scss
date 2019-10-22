@@ -60,24 +60,24 @@ $border-thick: 4px;
 //BOUTONS
 
 .button {
-  border: $border-thick solid $add-button-color;
-  border-radius: 50px;
-  padding: 0.3em 0.5em 0.3em 0.5em;
-  background-color: $white-backgroud-color;
-  font-size: $typo-size-Small;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: $boxMargin;
-  margin-bottom: $boxMargin;
-  text-transform: lowercase;
-  &:first-letter {
-    text-transform: uppercase;
-  }
-  &:hover {
-    opacity: 0.8;
-    cursor: pointer;
-  }
+    border: $border-thick solid $add-button-color;
+    border-radius: 50px;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    background-color: $white-backgroud-color;
+    font-size: $typo-size-Small;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $boxMargin;
+    margin-bottom: $boxMargin;
+    text-transform: lowercase;
+    &:first-letter {
+        text-transform: uppercase!important;
+    }
+    &:hover {
+        opacity: .8;
+        cursor: pointer;
+    }
 }
 
 .button--don {
@@ -121,30 +121,9 @@ $border-thick: 4px;
   @extend .button;
   border-color: $cat-event-color;
 }
-
 .button--forgot {
-  @extend .button;
-  border-color: $cat-event-color;
-}
-
-.button--add {
-  @extend .button;
-  border-color: $add-button-color;
-}
-
-.button--connexion {
-  @extend .button;
-  border-color: $cat-help-color;
-}
-
-.button--inscription {
-  @extend .button;
-  border-color: $cat-event-color;
-}
-
-.button--forgot {
-  @extend .button;
-  border-color: $cat-event-color;
+    @extend .button;
+    border-color:$cat-treasure-color;
 }
 
 .button-category {
