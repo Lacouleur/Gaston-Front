@@ -9,18 +9,8 @@ import Login from './Login';
 import Welcome from './Welcome';
 
 // == Composant
-class Logs extends React.Component {
-  state = {}
+const Logs = () => {
 
-  changeHandler = (event) => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
-  }
-
-    
-render () {
 
   const view = 'inscription'
 
@@ -28,11 +18,15 @@ render () {
   <div className="logs">
     {view === 'welcome' && <Welcome />}
     {view === 'login' &&<Login />}
-    {view === 'inscription' &&<Inscription />}
+    {view === 'inscription' &&<Inscription
+    changeHandler = {this.changeHandler}
+
+    
+    />}
     {view === 'forgot' &&<Forgot />}
   </div>
 );
-    }
+    
  }
 
 // == Export

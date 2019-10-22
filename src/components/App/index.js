@@ -10,10 +10,22 @@ import TresorsList from 'src/components/TresorsList';
 
 
 // == Composant
-const App = () => {
+class App extends React.Component {
+  state = {}
 
-  //péparation d'un variable en dure pour affichage des composants dans "content" (navigation de gauche)
-  const view = "logs"
+
+
+  changeHandler = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  render () {
+
+    // Modifier la valeur pour changer l'affichage
+    const view = "logs"
 
   return (
 
@@ -34,6 +46,7 @@ const App = () => {
     </div>
   </div>
 );
+}
 }
 
 // == Export
