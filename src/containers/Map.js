@@ -33,7 +33,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   // }
   updateViewport: (mapChange) => {
     dispatch(updateViewport(mapChange));
-    console.log(mapChange);
+    // console.log(mapChange);
   },
 });
 
