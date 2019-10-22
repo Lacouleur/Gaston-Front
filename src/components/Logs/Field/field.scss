@@ -1,18 +1,25 @@
-@import 'src/styles/_vars'; 
+@import 'src/styles/vars'; 
 
 .field {
        
         &-input {
             width : 80%;
-            height : 1.2em; 
+            height : 3em; 
             margin : 3% auto 3% auto;
             @extend .button--connexion;
 
             &-incription {
                 width : 80%;
-                height : 2em; 
+                height : 3em; 
                 margin : 3% auto 3% auto;
                 @extend .button--inscription;
+            }
+
+            &-forgot {
+                width : 80%;
+                height : 3em; 
+                margin : 3% auto 3% auto;
+                @extend .button--forgot;
             }
         }
 

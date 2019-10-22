@@ -3,14 +3,12 @@ import React from 'react';
 // import { Container} from 'semantic-ui-react';
 
 // == Import : local
-import 'src/styles/_vars.scss'
 import './app.scss';
-import NavBar from 'src/components/NavBar';
-import Content from 'src/components/Content';
+import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import TresorsList from 'src/components/Tresors';
-import FooterNav from 'src/components/FooterNav';
-// import Logs from 'src/components/Logs'
+
+import Logs from 'src/components/Logs'
 
 // == Composant
 const App = () => {
@@ -19,26 +17,25 @@ const App = () => {
   const view = "logs"
 
   return (
+
   <div id="app">
     <div className='navBar'>
       Navigation
-    {/* <NavBar /> */}
     </div>
 
     <div className="maincontainer">
       <div className="contentContainer">
-        {/*<Content/> */}
-        <TresorsList />
+        {view === 'tresor' && <Tresors />}
+        {view === 'logs' && <Logs />}
       </div>
 
       <div className="mapContainer">
         <Map />
       </div>
-      {/* <FooterNav /> */}
     </div>
   </div>
 );
-  }
+}
 
 // == Export
 export default App;
