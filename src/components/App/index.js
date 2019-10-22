@@ -5,11 +5,10 @@ import React from 'react';
 // == Import : local
 import 'src/styles/_vars.scss'
 import './app.scss';
-import NavBar from 'src/components/NavBar';
-import Content from 'src/components/Content';
+import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import Tresors from 'src/components/Tresors';
-import FooterNav from 'src/components/FooterNav';
+
 // import Logs from 'src/components/Logs'
 
 // == Composant
@@ -19,6 +18,7 @@ const App = () => {
   const view = "logs"
 
   return (
+
   <div id="app">
     <div className='navBar'>
       Navigation
@@ -27,8 +27,8 @@ const App = () => {
 
     <div className="maincontainer">
       <div className="contentContainer">
-        {/*<Content/> */}
-        <Tresors />
+        {view === 'tresor' && <Tresors />}
+        {view === 'logs' && <Logs />}
       </div>
 
       <div className="mapContainer">

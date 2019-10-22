@@ -2,6 +2,7 @@ node_modules/
 dist/
 .vs/
 .vs-code/
+_vars.css
 
 .DS_Store
 Thumbs.db

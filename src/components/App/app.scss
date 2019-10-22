@@ -1,7 +1,14 @@
 @import 'src/styles/_vars'; 
 
+
+* {
+  box-sizing: border-box;
+  font-family: $typo!important;
+}
+
 #app {
   font-size: 1.2em;
+  background-color: $white-backgroud-color;
 
 }
 
@@ -37,7 +44,7 @@ code {
   margin-right: 0em!important;
   padding-right: $gutter /4;
   padding-left: $gutter/ 4;
-  background-color: $grey-background-color;
+  background-color: $white-backgroud-color;
   display:inline-block;
 }
 

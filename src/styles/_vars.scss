@@ -70,7 +70,7 @@ $border-thick: 4px;
     margin-bottom: $boxMargin;
     text-transform: lowercase;
     &:first-letter {
-        text-transform: uppercase;
+        text-transform: uppercase!important;
     }
     &:hover {
         opacity: .8;
@@ -122,7 +122,7 @@ $border-thick: 4px;
 
 .button--forgot {
     @extend .button;
-    border-color:$cat-event-color;
+    border-color:$cat-treasure-color;
 }
 
 .button-category {
