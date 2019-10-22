@@ -1,0 +1,20 @@
+@import 'src/styles/_vars'; 
+
+.field {
+       
+        &-input {
+            width : 80%;
+            height : 1.2em; 
+            margin : 3% auto 3% auto;
+            @extend .button--connexion;
+
+            &-incription {
+                width : 80%;
+                height : 2em; 
+                margin : 3% auto 3% auto;
+                @extend .button--inscription;
+            }
+        }
+
+
+} 
