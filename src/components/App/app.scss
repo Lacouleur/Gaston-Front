@@ -2,21 +2,14 @@
 
 #app {
   font-size: 1.2em;
-  //text-align: center;
+
 }
 
 .maincontainer {
   display : flex;
   flex-wrap: wrap;
 }
-// body {
-//   margin: 0;
-//   padding: 0;
-//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-//     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -37,8 +30,8 @@ code {
 .contentContainer{
   
   width : 30%;
-  min-height : 100vh!important;
-  max-height : 100vh!important;
+  min-height : 100%!important;
+  max-height : 100%!important;
   margin-left: 0em!important;
   margin-right: 0em!important;
   background-color: $white-backgroud-color;
@@ -47,7 +40,7 @@ code {
 
 .mapContainer {
   width : 70%;
-  height : 100vh; 
+  height : 100%; 
   background-color : blue;
   display: inline-block;
 
@@ -56,7 +49,7 @@ code {
 .navBar {
   background-color : green; 
   width : 100%; 
-  height : 10vh; 
+  min-height : 2rem;
   display : block; 
   
 }
