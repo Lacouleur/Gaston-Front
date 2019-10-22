@@ -9,9 +9,11 @@ import fieldsData from './fieldsData'
 
 // == Composant
 
-const Inscription = ({value, changeHandler}) => {
+const Inscription = ({changeHandler, changeView}) => {
   
   const datasFields = fieldsData.fields;
+  const clickHandler = changeView('password');
+  const clickHandlerRetour = changeView('login');
 
     return (
 
@@ -24,12 +26,13 @@ const Inscription = ({value, changeHandler}) => {
       {datasFields.map((field) => (
           <Field
             key={field.name}
+            changeHandler={changeHandler}
             {...field}
           />
         ))}
         <button className="inscription-form-submit" type="submit">Se connecter</button>
       </form>
-        <button className="inscription-retour" type="submit">Se connecter</button>
+        <button className="inscription-retour" type="submit">Retour</button>
 
 </div>
 

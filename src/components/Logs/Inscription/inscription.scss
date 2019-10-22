@@ -51,14 +51,14 @@ b {
         margin : auto;
         margin-top : 3%;
             @extend .button--add ;
+            cursor: pointer;
 
     }
-
-
 
     &-form-submit {
         margin : auto;
             @extend .button--inscription ;
+            cursor: pointer;
 
     }
 
