@@ -1,7 +1,15 @@
-//FONT FAMILY
-body {
-  font-family: Arial;
-}
+//TYPOGRAPHY
+// all typos can be italic, just add "font-style: italic;" in your CSS sheet.
+$typo-size: 16px;
+$typo-size-Small: 13px;
+$typo-size-extra-small: 10px;
+$typo: 'Montserrat', sans-serif;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
 //TEXT COLORS
 $black-text-color: #262020;
 $dark-grey-text-color: #707070;
@@ -27,18 +35,6 @@ $cat-don-color: #ffdb26;
 $cat-event-color: #bbe41d;
 $cat-help-color: #5ac3ff;
 $cat-treasure-color: #ff4d4d;
-//TYPOGRAPHY
-// all typos can be italic, just add "font-style: italic;" in your CSS sheet.
-$typo-size: 16px;
-$typo-size-Small: 13px;
-$typo-size-extra-small: 10px;
-
-$typo: 'Montserrat', sans-serif;
-$light: 300;
-$regular: 400;
-$medium: 500;
-$semi-bold: 600;
-$bold: 700;
 //BORDERS
 $border-thin: 0.5px;
 $border-medium: 1px;
@@ -47,6 +43,12 @@ $border-thick: 4px;
 
 //LOGOS
 
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
 //CARDS
 .tresor-cards {
   height: auto;
@@ -68,35 +70,13 @@ $border-thick: 4px;
   margin-right: auto;
   margin-top: $boxMargin;
   margin-bottom: $boxMargin;
-  display: inline-block;
   text-transform: lowercase;
-  cursor: pointer;
   &:first-letter {
     text-transform: uppercase;
   }
-}
-
-.button--add {
-  @extend .button;
-  border-color: $add-button-color;
-}
-
-.button {
-  border: $border-thick solid $add-button-color;
-  border-radius: 50px;
-  padding: 0.3em 0.5em 0.3em 0.5em;
-  background-color: $white-backgroud-color;
-  font-size: $typo-size-Small;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: $boxMargin;
-  margin-bottom: $boxMargin;
-  display: inline-block;
-  text-transform: lowercase;
-  cursor: pointer;
-  &:first-letter {
-    text-transform: uppercase;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
   }
 }
 
@@ -127,6 +107,26 @@ $border-thick: 4px;
   margin-top: $small-gutter * 2;
 }
 
+.button--add {
+  @extend .button;
+  border-color: $add-button-color;
+}
+
+.button--connexion {
+  @extend .button;
+  border-color: $cat-help-color;
+}
+
+.button--inscription {
+  @extend .button;
+  border-color: $cat-event-color;
+}
+
+.button--forgot {
+  @extend .button;
+  border-color: $cat-event-color;
+}
+
 .button-category {
   font-size: $typo-size-extra-small;
   border: none;
@@ -136,7 +136,7 @@ $border-thick: 4px;
   color: #ffffff;
   padding: 3px 4px 3px 4px;
   text-decoration: none;
-  margin: 0 $small-gutter /2;
+  margin: 0 $small-gutter / 2;
   &:hover {
     text-decoration: none;
   }

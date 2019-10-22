@@ -8,7 +8,7 @@ import './app.scss';
 import NavBar from 'src/components/NavBar';
 import Content from 'src/components/Content';
 import Map from 'src/containers/Map';
-import TresorsList from 'src/components/Tresors';
+import TresorsList from 'src/components/TresorsList';
 import FooterNav from 'src/components/FooterNav';
 // import Logs from 'src/components/Logs'
 

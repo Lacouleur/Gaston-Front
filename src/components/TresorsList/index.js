@@ -15,6 +15,5 @@ const TresorsList = () => (
       </div>
   </>
 );
-
 // == Export
 export default TresorsList;
