@@ -7,9 +7,6 @@ import './app.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import PostsList from 'src/components/PostsList';
-
-import Logs from 'src/components/Logs'
-
 // == Composant
 const App = () => {
   //péparation d'un variable en dure pour affichage des composants dans "content" (navigation de gauche)
