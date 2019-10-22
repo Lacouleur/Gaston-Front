@@ -6,9 +6,9 @@ import React from 'react';
 import './app.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
-import Tresors from 'src/components/Tresors';
+import TresorsList from 'src/components/Tresors';
 
-// import Logs from 'src/components/Logs'
+import Logs from 'src/components/Logs'
 
 // == Composant
 const App = () => {
@@ -35,7 +35,7 @@ const App = () => {
     </div>
   </div>
 );
-  }
+}
 
 // == Export
 export default App;
