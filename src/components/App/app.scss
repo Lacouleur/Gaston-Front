@@ -8,6 +8,7 @@
 .maincontainer {
   display : flex;
   flex-wrap: wrap;
+  
 }
 
 
@@ -34,10 +35,13 @@ code {
   max-height : 100%!important;
   margin-left: 0em!important;
   margin-right: 0em!important;
-  background-color: $white-backgroud-color;
+  padding-right: $gutter /4;
+  padding-left: $gutter/ 4;
+  background-color: $grey-background-color;
   display:inline-block;
 }
 
+  
 .mapContainer {
   width : 70%;
   height : 100%; 

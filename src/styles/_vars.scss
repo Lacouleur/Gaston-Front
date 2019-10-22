@@ -39,6 +39,7 @@ $border-thin: 0.5px;
 $border-medium: 1px;
 $border-regular: 2px;
 $border-thick: 4px;
+
 //LOGOS
 .logo {
     display: block;
@@ -55,6 +56,7 @@ $border-thick: 4px;
     margin-bottom: $boxMargin;
 }
 //BOUTONS
+
 .button {
     border: $border-thick solid $add-button-color;
     border-radius: 50px;
@@ -102,9 +104,10 @@ $border-thick: 4px;
     border-color: $got-it-button-color;
     margin-top: $small-gutter * 2;
 }
+
 .button--add {
-    @extend .button;
-    border-color: $add-button-color;
+  @extend .button;
+  border-color: $add-button-color;
 }
 
 .button--connexion {

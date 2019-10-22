@@ -10,7 +10,7 @@ import Content from 'src/components/Content';
 import Map from 'src/containers/Map';
 import Tresors from 'src/components/Tresors';
 import FooterNav from 'src/components/FooterNav';
-import Logs from 'src/components/Logs'
+// import Logs from 'src/components/Logs'
 
 // == Composant
 const App = () => {
@@ -25,25 +25,17 @@ const App = () => {
     {/* <NavBar /> */}
     </div>
 
-    <div className='maincontainer'>
-    
+    <div className="maincontainer">
       <div className="contentContainer">
         {/*<Content/> */}
-        {view ==='logs' && <Logs />}
-
-       
+        <Tresors />
       </div>
 
-      <div className='mapContainer'>
-     
-      <Map />
+      <div className="mapContainer">
+        <Map />
       </div>
-
-          {/* <Tresors /> */}
-
-
-          {/* <FooterNav /> */}
-        </div>
+      {/* <FooterNav /> */}
+    </div>
   </div>
 );
   }
