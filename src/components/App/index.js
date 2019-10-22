@@ -7,7 +7,7 @@ import './app.scss';
 import NavBar from 'src/components/NavBar';
 import Content from 'src/components/Content';
 import Map from 'src/containers/Map';
-import TresorsList from 'src/components/TresorsList';
+import PostsList from 'src/components/PostsList';
 import FooterNav from 'src/components/FooterNav';
 import Logs from 'src/components/Logs'
 
@@ -23,7 +23,7 @@ const App = () => {
     </div>
     <div className="maincontainer">
       <div className="contentContainer">
-        {view === 'tresor' && <Tresors />}
+        {view === 'PostsList' && <PostsList />}
         {view === 'logs' && <Logs />}
       </div>
       <div className="mapContainer">
