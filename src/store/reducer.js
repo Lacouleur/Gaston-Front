@@ -1,11 +1,12 @@
 // == Initial State
 // import de test pour recherche SearchCity
 // import SearchData from '../data/searchcity'
-import postsLists from '../data/tresorsBack'
+import postsLists from '../data/tresorsBack';
 
 const initialState = {
   // https://github.com/uber/react-map-gl/blob/master/docs/advanced/viewport-transition.md
   postsLists,
+  loading: true,
   viewport: {
     // ATTENTION Garder L'ordre Latitude Longitude !!!!
     // width: '100%',
@@ -33,6 +34,9 @@ const DO_SOMETHING = 'DO_SOMETHING';
 const UPDATE_VIEWPORT = 'UPDATE_VIEWPORT';
 const UPDATE_SEARCHFIELD = 'UPDATE_SEARCHFIELD';
 const UPDATE_VIEWPORTCENTER = 'UPDATE_VIEWPORTCENTER';
+export const FETCH_POSTS = 'FETCH_POST';
+const STOP_LOAD_POSTS = 'STOP_LOAD_POSTS';
+const RECEIVE_POSTS = 'RECEIVE_POSTS';
 
 // == Reducer
 const reducer = (state = initialState, action = {}) => {
@@ -54,7 +58,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         // viewport: action.viewport,
       };
-
+    case FETCH_POSTS:
+      console.log(action);
+      return {
+        ...state,
+        loading: false,
+      };
     default:
       return state;
   }
@@ -79,6 +88,16 @@ export const updateViewportCenter = (viewport) => ({
 export const updateSearchField = (searchFieldValue) => ({
   type: UPDATE_SEARCHFIELD,
   searchFieldValue,
+});
+
+export const fetchPosts = () => ({
+  type: FETCH_POSTS,
+});
+export const stopLoadPosts = () => ({
+  type: STOP_LOAD_POSTS,
+});
+export const receivePosts = () => ({
+  type: RECEIVE_POSTS,
 });
 
 // == Selectors
