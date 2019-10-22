@@ -9,6 +9,8 @@ import Field from '../Field';
 // == Composant
 const Forgot = () => {
 
+  const clickHandlerReturn = changeView('login');
+
     return (
   <div className="forgot">
 

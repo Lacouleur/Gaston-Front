@@ -11,17 +11,23 @@ import Welcome from './Welcome';
 // == Composant
 const Logs = () => {
 
-    const view = 'forgot'
+
+  const view = 'inscription'
 
     return (
   <div className="logs">
     {view === 'welcome' && <Welcome />}
     {view === 'login' &&<Login />}
-    {view === 'inscription' &&<Inscription />}
+    {view === 'inscription' &&<Inscription
+    changeHandler = {this.changeHandler}
+
+    
+    />}
     {view === 'forgot' &&<Forgot />}
   </div>
 );
-    }
+    
+ }
 
 // == Export
 export default Logs;
