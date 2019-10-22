@@ -1,6 +1,6 @@
 //FONT FAMILY
-body{
-    font-family: Arial;
+body {
+  font-family: Arial;
 }
 //TEXT COLORS
 $black-text-color: #262020;
@@ -8,22 +8,22 @@ $dark-grey-text-color: #707070;
 $medium-grey-text-color: #707070;
 $grey-text-color: #8d8b8b;
 $light-grey-text-color: #c2c2c2;
-$title:#041f31;
+$title: #041f31;
 
 //BACKGROUND COLORS
 $white-backgroud-color: #fffbf8;
 $grey-background-color: #e0e0e0;
 //MARGES
 $gutter: 1em;
-$small-gutter:$gutter /2;
-$boxMargin:0.3em;
+$small-gutter: $gutter / 2;
+$boxMargin: 0.3em;
 //INTERFACE COLORS
 $toolbar-color: #041f31;
 $error-color: #ff401b;
 $add-button-color: #529af3;
-$got-it-button-color:green;
+$got-it-button-color: green;
 //CATEGORY COLORS
-$cat-don-color: #FFDB26;
+$cat-don-color: #ffdb26;
 $cat-event-color: #bbe41d;
 $cat-help-color: #5ac3ff;
 $cat-treasure-color: #ff4d4d;
@@ -47,15 +47,13 @@ $border-thick: 4px;
 
 //LOGOS
 
-
 //CARDS
-.tresor-cards{
-    height:auto;
-    width:100%;
-    background-color:$white-backgroud-color;
-    border: 1px solid lighten( $grey-text-color, 30% );
-    margin-bottom: $boxMargin;
-
+.tresor-cards {
+  height: auto;
+  width: 100%;
+  background-color: $white-backgroud-color;
+  border: 1px solid lighten($grey-text-color, 30%);
+  margin-bottom: $boxMargin;
 }
 //BOUTONS
 
@@ -64,11 +62,11 @@ $border-thick: 4px;
   border-radius: 50px;
   padding: 0.3em 0.5em 0.3em 0.5em;
   background-color: $white-backgroud-color;
-  font-size:$typo-size-Small;
+  font-size: $typo-size-Small;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top:$boxMargin;
+  margin-top: $boxMargin;
   margin-bottom: $boxMargin;
   display: inline-block;
   text-transform: lowercase;
@@ -84,79 +82,62 @@ $border-thick: 4px;
 }
 
 .button {
-    border: $border-thick solid $add-button-color;
-    border-radius: 50px;
-    padding: 0.3em 0.5em 0.3em 0.5em;
-    background-color: $white-backgroud-color;
-    font-size:$typo-size-Small;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:$boxMargin;
-    margin-bottom: $boxMargin;
-    display: inline-block;
-    text-transform: lowercase;
-    cursor: pointer;
-    &:first-letter {
-      text-transform: uppercase;
-    }
+  border: $border-thick solid $add-button-color;
+  border-radius: 50px;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  background-color: $white-backgroud-color;
+  font-size: $typo-size-Small;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $boxMargin;
+  margin-bottom: $boxMargin;
+  display: inline-block;
+  text-transform: lowercase;
+  cursor: pointer;
+  &:first-letter {
+    text-transform: uppercase;
   }
-  
-  .button--don {
-    @extend .button;
-    border-color: $cat-don-color;
-  }
-  .button--event {
-    @extend .button;
-    border-color: $cat-event-color;
-  }
-  .button--help {
-    @extend .button;
-    border-color: $cat-help-color;
-  }
-  .button--treasure {
-    @extend .button;
-    border-color: $cat-treasure-color;
-  }
-  .button--vanish {
-    @extend .button;
-    border-color: $error-color;
-    margin-top:  $small-gutter *2;
-  }
-  .button--got-it {
-    @extend .button;
-    border-color: $got-it-button-color;
-    margin-top:  $small-gutter *2;
-  }
+}
 
+.button--don {
+  @extend .button;
+  border-color: $cat-don-color;
+}
+.button--event {
+  @extend .button;
+  border-color: $cat-event-color;
+}
+.button--help {
+  @extend .button;
+  border-color: $cat-help-color;
+}
+.button--treasure {
+  @extend .button;
+  border-color: $cat-treasure-color;
+}
+.button--vanish {
+  @extend .button;
+  border-color: $error-color;
+  margin-top: $small-gutter * 2;
+}
+.button--got-it {
+  @extend .button;
+  border-color: $got-it-button-color;
+  margin-top: $small-gutter * 2;
+}
 
-
-
-
-
-  .button-category {
-    font-size: $typo-size-extra-small;
-    border: none;
-    background: #a7a7a7;
-    border-radius: 10px;
-    font-family: Arial;
-    color: #ffffff;
-    padding: 3px 4px 3px 4px;
+.button-category {
+  font-size: $typo-size-extra-small;
+  border: none;
+  background: #a7a7a7;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 3px 4px 3px 4px;
+  text-decoration: none;
+  margin: 0 $small-gutter /2;
+  &:hover {
     text-decoration: none;
-    // margin-left: $gutter /2;
-    &:hover {
-        text-decoration: none;
-      }
-    
   }
-
-
-// .button--connexion {
-//   @extend .button;
-//   border-color: $connexion-button-color;
-// }
-
-// .button--inscription {
-//   @extend .button;
-//   border-color: $inscription-button-color;
-// }
+}
