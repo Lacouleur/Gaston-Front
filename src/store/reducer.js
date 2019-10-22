@@ -2,7 +2,7 @@
 // import de test pour recherche SearchCity
 // import SearchData from '../data/searchcity'
 import postsLists from '../data/tresorsBack'
-console.log(postsLists);
+
 const initialState = {
   // https://github.com/uber/react-map-gl/blob/master/docs/advanced/viewport-transition.md
   postsLists,

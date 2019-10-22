@@ -6,11 +6,11 @@ import React from 'react';
 import './app.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
-import PostsList from 'src/components/PostsList';
+import PostsList from 'src/containers/PostsList';
 // == Composant
 const App = () => {
   //péparation d'un variable en dure pour affichage des composants dans "content" (navigation de gauche)
-  const view = "logs"
+  const view = "PostsList"
   return (
 
   <div id="app">
