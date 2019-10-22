@@ -8,7 +8,7 @@ import './app.scss';
 import NavBar from 'src/components/NavBar';
 import Content from 'src/components/Content';
 import Map from 'src/containers/Map';
-import Tresors from 'src/components/Tresors';
+import TresorsList from 'src/components/Tresors';
 import FooterNav from 'src/components/FooterNav';
 // import Logs from 'src/components/Logs'
 
@@ -28,7 +28,7 @@ const App = () => {
     <div className="maincontainer">
       <div className="contentContainer">
         {/*<Content/> */}
-        <Tresors />
+        <TresorsList />
       </div>
 
       <div className="mapContainer">
