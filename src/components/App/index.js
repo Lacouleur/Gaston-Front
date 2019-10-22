@@ -24,6 +24,7 @@ class App extends React.Component {
  // Modifier la valeur pour changer l'affichage
  const view = "logs"
 
+
   return (
 
   <div id="app">
@@ -43,6 +44,7 @@ class App extends React.Component {
   </div>
  );
 }
+
 }
 
 // == Export

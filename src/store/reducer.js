@@ -1,9 +1,11 @@
 // == Initial State
 // import de test pour recherche SearchCity
 // import SearchData from '../data/searchcity'
+import postsLists from '../data/tresorsBack'
 
 const initialState = {
   // https://github.com/uber/react-map-gl/blob/master/docs/advanced/viewport-transition.md
+  postsLists,
   viewport: {
     // ATTENTION Garder L'ordre Latitude Longitude !!!!
     // width: '100%',
