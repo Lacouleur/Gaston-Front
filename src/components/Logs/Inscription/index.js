@@ -4,10 +4,14 @@ import React from 'react';
 // == Import : local
 import './inscription.scss';
 import Field from '../Field';
+import fieldsData from './fieldsData'
 
 
 // == Composant
-const Inscription = () => {
+
+const Inscription = ({value, changeHandler}) => {
+  
+  const datasFields = fieldsData.fields;
 
     return (
 
@@ -17,67 +21,12 @@ const Inscription = () => {
 
       <p className="inscription-text">Merci de bien vouloir remplir ces champs pour vous inscrire</p>
       <form className="inscription-form">
-        <Field
-          name="pseudo"
-          placeholder="Pseudonyme"
-          type="text"
-          style="incription"
-        />
-
-        <Field
-          name="firstname"
-          placeholder="Prénom"
-          type="text"
-          style="incription"
-        />
-
-        <Field
-          name="lastname"
-          placeholder="Nom de Famille"
-          type="text"
-          style="incription"
-        />
-
-        <Field
-          name="email"
-          placeholder="Courriel"
-          type="email"
-          style="incription"
-        />
-
-        <Field
-          name="password"
-          placeholder="Mot de passe"
-          type="password"
-          style="incription"
-        />
-
-        <Field
-          name="adresse"
-          placeholder="adresse (zone de recherche par défaut)"
-          type="text"
-          style="incription"
-        />
-
-        <Field
-          name="tel"
-          placeholder="N° de Téléphone (Optionel)"
-          type="text"
-          style="incription"
-        />
-
-        <Field
-          name="avatar"
-          placeholder="Avatar"
-          type="image"
-          style="incription"
-        />
-        <Field
-          name="password"
-          placeholder="Mot de passe"
-          type="password"
-          style="incription"
-        />
+      {datasFields.map((field) => (
+          <Field
+            key={field.name}
+            {...field}
+          />
+        ))}
         <button className="inscription-form-submit" type="submit">Se connecter</button>
       </form>
         <button className="inscription-retour" type="submit">Se connecter</button>

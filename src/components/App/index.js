@@ -7,10 +7,24 @@ import './app.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import PostsList from 'src/containers/PostsList';
+
 // == Composant
-const App = () => {
-  //péparation d'un variable en dure pour affichage des composants dans "content" (navigation de gauche)
-  const view = "PostsList"
+class App extends React.Component {
+  state = {}
+
+  changeHandler = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  render () {
+
+ // Modifier la valeur pour changer l'affichage
+ const view = "logs"
+
+
   return (
 
   <div id="app">
@@ -29,6 +43,8 @@ const App = () => {
     </div>
   </div>
  );
+}
+
 }
 
 // == Export
