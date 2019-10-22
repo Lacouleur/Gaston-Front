@@ -22,7 +22,6 @@ const App = () => {
   <div id="app">
     <div className='navBar'>
       Navigation
-    {/* <NavBar /> */}
     </div>
 
     <div className="maincontainer">
@@ -34,7 +33,6 @@ const App = () => {
       <div className="mapContainer">
         <Map />
       </div>
-      {/* <FooterNav /> */}
     </div>
   </div>
 );
