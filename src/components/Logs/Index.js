@@ -12,12 +12,18 @@ import Welcome from './Welcome';
 class Logs extends React.Component {
   state = {}
 
+  changeHandler = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  }
 
     
 render () {
 
-  const view = 'forgot'
-  
+  const view = 'inscription'
+
     return (
   <div className="logs">
     {view === 'welcome' && <Welcome />}
