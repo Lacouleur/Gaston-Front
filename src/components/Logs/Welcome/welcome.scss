@@ -45,6 +45,7 @@ b {
     &-buttonStart {
         margin : auto;
             @extend .button--add ;
+            cursor: pointer;
 
     }
 
