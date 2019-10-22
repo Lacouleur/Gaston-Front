@@ -3,17 +3,17 @@ import React from 'react';
 
 // == Import : local
 import './tresors.scss';
-import TresorsFilter from './TresorsFilter'
-import TresorCard from './TresorCard'
+import PostsFilters from './PostsFilters'
+import PostsCard from './PostsCard'
 
 // == Composant
-const TresorsList = () => (
+const PostsList = () => (
   <>
-    <TresorsFilter />
+    <PostsFilters />
     <div className="tresors-container">
-    <TresorCard />
+    <PostsCard />
       </div>
   </>
 );
 // == Export
-export default TresorsList;
+export default PostsList;
