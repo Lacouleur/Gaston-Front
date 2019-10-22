@@ -11,7 +11,7 @@ import Welcome from './Welcome';
 // == Composant
 const Logs = () => {
 
-    const view = 'inscription'
+    const view = 'forgot'
 
     return (
   <div className="logs">
