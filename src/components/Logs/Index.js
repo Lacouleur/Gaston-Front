@@ -9,10 +9,15 @@ import Login from './Login';
 import Welcome from './Welcome';
 
 // == Composant
-const Logs = () => {
+class Logs extends React.Component {
+  state = {}
 
-    const view = 'forgot'
 
+    
+render () {
+
+  const view = 'forgot'
+  
     return (
   <div className="logs">
     {view === 'welcome' && <Welcome />}
@@ -22,6 +27,7 @@ const Logs = () => {
   </div>
 );
     }
+ }
 
 // == Export
 export default Logs;

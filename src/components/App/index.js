@@ -6,9 +6,8 @@ import React from 'react';
 import './app.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
-import TresorsList from 'src/components/Tresors';
+import TresorsList from 'src/components/TresorsList';
 
-import Logs from 'src/components/Logs'
 
 // == Composant
 const App = () => {
@@ -25,7 +24,7 @@ const App = () => {
 
     <div className="maincontainer">
       <div className="contentContainer">
-        {view === 'tresor' && <Tresors />}
+        {view === 'tresor' && <TresorsList />}
         {view === 'logs' && <Logs />}
       </div>
 
