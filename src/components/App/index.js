@@ -1,35 +1,55 @@
 // == Import : npm
 import React from 'react';
-// import { Container} from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 // == Import : local
 import './app.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import PostsList from 'src/containers/PostsList';
+
 // == Composant
-const App = () => {
-  //péparation d'un variable en dure pour affichage des composants dans "content" (navigation de gauche)
-  const view = "PostsList"
-  return (
+class App extends React.Component {
+  state = {};
 
-  <div id="app">
-    <div className='navBar'>
-      Navigation
-    </div>
-    <div className="maincontainer">
-      <div className="contentContainer">
-        {view === 'PostsList' && <PostsList />}
+  componentDidMount() {
+    // console.log("je suis ici");
+    const { fetchPosts } = this.props;
+    fetchPosts();
+  }
 
-        {view === 'logs' && <Logs />}
+  changeHandler = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  render() {
+    // Modifier la valeur pour changer l'affichage
+    const view = 'PostsList';
+
+    return (
+      <div id="app">
+        <div className="navBar">Navigation</div>
+        <div className="maincontainer">
+          <div className="contentContainer">
+            {view === 'PostsList' && <PostsList />}
+
+            {view === 'logs' && <Logs />}
+          </div>
+          <div className="mapContainer">
+            <Map />
+          </div>
+        </div>
       </div>
-      <div className="mapContainer">
-        <Map />
-      </div>
-    </div>
-  </div>
- );
+    );
+  }
 }
+
+App.propTypes = {
+  fetchPosts: PropTypes.func.isRequired,
+};
 
 // == Export
 export default App;
