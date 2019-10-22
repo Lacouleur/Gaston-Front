@@ -1,0 +1,60 @@
+@import 'src/styles/_vars'; 
+
+b {
+    font-weight: $medium;
+  }
+
+.login {
+
+    width : 100%;
+
+    
+
+    &-text {
+        width: 100%;
+        font-family: $typo;
+        font-size: $regular;
+        font-style: italic;
+        color : $black-text-color; 
+        padding : 0 2em 0 2em;
+        line-height : 1.5em;
+
+        &-link {
+            color: $add-button-color;
+            cursor: pointer;
+            display: block;
+            font-size: 0.8em;
+            margin: 2em 0;
+            text-align: center;
+            text-decoration: underline;
+        
+            &:hover {
+              opacity: .8;
+            }
+        }
+    }
+
+    &-logo {
+        @extend .logo ;
+    }
+
+    &-subTitle {
+        font-size: 1.5em;
+        //text-transform : uppercase;
+        font-weight: $medium;
+        text-align : center;
+        color : $dark-grey-text-color;
+        margin-top : 2em;
+        margin-bottom : 2em;
+    }
+
+
+
+    &-form-submit--login {
+        margin : auto;
+            @extend .button--add ;
+
+    }
+
+
+}

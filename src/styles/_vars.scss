@@ -127,6 +127,26 @@ $border-thick: 4px;
   border-color: $cat-event-color;
 }
 
+.button--add {
+  @extend .button;
+  border-color: $add-button-color;
+}
+
+.button--connexion {
+  @extend .button;
+  border-color: $cat-help-color;
+}
+
+.button--inscription {
+  @extend .button;
+  border-color: $cat-event-color;
+}
+
+.button--forgot {
+  @extend .button;
+  border-color: $cat-event-color;
+}
+
 .button-category {
   font-size: $typo-size-extra-small;
   border: none;
@@ -139,5 +159,9 @@ $border-thick: 4px;
   margin: 0 $small-gutter / 2;
   &:hover {
     text-decoration: none;
+    margin: 0 $small-gutter / 2;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }

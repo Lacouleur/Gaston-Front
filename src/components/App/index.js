@@ -20,7 +20,10 @@ const App = () => {
 
   return (
   <div id="app">
-    <div className="navBar">{/* <NavBar /> */}</div>
+    <div className='navBar'>
+      Navigation
+    {/* <NavBar /> */}
+    </div>
 
     <div className="maincontainer">
       <div className="contentContainer">
