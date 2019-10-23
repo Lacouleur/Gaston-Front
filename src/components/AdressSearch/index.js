@@ -4,22 +4,19 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './app.scss';
-import Logs from 'src/components/Logs';
-import Map from 'src/containers/Map';
-import NavBar from 'src/components/NavBar';
-import PostsList from 'src/containers/PostsList';
+
 
 // == Composant
 class App extends React.Component {
   state = {
-    contentView: 'logs',
+    contentView: 'PostsList',
     currentView: 'welcome',
   };
 
   componentDidMount() {
     // console.log("je suis ici");
     const { fetchPosts, fetchUsers, fetchCategories } = this.props;
-    fetchPosts();
+    fetchPosts(); 
     fetchUsers();
     fetchCategories();
   }
@@ -75,8 +72,6 @@ class App extends React.Component {
 
 App.propTypes = {
   fetchPosts: PropTypes.func.isRequired,
-  fetchUsers: PropTypes.func.isRequired,
-  fetchCategories: PropTypes.func.isRequired,
 };
 
 // == Export
