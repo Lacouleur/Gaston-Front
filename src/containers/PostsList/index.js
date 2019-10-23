@@ -2,10 +2,10 @@
 import { connect } from 'react-redux';
 
 // == Import : local
-import Map from 'src/components/Map';
+import PostsList from 'src/components/PostsList';
 
 // Action Creators
-import { updateViewport } from 'src/store/reducer';
+// import { updateViewport } from 'src/store/reducer';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -15,9 +15,8 @@ import { updateViewport } from 'src/store/reducer';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  viewport: state.viewport,
-  mapboxApiAccessToken: state.mapboxApiAccessToken,
-  mapStyle: state.mapStyle,
+  postsLists: state.postsLists,
+  loading: state.loading,
 });
 
 /* === Actions ===
@@ -27,24 +26,16 @@ const mapStateToProps = (state, ownProps) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  // doSomething: () => {
-  //   dispatch(doSomething("Coucou"));
-  // }
-  updateViewport: (mapChange) => {
-    dispatch(updateViewport(mapChange));
-    console.log(mapChange);
-  },
-});
+const mapDispatchToProps = {};
 
 // Container
-const MapContainer = connect(
+const PostsListContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Map);
+)(PostsList);
 
 // == Export
-export default MapContainer;
+export default PostsListContainer;
 
 /* = export à la volée
 export default connect(

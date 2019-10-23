@@ -10,7 +10,9 @@ const Field = ({
   name,
   placeholder,
   type, 
-  style
+  style,
+  value,
+  changeHandler
 }) => {
 
   const className = `field-input-${style}`
@@ -22,8 +24,9 @@ const Field = ({
             name={name}
             type={type}
             required 
-            autoComplete="new-password"
+            autoComplete="off"
             placeholder= {placeholder } 
+            onChange={changeHandler}
           /*id= */
           // https://fr.reactjs.org/docs/events.html
           /* onChange={this.changeHandler} */

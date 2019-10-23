@@ -2,10 +2,10 @@
 import { connect } from 'react-redux';
 
 // == Import : local
-import Example from 'src/components/Example';
+import Map from 'src/components/Map';
 
 // Action Creators
-import { doSomething } from 'src/store/reducer';
+import { updateViewport } from 'src/store/reducer';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -15,7 +15,9 @@ import { doSomething } from 'src/store/reducer';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  message: state.message,
+  viewport: state.viewport,
+  mapboxApiAccessToken: state.mapboxApiAccessToken,
+  mapStyle: state.mapStyle,
 });
 
 /* === Actions ===
@@ -26,23 +28,27 @@ const mapStateToProps = (state, ownProps) => ({
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  doSomething: () => {
-    dispatch(doSomething('Coucou'));
+  // doSomething: () => {
+  //   dispatch(doSomething("Coucou"));
+  // }
+  updateViewport: (mapChange) => {
+    dispatch(updateViewport(mapChange));
+    // console.log(mapChange);
   },
 });
 
 // Container
-const ExampleContainer = connect(
+const MapContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Example);
+)(Map);
 
 // == Export
-export default ExampleContainer;
+export default MapContainer;
 
 /* = export à la volée
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Example);
+)(Map);
 */
