@@ -25,7 +25,7 @@ const Field = ({
             type={type}
             required 
             autoComplete="off"
-            placeholder= {placeholder } 
+            placeholder= {placeholder} 
             onChange={changeHandler}
           /*id= */
           // https://fr.reactjs.org/docs/events.html
