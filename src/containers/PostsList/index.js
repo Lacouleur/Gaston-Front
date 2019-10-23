@@ -2,10 +2,10 @@
 import { connect } from 'react-redux';
 
 // == Import : local
-import Example from 'src/components/Example';
+import PostsList from 'src/components/PostsList';
 
 // Action Creators
-import { doSomething } from 'src/store/reducer';
+// import { updateViewport } from 'src/store/reducer';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -15,7 +15,8 @@ import { doSomething } from 'src/store/reducer';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  message: state.message,
+  postsLists: state.postsLists,
+  loading: state.loading,
 });
 
 /* === Actions ===
@@ -25,24 +26,20 @@ const mapStateToProps = (state, ownProps) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  doSomething: () => {
-    dispatch(doSomething('Coucou'));
-  },
-});
+const mapDispatchToProps = {};
 
 // Container
-const ExampleContainer = connect(
+const PostsListContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Example);
+)(PostsList);
 
 // == Export
-export default ExampleContainer;
+export default PostsListContainer;
 
 /* = export à la volée
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Example);
+)(Map);
 */

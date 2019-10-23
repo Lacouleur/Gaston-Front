@@ -13,7 +13,7 @@ const Inscription = ({changeHandler, changeView}) => {
   
   const datasFields = fieldsData.fields;
   const clickHandler = changeView('password');
-  const clickHandlerRetour = changeView('login');
+  const clickHandlerBack = changeView('login');
 
     return (
 
@@ -30,9 +30,9 @@ const Inscription = ({changeHandler, changeView}) => {
             {...field}
           />
         ))}
-        <button className="inscription-form-submit" type="submit">Se connecter</button>
+        <button className="inscription-form-submit" onClick={clickHandler} type="submit">Se connecter</button>
       </form>
-        <button className="inscription-retour" type="submit">Retour</button>
+        <button className="inscription-retour" onClick={clickHandlerBack} type="submit">Retour</button>
 
 </div>
 
