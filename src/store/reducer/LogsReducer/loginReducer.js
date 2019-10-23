@@ -5,7 +5,7 @@ const initialState = {
   
   // - Actions Types
   const EXAMPLE_ACTION = 'EXAMPLE_ACTION';
-  export const EXAMPLE_MIDDLEWARE_ACTION = 'CONNEXAMPLE_MIDDLEWARE_ACTION';
+  export const EXAMPLE_MIDDLEWARE_ACTION = 'EXAMPLE_MIDDLEWARE_ACTION';
   
   // - Reducer
   const reducer = (state = initialState, action = {}) => {
