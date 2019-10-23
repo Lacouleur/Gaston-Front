@@ -47,7 +47,8 @@ const Logs = ({changeHandler, changeView, view}) => {
      />}
   </div>
 );
-    }
+    
+ }
 
 Logs.propTypes = {
   changeHandler: PropTypes.func.isRequired,
