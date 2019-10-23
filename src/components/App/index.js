@@ -7,7 +7,6 @@ import './app.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import PostsList from 'src/containers/PostsList';
-import Welcome from '../Logs/Welcome';
 import NavBar from 'src/components/NavBar'
 
 // == Composant
@@ -49,11 +48,13 @@ class App extends React.Component {
 
     return (
       <div id="app">
+        
         <NavBar className="navBar" />
+
         <div className="maincontainer">
+
           <div className="contentContainer">
             {contentView === 'PostsList' && <PostsList />}
-
             {contentView === 'logs' && (
               <Logs
                 changeHandler={this.changeHandler}
@@ -62,10 +63,13 @@ class App extends React.Component {
               />
             )}
           </div>
+
           <div className="mapContainer">
             <Map />
           </div>
+
         </div>
+
       </div>
     );
   }
