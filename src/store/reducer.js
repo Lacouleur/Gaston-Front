@@ -21,7 +21,7 @@ const initialState = {
   // Plusieurs style par defaut sont dispos on peut meme
   // creer le notre ou afficher different type de vue
   // suivant utilisateur
-  mapStyle: 'mapbox://styles/mapbox/basic-v9',
+  mapStyle: 'mapbox://styles/coolskin2b/ck22bq57r0qhb1co3tz0yqbd3',
   // searchCity: {
   //   isLoading: false,
   //   results: SearchData,
