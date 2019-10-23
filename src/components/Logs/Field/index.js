@@ -1,5 +1,6 @@
 // == Import : npm
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // == Import : local
 import './field.scss';
@@ -11,7 +12,7 @@ const Field = ({
   placeholder,
   type, 
   style,
-  value,
+  //value,
   changeHandler
 }) => {
 
@@ -25,7 +26,7 @@ const Field = ({
             type={type}
             required 
             autoComplete="off"
-            placeholder= {placeholder } 
+            placeholder= {placeholder} 
             onChange={changeHandler}
           /*id= */
           // https://fr.reactjs.org/docs/events.html
@@ -36,6 +37,17 @@ const Field = ({
 
 );
     }
+
+//PropTypes
+
+Field.propTypes = {
+  name : PropTypes.string.isRequired,
+  placeholder : PropTypes.string.isRequired,
+  type : PropTypes.string.isRequired,
+  style : PropTypes.string.isRequired,
+  //value : PropTypes.string.isRequired,
+  changeHandler : PropTypes.string.isRequired,
+};
 
 // == Export
 export default Field;
