@@ -16,7 +16,9 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
   //  Fonction pour calculer la taille du Navigateur
   const [windowWidth, setWindowWidth] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
+  const [navbarHeight, setnavbarHeight] = useState(0);
   let resizeWindow = () => {
+    setnavbarHeight(document.querySelector('.navbar').offsetHeight);
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
   };
@@ -63,7 +65,7 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
     <ReactMapGL
       {...viewport}
       width={windowWidth}
-      height={windowHeight}
+      height={windowHeight - navbarHeight}
       // onResize={handleResize}
       // transitionDuration={100}
       mapboxApiAccessToken={mapboxApiAccessToken}
@@ -107,7 +109,8 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
           <div>
             <h2>{selectedPark.properties.NAME}</h2>
             <p>{selectedPark.properties.DESCRIPTIO}</p>
-            <img src="public/DumpsterLogos.svg" />
+            {/* ajouter et configurer l'image dans la vignette */}
+            <img src="public/Images/image1.jpg" />
           </div>
         </Popup>
       ) : null}
