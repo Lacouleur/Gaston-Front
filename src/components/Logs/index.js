@@ -22,6 +22,7 @@ O - Mettre les click handlers
 */
 
 
+
 // == Composant
 const Logs = ({changeHandler, changeView, view}) => {
 
