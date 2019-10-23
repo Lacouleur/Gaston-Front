@@ -6,7 +6,7 @@ import postsLists from '../data/tresorsBack';
 const initialState = {
   // https://github.com/uber/react-map-gl/blob/master/docs/advanced/viewport-transition.md
   postsLists,
-  loading: true,
+  loading: false,
   viewport: {
     // ATTENTION Garder L'ordre Latitude Longitude !!!!
     // width: '100%',
