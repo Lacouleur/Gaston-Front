@@ -12,7 +12,7 @@ import Welcome from '../Logs/Welcome';
 // == Composant
 class App extends React.Component {
   state = { 
-    contentView: 'logs',
+    contentView:'logs',
     currentView:'welcome'
   }
 
