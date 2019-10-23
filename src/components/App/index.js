@@ -48,7 +48,7 @@ class App extends React.Component {
 
     return (
       <div id="app">
-        <div className="navBar">Navigation</div>
+        <NavBar className="navBar" />
         <div className="maincontainer">
           <div className="contentContainer">
             {contentView === 'PostsList' && <PostsList />}
