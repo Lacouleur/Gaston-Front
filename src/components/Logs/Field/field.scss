@@ -3,10 +3,6 @@
 .field {
        
         &-input {
-            width : 80%;
-            height : 3em; 
-            margin : 3% auto 3% auto;
-            @extend .button--connexion;
 
             &-incription {
                 width : 80%;
@@ -20,6 +16,14 @@
                 height : 3em; 
                 margin : 3% auto 3% auto;
                 @extend .button--forgot;
+            }
+
+            &-login {
+                width : 80%;
+                height : 3em; 
+                margin : 3% auto 3% auto;
+                @extend .button--connexion;
+
             }
         }
 

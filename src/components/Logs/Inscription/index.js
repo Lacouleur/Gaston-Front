@@ -32,7 +32,7 @@ const Inscription = ({changeHandler, changeView}) => {
         ))}
         <button className="inscription-form-submit" onClick={clickHandler} type="submit">Se connecter</button>
       </form>
-        <button className="inscription-retour" onClick={clickHandlerBack} type="submit">Retour</button>
+        <button className="inscription-retour" onClick={clickHandlerBack} type="button">Retour</button>
 
 </div>
 
