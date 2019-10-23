@@ -21,11 +21,11 @@ const PostsList = ({ postsLists, loading }) => {
         </div>
       )}
       {!loading && (
-        <div className="posts-container">
+        <article className="posts-container">
           {postsLists.map((post) => (
             <PostsCard postdetails={post} key={post.id} />
           ))}
-        </div>
+        </article>
       )}
     </>
   );

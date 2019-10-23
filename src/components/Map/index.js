@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { Container, Image, Menu } from 'semantic-ui-react';
+import { PacmanLoader } from 'react-spinners';
 
 // DATA EN DUR
 import * as parkDate from '../../data/skateboard-parks.json';
@@ -16,9 +17,11 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
   //  Fonction pour calculer la taille du Navigateur
   const [windowWidth, setWindowWidth] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
-  const [navbarHeight, setnavbarHeight] = useState(0);
+  const [navbarHeight, setNavbarHeight] = useState(0);
+  const [mapLoading, setMapLoading] = useState(true);
+
   let resizeWindow = () => {
-    setnavbarHeight(document.querySelector('.navbar').offsetHeight);
+    setNavbarHeight(document.querySelector('.navbar').offsetHeight);
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
   };
@@ -60,61 +63,75 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
   //   // setViewportsize(event);
   //   console.log('--------')
   // }
+  const handleLoad = (onLoadEvent) => {
+    setMapLoading(false);
+  };
 
   return (
-    <ReactMapGL
-      {...viewport}
-      width={windowWidth}
-      height={windowHeight - navbarHeight}
-      // onResize={handleResize}
-      // transitionDuration={100}
-      mapboxApiAccessToken={mapboxApiAccessToken}
-      mapStyle={mapStyle}
-      // Animation sur le changement :  Viewport Transition
-      // https://urbica.github.io/react-map-gl/#/Components/Layer
-      // https://github.com/uber/react-map-gl/blob/master/docs/advanced/viewport-transition.md#examples/viewport-animation
-      // onViewportChange={viewport => {
-      //   setViewport(viewport);
-      //   console.log(viewport);
-      // }}
-      onViewportChange={handleChange}
-    >
-      {parkDate.features.map((park) => (
-        // ICI A VERIFIER PREFERER LAYER A MARKER
-        <Marker
-          key={park.properties.PARK_ID}
-          latitude={park.geometry.coordinates[1]}
-          longitude={park.geometry.coordinates[0]}
-        >
-          <button
-            className="marker-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              setSelectedPark(park);
+    <>
+      <ReactMapGL
+        visible={!mapLoading}
+        onLoad={handleLoad}
+        reuseMaps={true}
+        asyncRender={true}
+        {...viewport}
+        width={windowWidth}
+        height={windowHeight - navbarHeight}
+        // onResize={handleResize}
+        // transitionDuration={100}
+        mapboxApiAccessToken={mapboxApiAccessToken}
+        mapStyle={mapStyle}
+        // Animation sur le changement :  Viewport Transition
+        // https://urbica.github.io/react-map-gl/#/Components/Layer
+        // https://github.com/uber/react-map-gl/blob/master/docs/advanced/viewport-transition.md#examples/viewport-animation
+        // onViewportChange={viewport => {
+        //   setViewport(viewport);
+        //   console.log(viewport);
+        // }}
+        onViewportChange={handleChange}
+      >
+        {parkDate.features.map((park) => (
+          // ICI A VERIFIER PREFERER LAYER A MARKER
+          <Marker
+            key={park.properties.PARK_ID}
+            latitude={park.geometry.coordinates[1]}
+            longitude={park.geometry.coordinates[0]}
+          >
+            <button
+              className="marker-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedPark(park);
+              }}
+            >
+              {!mapLoading && (
+                <img src="public/DumpsterLogos.svg" alt="Dumpsters" />
+              )}
+            </button>
+          </Marker>
+        ))}
+
+        {selectedPark ? (
+          <Popup
+            latitude={selectedPark.geometry.coordinates[1]}
+            longitude={selectedPark.geometry.coordinates[0]}
+            onClose={() => {
+              setSelectedPark(null);
             }}
           >
-            <img src="public/DumpsterLogos.svg" alt="Dumpsters" />
-          </button>
-        </Marker>
-      ))}
-
-      {selectedPark ? (
-        <Popup
-          latitude={selectedPark.geometry.coordinates[1]}
-          longitude={selectedPark.geometry.coordinates[0]}
-          onClose={() => {
-            setSelectedPark(null);
-          }}
-        >
-          <div>
-            <h2>{selectedPark.properties.NAME}</h2>
-            <p>{selectedPark.properties.DESCRIPTIO}</p>
-            {/* ajouter et configurer l'image dans la vignette */}
-            <img src="public/Images/image1.jpg" />
-          </div>
-        </Popup>
-      ) : null}
-    </ReactMapGL>
+            <div>
+              <h2>{selectedPark.properties.NAME}</h2>
+              <p>{selectedPark.properties.DESCRIPTIO}</p>
+              {/* ajouter et configurer l'image dans la vignette */}
+              <img src="public/Images/image1.jpg" />
+            </div>
+          </Popup>
+        ) : null}
+      </ReactMapGL>
+      <div className="float_center">
+        {mapLoading && <PacmanLoader color={'#123abc'} loading={mapLoading} />}
+      </div>
+    </>
   );
 };
 Map.propTypes = {
