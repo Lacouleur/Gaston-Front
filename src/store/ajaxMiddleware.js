@@ -8,7 +8,7 @@ const ajaxMiddleware = (store) => (next) => (action) => {
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
       axios
         .get(
-          'https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port&postcode=44380',{ crossdomain: true },
+          '//alexis-le-trionnaire.vpnuser.lan/projet-Dumpsters/website-skeleton/public/api/posts',{ crossdomain: true },
           {
             headers: {
               'Access-Control-Allow-Origin': '*',

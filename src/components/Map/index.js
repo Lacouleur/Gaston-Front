@@ -65,7 +65,7 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
       width={windowWidth}
       height={windowHeight}
       // onResize={handleResize}
-      transitionDuration={100}
+      // transitionDuration={100}
       mapboxApiAccessToken={mapboxApiAccessToken}
       mapStyle={mapStyle}
       // Animation sur le changement :  Viewport Transition

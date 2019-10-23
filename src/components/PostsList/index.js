@@ -1,6 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BeatLoader } from 'react-spinners';
 
 // == Import : local
 import './postsList.scss';
@@ -13,11 +14,12 @@ const PostsList = ({ postsLists, loading }) => {
     <>
       <PostsFilters />
       {loading && (
-        <div className="loading">
-          Recupération des Posts - Veuillez patienter
+        <div className="sweet-loading">
+          <div className="sweet-loading--center">
+            <BeatLoader color={'#123abc'} loading={loading} />
+          </div>
         </div>
       )}
-
       {!loading && (
         <div className="tresors-container">
           {postsLists.map((post) => (
