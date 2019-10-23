@@ -2,10 +2,14 @@
 // import de test pour recherche SearchCity
 // import SearchData from '../data/searchcity'
 import postsLists from '../data/tresorsBack';
+import postsCategories from '../data/postsCategories';
+import postsUsers from '../data/postsUsers';
 
 const initialState = {
   // https://github.com/uber/react-map-gl/blob/master/docs/advanced/viewport-transition.md
   postsLists,
+  postsCategories,
+  postsUsers,
   loading: false,
   viewport: {
     // ATTENTION Garder L'ordre Latitude Longitude !!!!
@@ -35,8 +39,14 @@ const UPDATE_VIEWPORT = 'UPDATE_VIEWPORT';
 const UPDATE_SEARCHFIELD = 'UPDATE_SEARCHFIELD';
 const UPDATE_VIEWPORTCENTER = 'UPDATE_VIEWPORTCENTER';
 export const FETCH_POSTS = 'FETCH_POST';
-const STOP_LOAD_POSTS = 'STOP_LOAD_POSTS';
-const RECEIVE_POSTS = 'RECEIVE_POSTS';
+// const STOP_LOAD_POSTS = 'STOP_LOAD_POSTS';
+// const RECEIVE_POSTS = 'RECEIVE_POSTS';
+export const FETCH_USERS = 'FETCH_USERS';
+// const STOP_FETCH_USERS ='STOP_FETCH_USERS';
+// const RECEIVE__FETCH_USERS ='RECEIVE__FETCH_USERS';
+export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
+// const STOP_FETCH_CATEGORIES ='STOP_FETCH_CATEGORIES';
+// const RECEIVE__FETCH_CATEGORIES ='RECEIVE__FETCH_CATEGORIES';
 
 // == Reducer
 const reducer = (state = initialState, action = {}) => {
@@ -59,6 +69,18 @@ const reducer = (state = initialState, action = {}) => {
         // viewport: action.viewport,
       };
     case FETCH_POSTS:
+      console.log(action);
+      return {
+        ...state,
+        loading: false,
+      };
+      case FETCH_CATEGORIES:
+      console.log(action);
+      return {
+        ...state,
+        loading: false,
+      };
+      case FETCH_USERS:
       console.log(action);
       return {
         ...state,
@@ -99,6 +121,31 @@ export const stopLoadPosts = () => ({
 export const receivePosts = () => ({
   type: RECEIVE_POSTS,
 });
+
+
+
+export const fetchUsers = () => ({
+  type: FETCH_USERS,
+});
+export const stopLoadUsers = () => ({
+  type: STOP_FETCH_USERS,
+});
+export const receiveUsers = () => ({
+  type: RECEIVE_FETCH_USERS,
+});
+
+export const fetchCategories = () => ({
+  type: FETCH_CATEGORIES,
+});
+export const stopLoadCategories = () => ({
+  type: STOP_FETCH_CATEGORIES,
+});
+export const receiveCategories = () => ({
+  type: RECEIVE_FETCH_CATEGORIES,
+});
+
+
+
 
 // == Selectors
 

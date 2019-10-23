@@ -9,8 +9,6 @@ import Map from 'src/containers/Map';
 import NavBar from 'src/components/NavBar';
 import PostsList from 'src/containers/PostsList';
 
-
-
 // == Composant
 class App extends React.Component {
   state = {
@@ -20,8 +18,10 @@ class App extends React.Component {
 
   componentDidMount() {
     // console.log("je suis ici");
-    const { fetchPosts } = this.props;
-    fetchPosts();
+    const { fetchPosts, fetchUsers, fetchCategories } = this.props;
+    fetchPosts(); 
+    fetchUsers();
+    fetchCategories();
   }
 
   // == Functions
@@ -50,11 +50,9 @@ class App extends React.Component {
 
     return (
       <div id="app">
-        
         <NavBar className="navBar" />
 
         <main className="maincontainer">
-
           <section className="contentContainer">
             {contentView === 'PostsList' && <PostsList />}
             {contentView === 'logs' && (
@@ -67,15 +65,9 @@ class App extends React.Component {
           </section>
 
           <div className="mapContainer">
-            
             <Map />
-
-            
-            
           </div>
-
         </main>
-
       </div>
     );
   }
