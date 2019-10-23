@@ -55,6 +55,9 @@ b {
             @extend .button--add ;
 
     }
-
+    &-form-submit--inscription {
+        margin-top : 3%;
+        @extend .button--inscription ;
+    }
 
 }
