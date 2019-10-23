@@ -7,9 +7,9 @@ import Field from '../Field';
 
 
 // == Composant
-const Forgot = () => {
+const Forgot = ({changeView}) => {
 
-  const clickHandlerReturn = changeView('login');
+  const clickHandlerBack = changeView('login');
 
     return (
   <div className="forgot">
@@ -28,7 +28,7 @@ const Forgot = () => {
 
       <button className="forgot-form-submit" type="submit">Réinitialiser</button>
     </form>
-      <button className="forgot-retour" type="submit">retour</button>
+      <button className="forgot-retour" onClick={clickHandlerBack} type="button">retour</button>
   </div>
 );
     }
