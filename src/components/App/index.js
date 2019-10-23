@@ -13,7 +13,7 @@ import NavBar from 'src/components/NavBar'
 // == Composant
 class App extends React.Component {
   state = {
-    contentView: 'logs',
+    contentView: 'PostsList',
     currentView: 'welcome',
   };
 
