@@ -9,7 +9,7 @@
     font-size: $typo-size;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   &-title {
     font-size: $typo-size-Small;
@@ -65,7 +65,8 @@
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   color: #202124;
-  margin: $small-gutter ;
+  margin : ($small-gutter /2) 0($small-gutter /2) ($small-gutter /2);
+
   border-radius: 3px;
   padding-top: $small-gutter;
   padding-bottom: $small-gutter;
@@ -98,6 +99,7 @@
   }
   &-status{
     display:flex;
+    justify-content: space-evenly;
   }
   h2 {
     color: $title;

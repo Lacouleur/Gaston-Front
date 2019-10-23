@@ -8,7 +8,6 @@ import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import NavBar from 'src/components/NavBar';
 import PostsList from 'src/containers/PostsList';
-import NavBar from 'src/components/NavBar'
 
 
 // == Composant
