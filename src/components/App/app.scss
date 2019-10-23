@@ -9,6 +9,12 @@
   font-size: 1.2em;
   background-color: $white-backgroud-color;
 }
+.navBar {
+  background-color: green;
+  width: 100%;
+  min-height: 2rem;
+  display: block;
+}
 
 .maincontainer {
   display: flex;
@@ -47,13 +53,6 @@ code {
   max-height: 100% !important;
   width: 70%;
   height: 100%;
-  background-color: blue;
+  background-color: lighten($add-button-color, 32%);
   display: inline-block;
-}
-
-.navBar {
-  background-color: green;
-  width: 100%;
-  min-height: 2rem;
-  display: block;
 }

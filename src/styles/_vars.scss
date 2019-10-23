@@ -47,7 +47,9 @@ $border-regular: 2px;
 $border-thick: 4px;
 
 //LOGOS
-
+body{
+  overflow-y: hidden;
+}
 .logo {
   display: block;
   margin-left: auto;

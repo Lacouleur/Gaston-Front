@@ -27,9 +27,11 @@ const PostsCard = ({ postdetails }) => {
         <div className="posts-cards-adress">{addressLabel}</div>
       </div>
       <div className="posts-cards-right">
-        <h2>{title}</h2>
-        <h3>{user.id}</h3>
-        <p>{description}</p>
+        <header>
+          <h1>{title}</h1>
+          <h3>{user.id}</h3>
+          <p>{description}</p>
+        </header>
         <div>
           <button className="button-category">{category.id}</button>
         </div>

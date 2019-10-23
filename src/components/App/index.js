@@ -53,9 +53,9 @@ class App extends React.Component {
         
         <NavBar className="navBar" />
 
-        <div className="maincontainer">
+        <main className="maincontainer">
 
-          <div className="contentContainer">
+          <section className="contentContainer">
             {contentView === 'PostsList' && <PostsList />}
             {contentView === 'logs' && (
               <Logs
@@ -64,13 +64,17 @@ class App extends React.Component {
                 view={this.state.currentView}
               />
             )}
-          </div>
+          </section>
 
           <div className="mapContainer">
+            
             <Map />
+
+            
+            
           </div>
 
-        </div>
+        </main>
 
       </div>
     );
