@@ -21,7 +21,7 @@ const PostsList = ({ postsLists, loading }) => {
         </div>
       )}
       {!loading && (
-        <div className="tresors-container">
+        <div className="posts-container">
           {postsLists.map((post) => (
             <PostsCard postdetails={post} key={post.id} />
           ))}

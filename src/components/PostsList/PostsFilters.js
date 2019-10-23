@@ -6,9 +6,9 @@ import React from 'react';
 
 // == Composant
 const PostsFilters = () => (
-    <div className="tresor-category-container">
-      <p className="tresor-category-title">Filtres:</p>
-      <div className="tresor-category-filter">
+    <div className="posts-category-container">
+      <p className="posts-category-title">Filtres:</p>
+      <div className="posts-category-filter">
         <button className="button--don">dons</button>
         <button className="button--help">demande d'aide</button>
         <button className="button--event">évenement</button>
