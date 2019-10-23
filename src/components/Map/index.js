@@ -7,7 +7,7 @@ import { PacmanLoader } from 'react-spinners';
 // DATA EN DUR
 import * as parkDate from '../../data/skateboard-parks.json';
 // CSS MAPBOX
-import 'mapbox-gl/dist/mapbox-gl.css';
+import 'src/styles/mapbox-gl.css';
 import './map.scss';
 
 const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
@@ -73,12 +73,12 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
         visible={!mapLoading}
         onLoad={handleLoad}
         reuseMaps={true}
-        asyncRender={true}
+        // asyncRender={true} Make the Marker Move on Scroll
         {...viewport}
         width={windowWidth}
         height={windowHeight - navbarHeight}
         // onResize={handleResize}
-        transitionDuration={100}
+        transitionDuration={250}
         mapboxApiAccessToken={mapboxApiAccessToken}
         mapStyle={mapStyle}
         // Animation sur le changement :  Viewport Transition
@@ -119,11 +119,13 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
               setSelectedPark(null);
             }}
           >
-            <div>
-              <h2>{selectedPark.properties.NAME}</h2>
-              <p>{selectedPark.properties.DESCRIPTIO}</p>
-              {/* ajouter et configurer l'image dans la vignette */}
-              <img src="public/Images/image1.jpg" />
+            <img className="popup--img" src="public/Images/image1.jpg" />
+            <div className="map-popup">
+              <div className="popup-content">
+                <h2>{selectedPark.properties.NAME}</h2>
+                <p>{selectedPark.properties.DESCRIPTIO}</p>
+                {/* ajouter et configurer l'image dans la vignette */}
+              </div>
             </div>
           </Popup>
         ) : null}

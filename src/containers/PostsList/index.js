@@ -16,6 +16,7 @@ import PostsList from 'src/components/PostsList';
  */
 const mapStateToProps = (state, ownProps) => ({
   postsLists: state.postsLists,
+  
   loading: state.loading,
 });
 

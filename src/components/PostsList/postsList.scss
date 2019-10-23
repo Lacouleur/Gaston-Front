@@ -20,7 +20,7 @@
 .posts-container {
   -webkit-flex: 1 1 auto;
   overflow-y: scroll;
-  height: calc(#{$screenHeigthSize} - 10rem); //nav +3rem
+  height: calc(#{$screenHeigthSize} - 8rem); //nav +3rem
 }
 // SCROLL BAR POST START
 .posts-container::-webkit-scrollbar {
