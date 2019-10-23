@@ -1,10 +1,10 @@
 @import 'src/styles/_vars';
 
-.tresor-category-container {
+.posts-category-container {
   padding: $small-gutter;
   font-size: $typo-size;
 }
-.tresor-category {
+.posts-category {
   &-filter {
     font-size: $typo-size;
     display: flex;
@@ -17,54 +17,55 @@
   }
 }
 
-.tresors-container {
+.posts-container {
   overflow-y: auto;
-  height: 80vh; /* == min-height: 100px*/
+  height: 100vh; /* == min-height: 100px*/
 }
 // SCROLL BAR POST START
-.tresors-container::-webkit-scrollbar {
+.posts-container::-webkit-scrollbar {
   cursor: move;
   width: 21px;
   height: 21px;
 }
-.tresors-container::-webkit-scrollbar-button {
+.posts-container::-webkit-scrollbar-button {
   width: 0px;
   height: 0px;
 }
-.tresors-container::-webkit-scrollbar-thumb {
+.posts-container::-webkit-scrollbar-thumb {
   background: #e6e6e6;
 
   border: 7px solid #fffbf8;
   border-radius: 28px;
 }
-.tresors-container::-webkit-scrollbar-thumb:hover {
+.posts-container::-webkit-scrollbar-thumb:hover {
   background: #abddff;
 }
-.tresors-container::-webkit-scrollbar-thumb:active {
+.posts-container::-webkit-scrollbar-thumb:active {
   background: #abddff;
 }
-.tresors-container::-webkit-scrollbar-track {
+.posts-container::-webkit-scrollbar-track {
   background: #abddff;
   border: 11px solid #fffbf8;
   border-radius: 28px;
 }
-.tresors-container::-webkit-scrollbar-track:hover {
+.posts-container::-webkit-scrollbar-track:hover {
   background: #abddff;
 }
-.tresors-container::-webkit-scrollbar-track:active {
+.posts-container::-webkit-scrollbar-track:active {
   background: #abddff;
 }
-.tresors-container::-webkit-scrollbar-corner {
+.posts-container::-webkit-scrollbar-corner {
   background: transparent;
 }
 // SCROLL BAR POST -END
 
-.tresor-cards {
+.posts-cards {
   background: #fff;
   border-radius: 2px;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   color: #202124;
+  margin: $small-gutter ;
   border-radius: 3px;
   padding-top: $small-gutter;
   padding-bottom: $small-gutter;
@@ -94,6 +95,9 @@
     // display: flex;
     // flex-direction: column;
     // justify-content:space-around;
+  }
+  &-status{
+    display:flex;
   }
   h2 {
     color: $title;

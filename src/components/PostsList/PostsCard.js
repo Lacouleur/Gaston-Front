@@ -16,24 +16,24 @@ const PostsCard = ({ postdetails }) => {
   } = postdetails;
   console.log(category);
   return (
-    <article className="tresor-cards">
-      <div className="tresor-cards-left">
+    <article className="posts-cards">
+      <div className="posts-cards-left">
         <img
-          className="tresor-cards-image"
+          className="posts-cards-image"
           src={picture}
           alt={picture}
-          className="tresor-cards-image"
+          className="posts-cards-image"
         />
-        <div className="tresor-cards-adress">{addressLabel}</div>
+        <div className="posts-cards-adress">{addressLabel}</div>
       </div>
-      <div className="tresor-cards-right">
+      <div className="posts-cards-right">
         <h2>{title}</h2>
         <h3>{user.id}</h3>
         <p>{description}</p>
         <div>
           <button className="button-category">{category.id}</button>
         </div>
-        <div>
+        <div className="posts-cards-status">
           <button className="button--vanish">Il n'y est plus </button>
           <button className="button--got-it">je l'ai récupéré</button>
         </div>

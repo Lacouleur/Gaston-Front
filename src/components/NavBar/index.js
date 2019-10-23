@@ -5,8 +5,9 @@ import React from 'react';
 import './navbar.scss';
 const NavBar = () => (
   <div className="navbar">
-    <button>Ajouter une annonce</button>
-    <img className="NavBar-logo" src="public\DumpsterLogoswhite.png" alt="Logo Gaston Racoon white"></img>
+    <img className="navbar-logo" src="public\DumpsterLogoswhite.png" alt="Logo Gaston Racoon white"></img>
+<p>Gaston</p>
+        <button>Ajouter une annonce</button>
   </div>
 );
 
