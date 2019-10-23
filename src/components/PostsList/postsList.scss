@@ -16,14 +16,14 @@
     padding-bottom: $small-gutter;
   }
 }
+
 .tresors-container {
   overflow-y: auto;
   height: 80vh; /* == min-height: 100px*/
 }
-//-------------------
-
+// SCROLL BAR POST START
 .tresors-container::-webkit-scrollbar {
- cursor:move;
+  cursor: move;
   width: 21px;
   height: 21px;
 }
@@ -57,8 +57,8 @@
 .tresors-container::-webkit-scrollbar-corner {
   background: transparent;
 }
+// SCROLL BAR POST -END
 
-//-------------------
 .tresor-cards {
   background: #fff;
   border-radius: 2px;
