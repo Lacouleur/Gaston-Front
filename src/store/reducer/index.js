@@ -4,11 +4,7 @@
 import { combineReducers } from 'redux';
 
 // on importe chacun des sous-reducers
-import user from './user';
-import repos from './repos';
-import form from './form';
-import InputSearch  from './InputSearch';
-import results from './results'
+import appReducer from 'src/store/reducer/AppReducer/appReducer'
 
 // combineReducers nous retourne le reducer parent généré
 // on doit fournir en paramètre un objet
@@ -16,11 +12,7 @@ import results from './results'
 // https://redux.js.org/api/combinereducers
 const reducer = combineReducers({
   // user: user
-  user,
-  repos,
-  form,
-  InputSearch,
-  results,
+app : appReducer,
 });
 
 export default reducer;

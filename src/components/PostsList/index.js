@@ -9,34 +9,43 @@ import PostsFilters from './PostsFilters';
 import PostsCard from './PostsCard';
 
 // == Composant
-const PostsList = ({ postsLists, loading }) => {
-  return (
-    <>
-      <PostsFilters />
-      {loading && (
-        <div className="sweet-loading">
-          <div className="sweet-loading--center">
-            <BeatLoader color={'#123abc'} loading={loading} />
-          </div>
-        </div>
-      )}
-      {!loading && (
-        <article className="posts-container">
-          {postsLists.map((post) => (
-            <PostsCard postdetails={post} key={post.id} />
-          ))}
-        </article>
-      )}
-    </>
-  );
-};
+// const PostsList = ({ postsLists, loading }) => {
+  
+//   componentDidMount() {
+//     // console.log("je suis ici");
+//     const { fetchPosts, fetchUsers, fetchCategories } = this.props;
+//     fetchPosts();
+//     fetchUsers();
+//     fetchCategories();
+//   }
 
-PostsList.propTypes = {
-  postsLists: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
-};
-// == Export
-export default PostsList;
+//   return (
+//     <>
+//       <PostsFilters />
+//       {loading && (
+//         <div className="sweet-loading">
+//           <div className="sweet-loading--center">
+//             <BeatLoader color={'#123abc'} loading={loading} />
+//           </div>
+//         </div>
+//       )}
+//       {!loading && (
+//         <article className="posts-container">
+//           {postsLists.map((post) => (
+//             <PostsCard postdetails={post} key={post.id} />
+//           ))}
+//         </article>
+//       )}
+//     </>
+//   );
+// };
+
+// PostsList.propTypes = {
+//   postsLists: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//     }),
+//   ).isRequired,
+// };
+// // == Export
+// export default PostsList;

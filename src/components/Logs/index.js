@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 import './logs.scss';
 import Forgot from './Forgot';
 import Inscription from './Inscription';
-import Login from 'src/containers/Logs/Login/loginContainer';
+//import Login from 'src/containers/Logs/Login/loginContainer';
+import Login from './Login';
 import Welcome from './Welcome';
 
 /* Liste de taches 
