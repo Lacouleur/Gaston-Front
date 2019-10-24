@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 
 // on importe chacun des sous-reducers
 import appReducer from 'src/store/reducer/AppReducer/appReducer'
-
+import mapReducer from 'src/store/reducer/MapReducer/mapReducer'
 // combineReducers nous retourne le reducer parent généré
 // on doit fournir en paramètre un objet
 // avec en clé un nom donné à chaque reducer et en valeur, chaque fonction reducer
@@ -13,6 +13,7 @@ import appReducer from 'src/store/reducer/AppReducer/appReducer'
 const reducer = combineReducers({
   // user: user
 app : appReducer,
+map : mapReducer,
 });
 
 export default reducer;

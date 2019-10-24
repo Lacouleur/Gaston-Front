@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useStore } from 'react-redux';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { Container, Image, Menu } from 'semantic-ui-react';
 import { PacmanLoader } from 'react-spinners';
@@ -10,7 +11,10 @@ import * as parkDate from '../../data/skateboard-parks.json';
 import 'src/styles/mapbox-gl.css';
 import './map.scss';
 
-const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
+const Map = ({ }) => {
+// const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
+  const store = useStore();
+  console.log(store);
   // IMPORT DES DATA EN DUR
   const [selectedPark, setSelectedPark] = useState(null);
 
@@ -69,70 +73,7 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
 
   return (
     <>
-      <ReactMapGL
-        visible={!mapLoading}
-        onLoad={handleLoad}
-        reuseMaps={true}
-        // asyncRender={true} Make the Marker Move on Scroll
-        {...viewport}
-        width={windowWidth}
-        height={windowHeight - navbarHeight}
-        // onResize={handleResize}
-        transitionDuration={250}
-        mapboxApiAccessToken={mapboxApiAccessToken}
-        mapStyle={mapStyle}
-        // Animation sur le changement :  Viewport Transition
-        // https://urbica.github.io/react-map-gl/#/Components/Layer
-        // https://github.com/uber/react-map-gl/blob/master/docs/advanced/viewport-transition.md#examples/viewport-animation
-        // onViewportChange={viewport => {
-        //   setViewport(viewport);
-        //   console.log(viewport);
-        // }}
-        onViewportChange={handleChange}
-      >
-        {parkDate.features.map((park) => (
-          // ICI A VERIFIER PREFERER LAYER A MARKER
-          <Marker
-            key={park.properties.PARK_ID}
-            latitude={park.geometry.coordinates[1]}
-            longitude={park.geometry.coordinates[0]}
-          >
-            <button
-              className="marker-btn"
-              onClick={(e) => {
-                e.preventDefault();
-                setSelectedPark(park);
-              }}
-            >
-              {!mapLoading && (
-                <img src="public/DumpsterLogos.svg" alt="Dumpsters" />
-              )}
-            </button>
-          </Marker>
-        ))}
-
-        {selectedPark ? (
-          <Popup
-            latitude={selectedPark.geometry.coordinates[1]}
-            longitude={selectedPark.geometry.coordinates[0]}
-            onClose={() => {
-              setSelectedPark(null);
-            }}
-          >
-            <img className="popup--img" src="public/Images/image1.jpg" />
-            <div className="map-popup">
-              <div className="popup-content">
-                <h2>{selectedPark.properties.NAME}</h2>
-                <p>{selectedPark.properties.DESCRIPTIO}</p>
-                {/* ajouter et configurer l'image dans la vignette */}
-              </div>
-            </div>
-          </Popup>
-        ) : null}
-      </ReactMapGL>
-      <div className="float_center">
-        {mapLoading && <PacmanLoader color={'#123abc'} loading={mapLoading} />}
-      </div>
+      
     </>
   );
 };

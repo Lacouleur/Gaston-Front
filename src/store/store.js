@@ -1,4 +1,3 @@
-
 // == Import : npm
 import { createStore, compose, applyMiddleware } from 'redux';
 
@@ -12,11 +11,10 @@ import reducer from 'src/store/reducer';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancers = composeEnhancers(
-  applyMiddleware(
-    //ajaxMiddleware,
-    // logMiddleware,
-    // secondMiddleware,
-  ),
+  applyMiddleware(),
+  //ajaxMiddleware,
+  // logMiddleware,
+  // secondMiddleware,
 );
 
 const store = createStore(
@@ -24,6 +22,7 @@ const store = createStore(
   // preloadedState,
   enhancers,
 );
+console.log(store);
 
 // == Export
 export default store;
