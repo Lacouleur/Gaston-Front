@@ -1,6 +1,6 @@
 // - initialState
 const initialState = {
-    Examplename : 'ExampleValue'
+    examplename : 'madona'
   };
   
   // - Actions Types
