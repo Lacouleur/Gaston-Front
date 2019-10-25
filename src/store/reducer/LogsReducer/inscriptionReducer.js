@@ -1,19 +1,20 @@
 // - initialState
 const initialState = {
-    Examplename : 'ExampleValue'
+    contentView: 'PostsList', 
+    currentView: 'inscription',
   };
   
   // - Actions Types
-  const EXAMPLE_ACTION = 'EXAMPLE_ACTION';
+  const CHANGE_VIEW = 'CHANGE_VIEW';
   export const EXAMPLE_MIDDLEWARE_ACTION = 'EXAMPLE_MIDDLEWARE_ACTION';
   
   // - Reducer
   const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
-      case EXAMPLE_ACTION:
+      case CHANGE_VIEW:
         return {
           ...state,
-          Examplename : action.value,
+          currentView: action.value,
         };
       default:
         return state;
@@ -21,8 +22,8 @@ const initialState = {
   };
   
   // - Actions Creators
-  export const exampleAction = (value) => ({
-    type: EXAMPLE_ACTION,
+  export const changeView = (value) => ({
+    type: CHANGE_VIEW,
     value,
   });
   

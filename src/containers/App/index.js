@@ -6,11 +6,11 @@ import App from 'src/components/App';
 
 // Action Creators
 
-import { exampleAction } from 'src/store/reducer';
+import { changeView } from 'src/store/reducer/AppReducer/appReducer';
 
 /* === State (données) === */
 const mapStateToProps = (state) => {
-  console.log ("STATE App = ", state);
+  // console.log ("STATE App = ", state);
   return {
   contentView : state.app.contentView,
   currentView : state.app.currentView,
@@ -18,7 +18,25 @@ const mapStateToProps = (state) => {
 };
 /* === Actions === */
 const mapDispatchToProps = (dispatch) => ({
+  changeView: (value="welcome", contentvalue="logs") => {
+    const action = changeView(value, contentvalue);
+    dispatch(action);
+  },
 
+  //   updateViewport: (mapChange) => {
+  //   dispatch(updateViewport(mapChange));
+  //   // console.log(mapChange);
+  // },
+
+  // const mapDispatchToProps = (dispatch, ownProps) => ({
+  // // doSomething: () => {
+  // //   dispatch(doSomething("Coucou"));
+  // // }
+  // fetchPosts: (posts) => {
+  //   dispatch(fetchPosts(posts));
+  //   // console.log(mapChange);
+  // },
+// });
 
 });
 

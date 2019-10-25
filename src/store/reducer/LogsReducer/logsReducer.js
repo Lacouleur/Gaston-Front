@@ -1,37 +1,36 @@
 // - initialState
 const initialState = {
-  contentView: 'logs',
-  currentView: 'welcome',
-  };
-  
-  // - Actions Types
-  const EXAMPLE_ACTION = 'EXAMPLE_ACTION';
-  export const EXAMPLE_MIDDLEWARE_ACTION = 'EXAMPLE_MIDDLEWARE_ACTION';
-  
-  // - Reducer
-  const reducer = (state = initialState, action = {}) => {
-    switch (action.type) {
-      case EXAMPLE_ACTION:
-        return {
-          ...state,
-          Examplename : action.value,
-        };
-      default:
-        return state;
-    }
-  };
-  
-  // - Actions Creators
-  export const exampleAction = (value) => ({
-    type: EXAMPLE_ACTION,
-    value,
-  });
-  
-  export const exampleMiddlewareAction = () => ({
-    type: EXAMPLE_MIDDLEWARE_ACTION,
-  });
-  
-  // - Selectors
-  
-  // - Export
-  export default reducer;
+
+};
+
+// - Actions Types
+const CHANGE_VALUE = 'CHANGE_VALUE';
+export const EXAMPLE_MIDDLEWARE_ACTION = 'EXAMPLE_MIDDLEWARE_ACTION';
+
+// - Reducer
+const reducer = (state = initialState, action = {}) => {
+  switch (action.type) {
+    case CHANGE_VALUE:
+      return {
+        ...state,
+        [action.name] : action.value,
+      };
+    default:
+      return state;
+  }
+};
+
+// - Actions Creators
+export const changeValue = (value) => ({
+  type: CHANGE_VALUE,
+  value,
+});
+
+export const exampleMiddlewareAction = () => ({
+  type: EXAMPLE_MIDDLEWARE_ACTION,
+});
+
+// - Selectors
+
+// - Export
+export default reducer;

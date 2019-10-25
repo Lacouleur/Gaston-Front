@@ -8,12 +8,12 @@ import Field from 'src/components/Logs/Field';
 import { exampleAction } from 'src/store/reducer/LogsReducer/fieldReducer';
 
 /* === State (données) === */
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, onwProps) => ({
   
 });
 
 /* === Actions === */
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, onwProps) => ({
   /*changeValue: (value) => {
     const action = changeInput(value);
     dispatch(action);
