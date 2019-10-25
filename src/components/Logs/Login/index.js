@@ -10,9 +10,19 @@ import Field from '../Field';
 // == Composant
 const Login = ({changeView, changeHandler}) => {
 
-  const clickHandler = changeView('PostsList', 'PostsList' );
-  const clickHandlerForgot = changeView('forgot');
-  const clickHandlerInscription = changeView('inscription')
+
+  const clickHandler = () => {
+    changeView('PostsList', 'PostsList')
+  };  
+
+  const clickHandlerForgot = () => {
+    clickHandlerForgot('forgot')
+  }; 
+  
+  const clickHandlerInscription = () => {
+    changeView('inscription')
+  };
+
 
     return (
       <div className="login">

@@ -8,12 +8,12 @@ import Inscription from 'src/components/Logs/Inscription';
 import { exampleAction } from 'src/store/reducer/LogsReducer/inscriptionReducer';
 
 /* === State (données) === */
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, onwProps) => ({
   
 });
 
 /* === Actions === */
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, onwProps) => ({
   /*changeValue: (value) => {
     const action = changeInput(value);
     dispatch(action);

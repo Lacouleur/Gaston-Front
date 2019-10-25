@@ -8,16 +8,16 @@ import Logs from 'src/components/Logs';
 import { exampleAction } from 'src/store/reducer/LogsReducer/logsReducer';
 
 /* === State (données) === */
-const mapStateToProps = (state) => ({
-  view: state.currentView,
+const mapStateToProps = (state, ownProps) => ({
+
 });
 
 /* === Actions === */
-const mapDispatchToProps = (dispatch) => ({
-  /*changeValue: (value) => {
-    const action = changeInput(value);
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  changeValue: (value) => {
+    const action = changeValue(value);
     dispatch(action);
-  },*/
+  },
 });
 
 // Container
