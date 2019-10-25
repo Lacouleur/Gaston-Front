@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 // == Import : local
 import App from 'src/containers/App';
-import store from 'src/store';
+import store from 'src/store/store.js';
 
 // == Render
 const rootComponent = (

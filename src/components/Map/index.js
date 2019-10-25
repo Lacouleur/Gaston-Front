@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useStore } from 'react-redux';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { Container, Image, Menu } from 'semantic-ui-react';
 import { PacmanLoader } from 'react-spinners';
@@ -11,6 +12,10 @@ import 'src/styles/mapbox-gl.css';
 import './map.scss';
 
 const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
+
+  // const store = useStore();
+  //   console.log(store);
+
   // IMPORT DES DATA EN DUR
   const [selectedPark, setSelectedPark] = useState(null);
 
@@ -69,7 +74,7 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
 
   return (
     <>
-      <ReactMapGL
+            <ReactMapGL
         visible={!mapLoading}
         onLoad={handleLoad}
         reuseMaps={true}
