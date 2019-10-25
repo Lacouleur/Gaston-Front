@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Map from 'src/components/Map';
 
 // Action Creators
-import { updateViewport } from 'src/store/reducer';
+import {updateViewport } from 'src/store/reducer/MapReducer/mapReducer.js';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -15,9 +15,9 @@ import { updateViewport } from 'src/store/reducer';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state) => (({
-  viewport: state.Map.viewport,
-  mapboxApiAccessToken: state.Map.mapboxApiAccessToken,
-  mapStyle: state.Map.mapStyle,
+  viewport: state.map.viewport,
+  mapboxApiAccessToken: state.map.mapboxApiAccessToken,
+  mapStyle: state.map.mapStyle,
 }));
  
 

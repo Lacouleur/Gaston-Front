@@ -22,7 +22,7 @@ const store = createStore(
   // preloadedState,
   enhancers,
 );
-console.log(store);
+
 
 // == Export
 export default store;
