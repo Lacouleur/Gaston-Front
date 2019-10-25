@@ -1,6 +1,7 @@
 // - initialState
 const initialState = {
-
+  contentView: 'logs',
+  currentView: 'welcome',
   };
   
   // - Actions Types
@@ -13,7 +14,7 @@ const initialState = {
       case CHANGE_VIEW:
         return {
           ...state,
-          currentView: action.value,
+          currentView: 'login'
         };
       default:
         return state;
@@ -21,9 +22,8 @@ const initialState = {
   };
   
   // - Actions Creators
-  export const qzetfgqze = (value) => ({
+  export const changeView = () => ({
     type: CHANGE_VIEW,
-    value,
   });
   
   export const exampleMiddlewareAction = () => ({

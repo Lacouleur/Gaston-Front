@@ -1,19 +1,23 @@
+import Logs from "src/components/Logs";
+
 // - initialState
 const initialState = {
-
+  contentView: 'logs', 
+  currentView: 'welcome',
 };
 
 // - Actions Types
-const CHANGE_VALUE = 'CHANGE_VALUE';
+const CHANGE_VIEW = 'CHANGE_VIEW';
 export const EXAMPLE_MIDDLEWARE_ACTION = 'EXAMPLE_MIDDLEWARE_ACTION';
 
 // - Reducer
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CHANGE_VALUE:
+    case CHANGE_VIEW:
       return {
         ...state,
-        [action.name] : action.value,
+        contentView: action.contentvalue,
+        currentView: action.value,
       };
     default:
       return state;
@@ -21,9 +25,10 @@ const reducer = (state = initialState, action = {}) => {
 };
 
 // - Actions Creators
-export const changeValue = (value) => ({
-  type: CHANGE_VALUE,
+export const changeView = (value, contentvalue) => ({
+  type: CHANGE_VIEW,
   value,
+  contentvalue,
 });
 
 export const exampleMiddlewareAction = () => ({

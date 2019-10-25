@@ -2,18 +2,18 @@
 import { connect } from 'react-redux';
 
 // == Import : local
-import Logs from 'src/components/Logs/Logs';
+import Field from 'src/components/Logs/Field';
 
 // Action Creators
-import { exampleAction } from 'src/store/reducer/LogsReducer/logsReducer';
+import { exampleAction } from 'src/store/reducer/LogsReducer/fieldReducer';
 
 /* === State (données) === */
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, onwProps) => ({
   
 });
 
 /* === Actions === */
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, onwProps) => ({
   /*changeValue: (value) => {
     const action = changeInput(value);
     dispatch(action);
@@ -21,10 +21,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // Container
-const LogsContainer = connect(
+const FieldContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Logs);
+)(Field);
 
 // == Export
-export default LogsContainer;
+export default FieldContainer;

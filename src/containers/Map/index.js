@@ -1,11 +1,11 @@
-// == Import : npm
+  // == Import : npm
 import { connect } from 'react-redux';
 
 // == Import : local
 import Map from 'src/components/Map';
 
 // Action Creators
-import { updateViewport } from 'src/store/reducer';
+import {updateViewport } from 'src/store/reducer/MapReducer/mapReducer.js';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -14,11 +14,12 @@ import { updateViewport } from 'src/store/reducer';
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state, ownProps) => ({
-  viewport: state.viewport,
-  mapboxApiAccessToken: state.mapboxApiAccessToken,
-  mapStyle: state.mapStyle,
-});
+const mapStateToProps = (state) => (({
+  viewport: state.map.viewport,
+  mapboxApiAccessToken: state.map.mapboxApiAccessToken,
+  mapStyle: state.map.mapStyle,
+}));
+ 
 
 /* === Actions ===
  * - mapDispatchToProps retroune un objet de props pour le composant de présentation
