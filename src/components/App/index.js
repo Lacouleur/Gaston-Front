@@ -50,7 +50,11 @@ class App extends React.Component {
 
     return (
       <div id="app">
-        <NavBar className="navBar" />
+        <NavBar className="navBar"
+        // changeHandler={this.changeHandler}
+        // changeView={this.changeView}
+        // view={this.state.currentView} 
+        />
 
         <main className="maincontainer">
           <section className="contentContainer">
