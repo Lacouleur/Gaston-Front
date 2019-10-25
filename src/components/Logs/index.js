@@ -1,6 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Route, Switch } from 'react-router-dom';
 
 // == Import : local
 import './logs.scss';
@@ -10,55 +11,35 @@ import Inscription from 'src/containers/Logs/Inscription/inscriptionContainer.js
 import Login from './Login';
 import Forgot from './Forgot';
 
-
 /* Liste de taches 
 
-O - Faire un menu scrolable 
-O - Créer un "on submit" sur les forms
-  O- Avec le petit this.steState
-O - Ajouter des vérifications sur les inputs
-O - Mettre les click handlers
-
-
-
+     <Switch>
+          <section className="contentContainer">
+            <Route exact path="/" component={Logs} />
+            <Route exact path="/postlist" component={PostsList} />        
+            <Route exact path="/addpost" component={PostsList} />
+            <Route exact path="/user" component={Logs} />
+          </section>
+        </Switch>
 */
 
-
-
 // == Composant
-const Logs = ({changeView, view, changeValue }) => {
+const Logs = () => {
+  // console.log('2 CHANGE_VIEW LOGS :', changeView);
 
-  console.log('2 CHANGE_VIEW LOGS :', changeView);
-  
-    return (
-  <div className="logs">
-  
-    {view === 'welcome' && 
-    <Welcome 
-    changeView = {changeView} 
-    changeHandler = {changeValue} />}
-
-    {view === 'login' &&
-    <Login 
-    changeView = {changeView} 
-    changeHandler = {changeValue}/>}
-
-    {view === 'inscription' &&
-    <Inscription
-    changeView = {changeView} 
-    changeHandler = {changeValue} />}
-
-    {view === 'forgot' &&
-    <Forgot
-    changeView = {changeView} 
-    changeValue={changeHandler} />}
-  </div>
-);
-    }
-
-Logs.propTypes = {
-  changeView : PropTypes.func.isRequired,
+  return (
+    <div className="logs">
+      <Switch>
+        <Route exact path="/" component={Welcome} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/inscription" component={Inscription} />
+        <Route exact path="/forgot" component={Forgot} />
+      </Switch>
+    </div>
+  );
 };
+
+Logs.propTypes = {};
 
 // == Export
 export default Logs;
