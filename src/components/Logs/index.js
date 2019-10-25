@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './logs.scss';
-import Welcome from '../../containers/Logs/Welcome/WelcomeContainer';
-import Inscription from '../../containers/Logs/Inscription/InscriptionContainer';
+import Welcome from 'src/containers/Logs/Welcome/welcomeContainer.js';
+import Inscription from 'src/containers/Logs/Inscription/inscriptionContainer.js';
 //import Login from 'src/containers/Logs/Login/loginContainer';
 import Login from './Login';
 import Forgot from './Forgot';
