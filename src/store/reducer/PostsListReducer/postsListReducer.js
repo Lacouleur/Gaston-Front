@@ -6,7 +6,7 @@ import postsCategories from 'src/data/postsCategories';
 import postsUsers from 'src/data/postsUsers';
 
 const initialState = {
-  loading: false,
+  loading: true,
   postsLists,
   postsCategories,
   postsUsers,
@@ -16,19 +16,18 @@ const initialState = {
 // - Actions Types
 export const FETCH_POSTS = 'FETCH_POST';
 const RECEIVE_POSTS = 'RECEIVE_POSTS';
-// const STOP_LOAD_POSTS = 'STOP_LOAD_POSTS';
+const STOP_LOAD = 'STOP_LOAD';
 export const FETCH_USERS = 'FETCH_USERS';
 // const STOP_FETCH_USERS ='STOP_FETCH_USERS';
-// const RECEIVE__FETCH_USERS ='RECEIVE__FETCH_USERS';
+// const RECEIVE_FETCH_USERS ='RECEIVE_FETCH_USERS';
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 // const STOP_FETCH_CATEGORIES ='STOP_FETCH_CATEGORIES';
-// const RECEIVE__FETCH_CATEGORIES ='RECEIVE__FETCH_CATEGORIES';
+// const RECEIVE_FETCH_CATEGORIES ='RECEIVE_FETCH_CATEGORIES';
 
 // - Reducer
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case FETCH_POSTS:
-      console.log(action);
       return {
         ...state,
         loading: false,
@@ -38,6 +37,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         posts: action.posts,
+        loading: false,
+      };
+    case STOP_LOAD:
+      return {
+        ...state,
         loading: false,
       };
     default:
@@ -50,8 +54,8 @@ export const fetchPosts = () => ({
   type: FETCH_POSTS,
   fetch,
 });
-export const stopLoadPosts = () => ({
-  type: STOP_LOAD_POSTS,
+export const stopLoad = () => ({
+  type: STOP_LOAD,
 });
 export const receivePosts = (posts) => ({
   type: RECEIVE_POSTS,

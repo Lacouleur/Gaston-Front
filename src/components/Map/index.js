@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useStore } from 'react-redux';
+// import { useStore } from 'react-redux';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { Container, Image, Menu } from 'semantic-ui-react';
 import { PacmanLoader } from 'react-spinners';

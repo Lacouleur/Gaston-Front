@@ -1,6 +1,12 @@
 import axios from 'axios';
 // Import Reducer
-import { FETCH_POSTS, FETCH_USERS, FETCH_CATEGORIES } from 'src/store/reducer/PostsListReducer/postsListReducer';
+import {
+  FETCH_POSTS,
+  FETCH_USERS,
+  FETCH_CATEGORIES,
+  receivePosts,
+  stopLoad,
+} from 'src/store/reducer/PostsListReducer/postsListReducer';
 
 // token : 63535622ff913a1c37312859b1be50666de3008e
 /*
@@ -21,7 +27,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
       axios
         .get(
-          '//184.72.109.29/projet-Gaston/website-skeleton/public/api/posts',
+          '//alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/posts',
           { crossdomain: true },
           {
             headers: {
@@ -40,8 +46,8 @@ const postsListMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           // dans tous les cas j'arrête de considérer qu'on charge
-          const stopLoadPosts = stopLoadPosts();
-          store.dispatch(stopLoadPosts);
+          const actionStopLoad = stopLoad();
+          store.dispatch(actionStopLoad);
         });
     // dans un switch on stoppe l'execution du switch à la fin de chaque case à l'aide de l'instruction break
     // l'instruction break permet de sortir du switch (fonctionne également dans un for, while)
@@ -70,8 +76,8 @@ const postsListMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           // dans tous les cas j'arrête de considérer qu'on charge
-          const stopLoadUsers = stopLoadUsers();
-          store.dispatch(stopLoadUsers);
+          const actionStopLoad = stopLoad();
+          store.dispatch(actionStopLoad);
         });
     case FETCH_CATEGORIES:
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
@@ -96,8 +102,8 @@ const postsListMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           // dans tous les cas j'arrête de considérer qu'on charge
-          const stopLoadCategories = stopLoadCategories();
-          store.dispatch(stopLoadCategories);
+          const actionStopLoad = stopLoad();
+          store.dispatch(actionStopLoad);
         });
       break;
     default:

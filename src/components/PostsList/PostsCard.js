@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // == Composant
 const PostsCard = ({ postdetails }) => {
-  console.log(postdetails);
+  // console.log(postdetails);
   const {
     title,
     description,
@@ -14,7 +14,7 @@ const PostsCard = ({ postdetails }) => {
     addressLabel,
     category,
   } = postdetails;
-  console.log(category);
+  // console.log(category);
   return (
     <article className="posts-cards">
       <div className="posts-cards-left">

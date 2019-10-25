@@ -1,6 +1,6 @@
 // - initialState
 const initialState = {
-    contentView: 'PostsList', 
+    contentView: 'logs', 
     currentView: 'welcome',
     };
     
