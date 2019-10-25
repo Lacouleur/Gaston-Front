@@ -1,0 +1,31 @@
+@import 'src/styles/vars'; 
+
+.field {
+       
+        &-input {
+
+            &-incription {
+                width : 80%;
+                height : 3em; 
+                margin : 3% auto 3% auto;
+                @extend .button--inscription;
+            }
+
+            &-forgot {
+                width : 80%;
+                height : 3em; 
+                margin : 3% auto 3% auto;
+                @extend .button--forgot;
+            }
+
+            &-login {
+                width : 80%;
+                height : 3em; 
+                margin : 3% auto 3% auto;
+                @extend .button--connexion;
+
+            }
+        }
+
+
+} 
