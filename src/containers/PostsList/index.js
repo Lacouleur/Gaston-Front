@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PostsList from 'src/components/PostsList';
 
 // Action Creators
-// import { updateViewport } from 'src/store/reducer';
+import {fetchPosts,stopLoadPosts,receivePosts } from 'src/store/reducer/PostsListReducer/postsListReducer';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -26,7 +26,15 @@ const mapStateToProps = (state, ownProps) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = {};
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  // doSomething: () => {
+  //   dispatch(doSomething("Coucou"));
+  // }
+  fetchPosts: (posts) => {
+    dispatch(fetchPosts(posts));
+    // console.log(mapChange);
+  },
+});
 
 // Container
 const PostsListContainer = connect(
