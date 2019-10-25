@@ -1,5 +1,5 @@
 const initialState = {
-    contentView: 'logs',
+    contentView: 'PostsList',
     currentView: 'welcome',
   };
   

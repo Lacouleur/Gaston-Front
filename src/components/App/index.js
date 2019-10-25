@@ -7,7 +7,7 @@ import './app.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import NavBar from 'src/components/NavBar';
-//import PostsList from 'src/containers/PostsList';
+import PostsList from 'src/containers/PostsList';
 
 // == Composant
 class App extends React.Component {
@@ -46,7 +46,7 @@ class App extends React.Component {
 
         <main className="maincontainer">
           <section className="contentContainer">
-            {/*{contentView === 'PostsList' && <PostsList />}*/}
+            {contentView === 'PostsList' && <PostsList />}
 
             {contentView === 'logs' && (
               <Logs
@@ -57,7 +57,9 @@ class App extends React.Component {
             )}
           </section>
 
-          <div className="mapContainer"><Map /></div>
+          <div className="mapContainer">
+            <Map />
+          </div>
         </main>
       </div>
     );

@@ -15,9 +15,8 @@ import PostsList from 'src/components/PostsList';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  postsLists: state.postsLists,
-  
-  loading: state.loading,
+  postsLists: state.postsList.postsLists,
+  loading: state.postsList.loading,
 });
 
 /* === Actions ===
