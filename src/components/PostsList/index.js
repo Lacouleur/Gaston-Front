@@ -9,27 +9,37 @@ import PostsFilters from './PostsFilters';
 import PostsCard from './PostsCard';
 
 // == Composant
-const PostsList = ({ postsLists, loading }) => {
-  return (
-    <>
-      <PostsFilters />
-      {loading && (
-        <div className="sweet-loading">
-          <div className="sweet-loading--center">
-            <BeatLoader color={'#123abc'} loading={loading} />
+
+// const PostsList = ({ postsLists, loading }) => {
+class PostsList extends React.Component {
+  componentDidMount() {
+    console.log("je suis ici");
+    const { fetchPosts } = this.props;
+    fetchPosts();
+  }
+  render() {
+    const { loading,postsLists } = this.props;
+    return (
+      <>
+        <PostsFilters />
+        {loading && (
+          <div className="sweet-loading">
+            <div className="sweet-loading--center">
+              <BeatLoader color={'#123abc'} loading={loading} />
+            </div>
           </div>
-        </div>
-      )}
-      {!loading && (
-        <article className="posts-container">
-          {postsLists.map((post) => (
-            <PostsCard postdetails={post} key={post.id} />
-          ))}
-        </article>
-      )}
-    </>
-  );
-};
+        )}
+        {!loading && (
+          <article className="posts-container">
+            {postsLists.map((post) => (
+              <PostsCard postdetails={post} key={post.id} />
+            ))}
+          </article>
+        )}
+      </>
+    );
+  }
+}
 
 PostsList.propTypes = {
   postsLists: PropTypes.arrayOf(

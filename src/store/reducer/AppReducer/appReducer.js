@@ -1,4 +1,4 @@
-import Logs from "../../../components/Logs";
+import Logs from "src/components/Logs";
 
 // - initialState
 const initialState = {
