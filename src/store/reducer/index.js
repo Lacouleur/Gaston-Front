@@ -3,16 +3,24 @@
 // redux fourni une fonction combineReducers qui combine plusieurs reducer en 1
 import { combineReducers } from 'redux';
 
-// on importe chacun des sous-reducers
+// import fieldReducer from 'src/store/reducer/LogsReducer/fieldReducer'
+// import forgotReducer from 'src/store/reducer/LogsReducer/forgotReducer'
+// import inscriptionReducer from 'src/store/reducer/LogsReducer/incriptionReducer'
+// import loginReducer from 'src/store/reducer/LogsReducer/loginReducer';
+// import logsReducer from 'src/store/reducer/LogsReducer/logsReducer'
+// import welcomeReducer from 'src/store/reducer/LogsReducer/welcomeReducer'
 import appReducer from 'src/store/reducer/AppReducer/appReducer'
 import mapReducer from 'src/store/reducer/MapReducer/mapReducer'
 import postsListReducer from 'src/store/reducer/PostsListReducer/postsListReducer'
-// combineReducers nous retourne le reducer parent généré
-// on doit fournir en paramètre un objet
-// avec en clé un nom donné à chaque reducer et en valeur, chaque fonction reducer
+
 // https://redux.js.org/api/combinereducers
 const reducer = combineReducers({
-  // user: user
+// fieldReducer,
+// forgotReducer,
+// inscriptionReducer,
+// loginReducer,
+// logsReducer,
+// welcomeReducer,
 app : appReducer,
 map : mapReducer,
 postsList : postsListReducer,

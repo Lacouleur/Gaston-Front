@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './logs.scss';
-import Forgot from './Forgot';
+import Welcome from '../../containers/Logs/Welcome/welcomeContainer';
 import Inscription from './Inscription';
 //import Login from 'src/containers/Logs/Login/loginContainer';
 import Login from './Login';
-import Welcome from './Welcome';
+import Forgot from './Forgot';
+
 
 /* Liste de taches 
 
@@ -25,35 +26,20 @@ O - Mettre les click handlers
 
 
 // == Composant
-const Logs = ({changeHandler, changeView, view}) => {
+const Logs = ({view}) => {
 
-    console.log("VIEW(in Logs) :" , view);
-
+  
     return (
   <div className="logs">
-    {view === 'welcome' && <Welcome 
-    changeView={changeView}
-    />}
-    {view === 'login' &&<Login 
-    changeHandler={changeHandler}
-    changeView={changeView}
-    />}
-    {view === 'inscription' &&<Inscription
-    changeHandler={changeHandler}
-    changeView={changeView}
-     />}
-    {view === 'forgot' &&<Forgot
-    changeHandler={changeHandler}
-    changeView={changeView}
-     />}
+    {view === 'welcome' && <Welcome />}
+    {view === 'login' &&<Login />}
+    {view === 'inscription' &&<Inscription/>}
+    {view === 'forgot' &&<Forgot />}
   </div>
 );
     }
 
 Logs.propTypes = {
-  changeHandler: PropTypes.func.isRequired,
-  view : PropTypes.string.isRequired,
-  changeView: PropTypes.func.isRequired,
 };
 
 // == Export

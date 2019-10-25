@@ -9,12 +9,14 @@ import App from 'src/components/App';
 import { exampleAction } from 'src/store/reducer';
 
 /* === State (données) === */
-const mapStateToProps = (state) => ({
-  contentView: state.app.contentView,
-  currentView: state.app.currentView,
-});
-
-// /* === Actions === */
+const mapStateToProps = (state) => {
+  console.log ("STATE App = ", state);
+  return {
+  contentView : state.app.contentView,
+  currentView : state.app.currentView,
+  }
+};
+/* === Actions === */
 const mapDispatchToProps = (dispatch) => ({
 
 

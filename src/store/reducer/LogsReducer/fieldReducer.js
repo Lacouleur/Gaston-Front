@@ -1,7 +1,6 @@
 // - initialState
 const initialState = {
-  contentView: 'logs',
-  currentView: 'welcome',
+    Examplename : 'ExampleValue'
   };
   
   // - Actions Types
