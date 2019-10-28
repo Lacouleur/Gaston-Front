@@ -8,6 +8,8 @@ import { BrowserRouter } from 'react-router-dom';
 import App from 'src/containers/App';
 import store from 'src/store/store.js';
 
+
+
 // == Render
 const rootComponent = (
   <Provider store={store}>
