@@ -10,6 +10,8 @@ import Map from 'src/containers/Map';
 import PostsList from 'src/containers/PostsList';
 import Welcome from 'src/containers/Logs/Welcome/welcomeContainer.js';
 import AdressSearch from 'src/components/AdressSearch';
+import Forgot from 'src/components/Logs/Forgot';
+import Inscription from 'src/components/Logs/Inscription';
 
 // == Composant
 class App extends React.Component {
@@ -20,21 +22,22 @@ class App extends React.Component {
     return (
       <main className="maincontainer">
         <section className="contentContainer">
-        <Switch>
+          <Switch>
             <Route exact path="/" component={Welcome} />
             <Route exact path="/postlist" component={PostsList} />
             <Route exact path="/addpost" component={PostsList} />
-            <Route  path="/sign" component={Logs} />
-            
+            <Route path="/sign/in" component={Logs} />
+            <Route path="/sign/up" component={Inscription} />
+            <Route path="/sign/forgot" component={Forgot} />
 
             <Route>
               <div>
-              <AdressSearch />
+                <AdressSearch />
                 <h1>Page non trouvée</h1>
               </div>
             </Route>
-            </Switch>
-          </section>
+          </Switch>
+        </section>
         <div className="mapContainer">
           <Map />
         </div>

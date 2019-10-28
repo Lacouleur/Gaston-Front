@@ -19,7 +19,7 @@ const Welcome = ({}) => {
     <div className="welcome">
       <img
         className="welcome-logo"
-        src="public\DumpsterLogos.svg"
+        src="public/DumpsterLogos.svg"
         alt="Logo Gaston Racoon"
       ></img>
       <h1 className="welcome-appTitle"> Gaston </h1>
@@ -45,7 +45,7 @@ const Welcome = ({}) => {
         </li>
       </ul>
       
-      <NavLink exact to="/sign" exact className="welcome-buttonStart">
+      <NavLink exact to="/sign/in" exact className="welcome-buttonStart">
         Gaston, montre moi des trésors
       </NavLink>
     </div>

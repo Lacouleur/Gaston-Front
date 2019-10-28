@@ -27,11 +27,11 @@ const Inscription = ({}) => {
                     {...field}
                   />
                 ))}
-                <NavLink exact to="/sign" exact>
+                <NavLink exact to="/sign/up" exact>
                 <button className="inscription-form-submit" type="submit">S'inscrire</button>
                 </NavLink>
                 </form>
-                <NavLink exact to="/sign" exact>
+                <NavLink exact to="/sign/in" exact>
                 <button className="inscription-retour" type="button">Retour</button>
                 </NavLink>
       </div>
