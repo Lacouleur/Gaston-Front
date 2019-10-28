@@ -29,7 +29,7 @@ class Login extends React.Component {
       <div className="login">
         <img
           className="login-logo"
-          src="public\DumpsterLogos.svg"
+          src="public/DumpsterLogos.svg"
           alt="Logo Gaston Racoon"
         />
         <h2 className="login-subTitle"> Connexion </h2>
@@ -39,7 +39,7 @@ class Login extends React.Component {
       </p>
         <form className="login-form" onSubmit={handleSubmit(this.submit)} >
           <Field
-            name="pseudo"
+            name="username"
             component="input"
             placeholder="Pseudo"
             type="text"
@@ -59,7 +59,7 @@ class Login extends React.Component {
 
         </form>
       {this.errorMessage()}
-        <NavLink exact to="/sign/inscription">
+        <NavLink exact to="/sign/up">
           <button className="login-form-submit login-form-submit--inscription" type="button">inscription</button>
         </NavLink>
 

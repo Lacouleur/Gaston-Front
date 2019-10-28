@@ -27,7 +27,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
       axios
         .get(
-          '//alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/posts',
+          '//projet-Gaston.vpnuser.lan/projet-Gaston/website-skeleton/public/api/posts',
           { crossdomain: true },
           {
             headers: {

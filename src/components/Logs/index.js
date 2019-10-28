@@ -19,8 +19,8 @@ const Logs = () => {
   return (
     <div className="logs">
       <Switch>
-        <Route exact path="/sign" component={Login} />
-        <Route exact path="/sign/inscription" component={Inscription} />
+        <Route exact path="/sign/in" component={Login} />
+        <Route exact path="/sign/up" component={Inscription} />
         <Route exact path="/sign/forgot" component={Forgot} />
       </Switch>
     </div>
