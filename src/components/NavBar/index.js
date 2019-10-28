@@ -11,7 +11,6 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-    
       {/* // LOGO GASTON */}
       <NavLink
         to="/"
