@@ -13,24 +13,19 @@ import {
   signInButton,
   signUpButton,
 } from './ressources';
+
 /*
 
-
-CONNECTE
-Dans le cas "connecté" -> affiche Postlist button
-Dans le cas "connecté" -> affiche addPost button
-Dans le cas "connecté" -> affiche Sign OUT
+SCHEMA DE LA NAVBAR
 
 #####case CONNECTE######### [PostList] ##### [ajouter une annonce]####### bonjour "Jesus" - se déconnecter - AVATAR
                                                                                   <-----------/
 
-NON CONNECTE
-Dans le cas "non connecté " -> affiche signin button
-Dans le cas "non connecté " -> affiche signupbutton
 
 #####case NON CONNECTE######### [Se connecte] ##### [s'inscrire]####### PAS DAVATAR
 
 */
+
 //  Composant
 
 class Navbar extends React.Component {
@@ -76,9 +71,18 @@ class Navbar extends React.Component {
   }
 }
 
+export function signOutAction() {
+  localStorage.clear();
+  return {
+    type: UNAUTHENTICATED
+  };
+}
+
 function mapStateToProps(state) {
   return {
     authenticated: state.auth.authenticated,
   };
 }
+
+
 export default connect(mapStateToProps)(Navbar);

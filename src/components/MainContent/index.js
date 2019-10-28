@@ -1,7 +1,6 @@
 // == Import : npm
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Route, Switch, requireAuth,noRequireAuth} from 'react-router-dom';
+import { Route, Switch,} from 'react-router-dom';
 // import { connect } from 'react-redux';
 // import store from 'src/store/store.js';
 
@@ -17,23 +16,15 @@ import AdressSearch from 'src/components/AdressSearch';
 import Forgot from 'src/components/Logs/Forgot';
 import Inscription from 'src/components/Logs/Inscription';
 
-
-
-
-
+//== Securtity
+import requireAuth from 'src/security/requireAuth';
+import noRequireAuth from 'src/security/noRequireAuth';
 
 // == Composant
 class MainContent extends React.Component {
   render() {
     const user = localStorage.getItem('user');
     //DEBUG
-    console.log("Logs ===> ",Logs);
-    console.log("Map ===> ", Map);
-    console.log("PostsList ===> ", PostsList);
-    console.log("Welcome ===> ", Welcome);
-    console.log("AdressSearch ===> ", AdressSearch);
-    console.log("Inscription ===> ", Inscription);
-    console.log("Forgot  ===> ", Forgot);
     console.log("requireAuth ===> ", requireAuth);
     console.log("noRequireAuth ===> ", noRequireAuth);
 

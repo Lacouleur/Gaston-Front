@@ -72,6 +72,7 @@ class Login extends React.Component {
     );
   };
 };
+
 function mapStateToProps(state) {
   return { errorMessage: state.auth.error };
 }
