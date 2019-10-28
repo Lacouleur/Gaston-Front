@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 
 export default function(ComposedComponent) {
   class NotAuthentication extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
       if (this.props.authenticated) {
         this.props.history.push('/postList');
       }
     }
-    componentWillUpdate(nextProps) {
+    componentDidUpdate(nextProps) {
       if (nextProps.authenticated) {
         this.props.history.push('/postList');
       }

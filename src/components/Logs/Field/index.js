@@ -45,8 +45,6 @@ Field.propTypes = {
   placeholder : PropTypes.string.isRequired,
   type : PropTypes.string.isRequired,
   style : PropTypes.string.isRequired,
-  // inputValue : PropTypes.func.isRequired,
-  handleInput : PropTypes.func.isRequired,
 };
 
 // Field.defaultProps = {

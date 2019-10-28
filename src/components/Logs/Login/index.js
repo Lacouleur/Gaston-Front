@@ -29,7 +29,7 @@ class Login extends React.Component {
       <div className="login">
         <img
           className="login-logo"
-          src="public/DumpsterLogos.svg"
+          src="/public/DumpsterLogos.svg"
           alt="Logo Gaston Racoon"
         />
         <h2 className="login-subTitle"> Connexion </h2>

@@ -16,7 +16,7 @@ const Forgot = () => {
     return (
       <div className="forgot">
  
-     <img className="forgot-logo" src="public\DumpsterLogos.svg" alt="Logo Gaston Racoon"></img>
+     <img className="forgot-logo" src="/public/DumpsterLogos.svg" alt="Logo Gaston Racoon"></img>
         <h2 className="forgot-subTitle"> Mot de passe oublié </h2>
 
         <p className="forgot-text">Veuillez entrer votre courriel pour réinitialiser votre mot de passe</p>
