@@ -16,6 +16,7 @@
     "eslint-plugin-import": "*",
     "eslint-plugin-jsx-a11y": "*",
     "eslint-plugin-react": "*",
+    "faker": "^4.1.0",
     "file-loader": "*",
     "html-webpack-plugin": "*",
     "ignore-styles": "*",
@@ -56,6 +57,7 @@
     "react-router-dom": "^5.1.2",
     "react-spinners": "^0.6.1",
     "redux": "^4.0.1",
+    "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.1"
   }
 }
