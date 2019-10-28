@@ -40,7 +40,6 @@ const Inscription = ({}) => {
 
 //PropTypes
 Inscription.propTypes = {
-
 };  
 
 // == Export

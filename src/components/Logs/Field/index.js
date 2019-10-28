@@ -12,21 +12,11 @@ const Field = ({
   placeholder,
   type, 
   style,
-  fieldState,
-  handleInput,
+  //value,
+  changeHandler
 }) => {
 
   const className = `field-input-${style}`
-
-  console.log('FieldState =',fieldState);
-
-  // const inputValue = fieldState.`${name}`;
-
-  const handleChange = (event) => {
-    //console.log("consoleLOG de event.target.value : ", event.target.value);
-    const { value, name } = event.target;
-    handleInput(value, name);
-  }
 
     return (
         <div className="field">
@@ -37,8 +27,11 @@ const Field = ({
             required 
             autoComplete="off"
             placeholder= {placeholder} 
-            onChange={handleChange}
-            // value={inputValue}
+            onChange={changeHandler}
+          /*id= */
+          // https://fr.reactjs.org/docs/events.html
+          /* onChange={this.changeHandler} */
+          /* value={value} */
         />
       </div>
 
