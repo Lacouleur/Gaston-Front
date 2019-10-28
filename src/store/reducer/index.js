@@ -1,7 +1,6 @@
-// ici je vais trouver le reducer parent dans lequel je vais combiner mes reducers
-
 // redux fourni une fonction combineReducers qui combine plusieurs reducer en 1
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 
 import fieldReducer from 'src/store/reducer/LogsReducer/fieldReducer';
 import forgotReducer from 'src/store/reducer/LogsReducer/forgotReducer';
@@ -12,14 +11,11 @@ import welcomeReducer from 'src/store/reducer/LogsReducer/welcomeReducer';
 import appReducer from 'src/store/reducer/AppReducer/appReducer';
 import mapReducer from 'src/store/reducer/MapReducer/mapReducer';
 import postsListReducer from 'src/store/reducer/PostsListReducer/postsListReducer';
+import authReducer from 'src/store/reducer/Authreducer/authreducer';
 
 // https://redux.js.org/api/combinereducers
 const reducer = combineReducers({
-<<<<<<< HEAD
-field : fieldReducer,
-=======
 fiel : fieldReducer,
->>>>>>> 5bc35350427f47bcc4b12dae02cb010ac9e01b35
 forgot : forgotReducer,
 incription : inscriptionReducer,
 login : loginReducer,
@@ -28,6 +24,9 @@ welcome : welcomeReducer,
 app : appReducer,
 map : mapReducer,
 postsList : postsListReducer,
+//From Redux-From
+form: formReducer,
+auth: authReducer
 });
 
 export default reducer;

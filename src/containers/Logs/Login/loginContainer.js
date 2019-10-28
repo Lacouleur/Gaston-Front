@@ -9,10 +9,7 @@ import { exampleAction } from 'src/store/reducer/LogsReducer/loginReducer';
 console.log('test import ', exampleAction);
 /* === State (données) === */
 const mapStateToProps = (state) => {
-<<<<<<< HEAD
-=======
   console.log('STATE Login =', state)
->>>>>>> 5bc35350427f47bcc4b12dae02cb010ac9e01b35
   return {
   //Madonna : state.loginReducer.examplename
 }
