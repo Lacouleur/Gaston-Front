@@ -4,14 +4,14 @@ export const AUTHENTICATED = 'authenticated_user';
 export const UNAUTHENTICATED = 'unauthenticated_user';
 export const AUTHENTICATION_ERROR = 'authentication_error';
 
-const URL = '//alexis-le-trionnaire.vpnuser.lan/projet-Dumpsters/website-skeleton/public/api';
+const URL = 'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api';
 
 
-export function logInAction({ pseudo, password }, history) {
+export function logInAction({ username, password }, history) {
 
   return async (dispatch) => {
     try {
-      const res = await axios.post(`${URL}/login_check`, { pseudo, password });
+      const res = await axios.post(`${URL}/login_check`, { username, password });
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', res.data.token);
       history.push('/secret');
@@ -19,8 +19,9 @@ export function logInAction({ pseudo, password }, history) {
     } catch(error) {
       dispatch({
         type: AUTHENTICATION_ERROR,
-        payload: 'Invalid email or password'
+        payload: 'Pseudo ou Password invalide'
       });
     }
   };
 }
+

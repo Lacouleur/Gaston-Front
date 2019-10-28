@@ -39,7 +39,7 @@ class Login extends React.Component {
       </p>
         <form className="login-form" onSubmit={handleSubmit(this.submit)} >
           <Field
-            name="pseudo"
+            name="username"
             component="input"
             placeholder="Pseudo"
             type="text"
