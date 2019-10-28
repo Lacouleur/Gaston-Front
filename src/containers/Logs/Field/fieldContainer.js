@@ -5,19 +5,23 @@ import { connect } from 'react-redux';
 import Field from 'src/components/Logs/Field';
 
 // Action Creators
-import { exampleAction } from 'src/store/reducer/LogsReducer/fieldReducer';
+import { handleInput } from 'src/store/reducer/LogsReducer/fieldReducer';
 
 /* === State (données) === */
-const mapStateToProps = (state, onwProps) => ({
-  
-});
+const mapStateToProps = (state, ownProps) => {
+  console.log("Input state =", state);
+  return {
+  fieldState: state.field
+
+}
+};
 
 /* === Actions === */
 const mapDispatchToProps = (dispatch, onwProps) => ({
-  /*changeValue: (value) => {
-    const action = changeInput(value);
+  handleInput: (value, name) => {
+    const action = changeValue(value, name);
     dispatch(action);
-  },*/
+  },
 });
 
 // Container

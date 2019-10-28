@@ -1,36 +1,39 @@
 // - initialState
+// token : 63535622ff913a1c37312859b1be50666de3008e
 const initialState = {
-    Examplename : 'ExampleValue'
-  };
-  
-  // - Actions Types
-  const EXAMPLE_ACTION = 'EXAMPLE_ACTION';
-  export const EXAMPLE_MIDDLEWARE_ACTION = 'EXAMPLE_MIDDLEWARE_ACTION';
-  
-  // - Reducer
-  const reducer = (state = initialState, action = {}) => {
-    switch (action.type) {
-      case EXAMPLE_ACTION:
-        return {
-          ...state,
-          Examplename : action.value,
-        };
-      default:
-        return state;
-    }
-  };
-  
-  // - Actions Creators
-  export const exampleAction = (value) => ({
-    type: EXAMPLE_ACTION,
-    value,
-  });
-  
-  export const exampleMiddlewareAction = () => ({
-    type: EXAMPLE_MIDDLEWARE_ACTION,
-  });
-  
-  // - Selectors
-  
-  // - Export
-  export default reducer;
+  name1 : "teste1"
+  //loading : true,
+};
+
+// - Actions Types
+const CHANGE_VALUE = 'CHANGE_VALUE';
+export const SEARCH_REPOS = 'SEARCH_REPOS';
+
+
+// - Reducer
+const reducer = (state = initialState, action = {}) => {
+  switch (action.type) {
+    case CHANGE_VALUE:
+      return {
+        ...state,
+        [action.name] : action.value,
+      };
+    default:
+      return state;
+  }
+};
+
+// - Actions Creators
+export const changeValue = (value, name) => ({
+  type: CHANGE_VALUE,
+  value,
+});
+
+// export const searchRepos = (value) => ({
+//   type: SEARCH_REPOS, 
+
+// })
+
+
+// - Export
+export default reducer;

@@ -1,6 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 // == Import : local
 import './forgot.scss';
@@ -8,14 +9,14 @@ import Field from '../Field';
 
 
 // == Composant
-const Forgot = ({changeView, changeHandler}) => {
+const Forgot = () => {
 
-  const clickHandlerBack = changeView('login');
+  // const clickHandlerBack = changeView('login');
 
     return (
       <div className="forgot">
-
-      <img className="forgot-logo" src="public\DumpsterLogos.svg" alt="Logo Gaston Racoon"></img>
+ 
+     <img className="forgot-logo" src="public\DumpsterLogos.svg" alt="Logo Gaston Racoon"></img>
         <h2 className="forgot-subTitle"> Mot de passe oublié </h2>
 
         <p className="forgot-text">Veuillez entrer votre courriel pour réinitialiser votre mot de passe</p>
@@ -25,19 +26,23 @@ const Forgot = ({changeView, changeHandler}) => {
               placeholder="Courriel"
               type="email"
               style="forgot"
-              changeHandler={changeHandler}
             />
-            <button className="forgot-form-submit" type="submit">Réinitialiser</button>
+
+            <NavLink exact to="/sign" exact>
+              <button className="forgot-form-submit" type="submit">Réinitialiser</button>
+            </NavLink>
+            
           </form>
-          <button className="forgot-retour" onClick={clickHandlerBack} type="button">retour</button>
+          <NavLink exact to="/sign" exact>
+            <button className="forgot-retour" type="button">retour</button> 
+          </NavLink>
+          
       </div>
     );
 }
 
 //PropTypes
 Forgot.propTypes = {
-  changeHandler: PropTypes.func.isRequired,
-  changeView: PropTypes.func.isRequired,
 };
 
 // == Export

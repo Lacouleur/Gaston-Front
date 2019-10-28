@@ -45,7 +45,7 @@ const Welcome = ({}) => {
         </li>
       </ul>
       
-      <NavLink exact to="/login" exact className="welcome-buttonStart">
+      <NavLink exact to="/sign" exact className="welcome-buttonStart">
         Gaston, montre moi des trésors
       </NavLink>
     </div>

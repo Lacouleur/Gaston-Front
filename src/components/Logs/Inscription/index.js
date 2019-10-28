@@ -1,6 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 // == Import : local
 import './inscription.scss';
@@ -10,11 +11,9 @@ import fieldsData from './fieldsData'
 
 // == Composant
 
-const Inscription = ({changeHandler, changeView}) => {
+const Inscription = ({}) => {
   
   const datasFields = fieldsData.fields;
-  const clickHandler = changeView('password');
-  const clickHandlerBack = changeView('login');
 
     return (
       <div className="inscription">
@@ -25,21 +24,22 @@ const Inscription = ({changeHandler, changeView}) => {
               {datasFields.map((field) => (
                 <Field
                     key={field.name}
-                    changeHandler={changeHandler}
                     {...field}
                   />
                 ))}
-              <button className="inscription-form-submit" onClick={clickHandler} type="submit">Se connecter</button>
-            </form>
-          <button className="inscription-retour" onClick={clickHandlerBack} type="button">Retour</button>
+                <NavLink exact to="/sign" exact>
+                <button className="inscription-form-submit" type="submit">S'inscrire</button>
+                </NavLink>
+                </form>
+                <NavLink exact to="/sign" exact>
+                <button className="inscription-retour" type="button">Retour</button>
+                </NavLink>
       </div>
     );
   }
 
 //PropTypes
 Inscription.propTypes = {
-  changeHandler: PropTypes.func.isRequired,
-  changeView: PropTypes.func.isRequired,
 };  
 
 // == Export

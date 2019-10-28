@@ -8,6 +8,8 @@ import './maincontent.scss';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import PostsList from 'src/containers/PostsList';
+import Welcome from 'src/containers/Logs/Welcome/welcomeContainer.js';
+import AdressSearch from 'src/components/AdressSearch';
 
 // == Composant
 class App extends React.Component {
@@ -19,12 +21,15 @@ class App extends React.Component {
       <main className="maincontainer">
         <section className="contentContainer">
         <Switch>
-            <Route exact path="/" component={Logs} />
+            <Route exact path="/" component={Welcome} />
             <Route exact path="/postlist" component={PostsList} />
             <Route exact path="/addpost" component={PostsList} />
-            <Route exact path="/user" component={Logs} />
+            <Route  path="/sign" component={Logs} />
+            
+
             <Route>
               <div>
+              <AdressSearch />
                 <h1>Page non trouvée</h1>
               </div>
             </Route>

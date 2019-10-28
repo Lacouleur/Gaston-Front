@@ -5,10 +5,13 @@ import { NavLink } from 'react-router-dom';
 
 // == Import : local
 import './login.scss';
-import Field from '../Field';
+import Field from 'src/containers/Logs/Field/fieldContainer';
 
 // == Composant
-const Login = ({}) => {
+const Login = () => {
+
+
+
   return (
     <div className="login">
       <img
@@ -27,25 +30,29 @@ const Login = ({}) => {
           placeholder="Pseudo"
           type="text"
           style="login"
-          changeHandler={changeHandler}
         />
         <Field
           name="password"
           placeholder="Mot de passe"
           type="password"
           style="login"
-          changeHandler={changeHandler}
         />
-        <NavLink className="login-form-submit login-form-submit--login" exact to="/login" exact className="welcome-buttonStart">
-        Se connecter
+
+        <NavLink exact to="/postlist" exact>
+          <button className="login-form-submit login-form-submit--login"  type="submit">Se connecter</button>
         </NavLink>
-        <NavLink className="login-form-submit login-form-submit--inscription" exact to="/inscription" exact className="welcome-buttonStart">
-        Inscription
+
+        </form>
+
+        <NavLink exact to="/sign/inscription" exact>
+          <button className="login-form-submit login-form-submit--inscription"  type="button">inscription</button>
         </NavLink>
-      </form>
-      <a className="login-text-link" onClick={clickHandlerForgot}>
-        Mot de passe oublié ?
-      </a>
+
+        <NavLink exact to="/sign/forgot" exact>
+          <a className="login-text-link">Mot de passe oublié ?</a>
+        </NavLink>
+
+
     </div>
   );
 };

@@ -11,17 +11,6 @@ import Inscription from 'src/containers/Logs/Inscription/inscriptionContainer.js
 import Login from './Login';
 import Forgot from './Forgot';
 
-/* Liste de taches 
-
-     <Switch>
-          <section className="contentContainer">
-            <Route exact path="/" component={Logs} />
-            <Route exact path="/postlist" component={PostsList} />        
-            <Route exact path="/addpost" component={PostsList} />
-            <Route exact path="/user" component={Logs} />
-          </section>
-        </Switch>
-*/
 
 // == Composant
 const Logs = () => {
@@ -30,10 +19,9 @@ const Logs = () => {
   return (
     <div className="logs">
       <Switch>
-        <Route exact path="/" component={Welcome} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/inscription" component={Inscription} />
-        <Route exact path="/forgot" component={Forgot} />
+        <Route exact path="/sign" component={Login} />
+        <Route exact path="/sign/inscription" component={Inscription} />
+        <Route exact path="/sign/forgot" component={Forgot} />
       </Switch>
     </div>
   );

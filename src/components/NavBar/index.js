@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 // Import Local
 import './navbar.scss';
+import AdressSearch from 'src/components/AdressSearch';
 
 //  Composant
 const NavBar = () => {
@@ -10,8 +11,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-
-    {/* // LOGO GASTON */}
+      {/* // LOGO GASTON */}
       <NavLink
         to="/"
         exact
@@ -24,8 +24,7 @@ const NavBar = () => {
           alt="Logo Gaston Racoon white"
         />
       </NavLink>
-
-    {/* //Ajout Annonce  */}
+      {/* //Ajout Annonce  */}
       <NavLink
         to="/addpost"
         exact
@@ -36,8 +35,8 @@ const NavBar = () => {
           Ajouter une annonce
         </button>
       </NavLink>
- 
-     {/* //Fil d'actualités  */}
+
+      {/* //Fil d'actualités  */}
       <NavLink
         to="/postlist"
         exact
@@ -48,7 +47,16 @@ const NavBar = () => {
           Fil d'actualités
         </button>
       </NavLink>
-
+      <NavLink
+        to="/sign"
+        exact
+        activeClassName="navigation-item--active"
+        className="navigation-item"
+      >
+        <button className="navbar-button-postlist" type="button">
+          SIGN
+        </button>
+      </NavLink>
 
       {/* // PORTRAIT */}
       <NavLink
