@@ -25,8 +25,8 @@ class MainContent extends React.Component {
   render() {
     const user = localStorage.getItem('user');
     //DEBUG
-    console.log("requireAuth ===> ", requireAuth);
-    console.log("noRequireAuth ===> ", noRequireAuth);
+    // console.log("requireAuth ===> ", requireAuth);
+    // console.log("noRequireAuth ===> ", noRequireAuth);
 
     // if (user) {
     //   store.dispatch({ type: AUTHENTICATED });

@@ -61,7 +61,7 @@ class Navbar extends React.Component {
         >
           <img
             className="navbar-logo"
-            src="public\DumpsterLogoswhite.png"
+            src="/public/DumpsterLogoswhite.png"
             alt="Logo Gaston Racoon white"
           />
         </NavLink>

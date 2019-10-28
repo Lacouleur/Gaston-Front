@@ -17,7 +17,7 @@ const Inscription = ({}) => {
 
     return (
       <div className="inscription">
-        <img className="inscription-logo" src="public\DumpsterLogos.svg" alt="Logo Gaston Racoon"></img>
+        <img className="inscription-logo" src="/public/DumpsterLogos.svg" alt="Logo Gaston Racoon"></img>
           <h2 className="inscription-subTitle"> Inscription </h2>
           <p className="inscription-text">Merci de bien vouloir remplir ces champs pour vous inscrire</p>
             <form className="inscription-form">

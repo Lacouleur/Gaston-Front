@@ -110,7 +110,7 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
               }}
             >
               {!mapLoading && (
-                <img src="public/DumpsterLogos.svg" alt="Dumpsters" />
+                <img src="/public/DumpsterLogos.svg" alt="Dumpsters" />
               )}
             </button>
           </Marker>

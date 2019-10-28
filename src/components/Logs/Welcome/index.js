@@ -19,7 +19,7 @@ const Welcome = ({}) => {
     <div className="welcome">
       <img
         className="welcome-logo"
-        src="public/DumpsterLogos.svg"
+        src="/public/DumpsterLogos.svg"
         alt="Logo Gaston Racoon"
       ></img>
       <h1 className="welcome-appTitle"> Gaston </h1>
