@@ -15,11 +15,7 @@ import postsListReducer from 'src/store/reducer/PostsListReducer/postsListReduce
 
 // https://redux.js.org/api/combinereducers
 const reducer = combineReducers({
-<<<<<<< HEAD
-field : fieldReducer,
-=======
 fiel : fieldReducer,
->>>>>>> 5bc35350427f47bcc4b12dae02cb010ac9e01b35
 forgot : forgotReducer,
 incription : inscriptionReducer,
 login : loginReducer,
