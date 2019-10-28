@@ -12,16 +12,12 @@ import { changeView } from 'src/store/reducer/AppReducer/appReducer';
 const mapStateToProps = (state) => {
   // console.log ("STATE App = ", state);
   return {
-  contentView : state.app.contentView,
-  currentView : state.app.currentView,
+
   }
 };
 /* === Actions === */
 const mapDispatchToProps = (dispatch) => ({
-  changeView: (value="welcome", contentvalue="logs") => {
-    const action = changeView(value, contentvalue);
-    dispatch(action);
-  },
+ 
 
   //   updateViewport: (mapChange) => {
   //   dispatch(updateViewport(mapChange));

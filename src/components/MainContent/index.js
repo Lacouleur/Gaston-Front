@@ -1,10 +1,14 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, requireAuth,noRequireAuth} from 'react-router-dom';
+// import { connect } from 'react-redux';
+// import store from 'src/store/store.js';
+
 
 // == Import : local
-import './maincontent.scss';
+// import './maincontent.scss';
+// import { AUTHENTICATED } from 'src/store/middlewares/loginMiddleware.js';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
 import PostsList from 'src/containers/PostsList';
@@ -13,22 +17,40 @@ import AdressSearch from 'src/components/AdressSearch';
 import Forgot from 'src/components/Logs/Forgot';
 import Inscription from 'src/components/Logs/Inscription';
 
+
+
+
+
+
 // == Composant
-class App extends React.Component {
+class MainContent extends React.Component {
   render() {
-    const contentView = 'logs';
-    // const { contentView, currentView, changeView } = this.props;
-    // // console.log('1 CHANGE_VIEW APP :', changeView);
+    const user = localStorage.getItem('user');
+    //DEBUG
+    console.log("Logs ===> ",Logs);
+    console.log("Map ===> ", Map);
+    console.log("PostsList ===> ", PostsList);
+    console.log("Welcome ===> ", Welcome);
+    console.log("AdressSearch ===> ", AdressSearch);
+    console.log("Inscription ===> ", Inscription);
+    console.log("Forgot  ===> ", Forgot);
+    console.log("requireAuth ===> ", requireAuth);
+    console.log("noRequireAuth ===> ", noRequireAuth);
+
+    // if (user) {
+    //   store.dispatch({ type: AUTHENTICATED });
+    // }
+
     return (
       <main className="maincontainer">
         <section className="contentContainer">
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route exact path="/postlist" component={PostsList} />
-            <Route exact path="/addpost" component={PostsList} />
-            <Route path="/sign/in" component={Logs} />
-            <Route path="/sign/up" component={Inscription} />
-            <Route path="/sign/forgot" component={Forgot} />
+            <Route exact path="/postlist" component={requireAuth(PostsList)} />
+            <Route exact path="/addpost" component={requireAuth(PostsList)} />
+            <Route path="/sign/in" component={noRequireAuth(Logs)} />
+            <Route path="/sign/up" component={noRequireAuth(Inscription)} />
+            <Route path="/sign/forgot" component={noRequireAuth(Forgot)} />
 
             <Route>
               <div>
@@ -46,19 +68,5 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
-  currentView: PropTypes.string.isRequired,
-  //fetchPosts: PropTypes.func.isRequired,
-  //fetchUsers: PropTypes.func.isRequired,
-  //fetchCategories: PropTypes.func.isRequired,
-};
-
 // == Export
-export default App;
-
-/*
-{/*contentView === 'logs' && (
-//   <Logs changeView={changeView} view={currentView} />
-// )}
-
-*/
+export default MainContent;
