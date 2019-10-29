@@ -11,12 +11,17 @@ export function logInAction({ username, password }, history) {
 
   return async (dispatch) => {
     try {
-      const res = await axios.post(`${URL}/login_check`, { username, password });
+      const res = await axios.post(`${URL}/login_check`, 
+      {
+        username,
+        password
+      });
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', res.data.token);
       history.push('/postList');
-
-    } catch(error) {
+      }
+      
+      catch(error) {
       dispatch({
         type: AUTHENTICATION_ERROR,
         payload: 'Pseudo ou Password invalide'
