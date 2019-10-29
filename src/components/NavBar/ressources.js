@@ -87,7 +87,7 @@ export const profilUserButton = (
   >
     <img
       className="navbar-profile"
-      src="public/petit-raton-laveur.jpg"
+      src="/public/petit-raton-laveur.jpg"
       alt="image profile"
     />
   </NavLink>

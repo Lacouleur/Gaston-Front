@@ -2,7 +2,9 @@
 // token : 63535622ff913a1c37312859b1be50666de3008e
 const initialState = {
   name1 : "teste1"
-  //loading : true,
+  name2 : "Le zizi"
+  name3 : "un abricot"
+  name4 : "Un ami corse"
 };
 
 // - Actions Types
