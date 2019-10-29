@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 // import { useStore } from 'react-redux';
-import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-import { Container, Image, Menu } from 'semantic-ui-react';
+import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import { PacmanLoader } from 'react-spinners';
 
 // DATA EN DUR
@@ -12,7 +11,12 @@ import 'src/styles/mapbox-gl.css';
 import './map.scss';
 
 const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
-
+  const geolocateStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    margin: 10,
+  };
   // const store = useStore();
   //   console.log(store);
 
@@ -74,7 +78,7 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
 
   return (
     <>
-            <ReactMapGL
+      <ReactMapGL
         visible={!mapLoading}
         onLoad={handleLoad}
         reuseMaps={true}
@@ -134,6 +138,11 @@ const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
             </div>
           </Popup>
         ) : null}
+        <GeolocateControl
+          style={geolocateStyle}
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+        />
       </ReactMapGL>
       <div className="float_center">
         {mapLoading && <PacmanLoader color={'#123abc'} loading={mapLoading} />}
