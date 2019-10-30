@@ -15,6 +15,8 @@ import { updateViewport } from 'src/store/reducer/MapReducer/mapReducer.js';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state) => ({
+  lat: state.adressSearch.lat,
+  lon: state.adressSearch.lon,
   viewport: state.map.viewport,
   mapboxApiAccessToken: state.map.mapboxApiAccessToken,
   mapStyle: state.map.mapStyle,

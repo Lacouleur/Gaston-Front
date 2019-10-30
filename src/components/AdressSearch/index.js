@@ -37,7 +37,7 @@ class SearchAdress extends React.Component {
         <label>Adresse Pour vous Geolocaliser</label>
         <input
           className="adress-search-input"
-          name=""
+          name="adressSearch"
           value={queryInput}
           data-placeholder=" "
           multiple
@@ -52,8 +52,8 @@ class SearchAdress extends React.Component {
                 key={result.properties.id}
                 onClick={HandleClickAdress}
                 data-adress={result.properties.label}
-                data-lat={result.properties.x}
-                data-lon={result.properties.y}
+                data-lon={result.geometry.coordinates[0]}
+                data-lat={result.geometry.coordinates[1]}
               >
                 {result.properties.label}
               </li>
@@ -66,43 +66,3 @@ class SearchAdress extends React.Component {
 }
 
 export default SearchAdress;
-
-{
-  /* <li onClick={HandleClickAdress} key={result.properties.label.id}>
-  {result.properties.label}
-</li>; */
-}
-
-{
-  /* <li
-              onClick={HandleClickAdress}
-              data-lat={result.properties.label.x}
-              data-lon={result.properties.label.y}
-              key={result.properties.label.id}
-            >
-              {result.properties.label}
-            </li> */
-}
-
-{
-  /* // geometry: {type: "Point", coordinates: Array(2)}
-// properties:
-// city: "Annecy"
-// citycode: "74010"
-// context: "74, Haute-Savoie, Auvergne-Rhône-Alpes"
-// housenumber: "4"
-// id: "74010_0430_00004"
-// importance: 0.7709726565990154
-// label: "4 Rue Carnot 74000 Annecy"
-// name: "4 Rue Carnot"
-// oldcity: "Cran-Gevrier"
-// oldcitycode: "74093"
-// postcode: "74000"
-// score: 0.8882702415090014
-// street: "Rue Carnot"
-// type: "housenumber"
-// x: 941624.2
-// y: 6537408.44
-// __proto__: Object
-// type: "Feature" */
-}

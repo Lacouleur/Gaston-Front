@@ -18,7 +18,7 @@ export const STOP_LOAD = 'STOP_LOAD';
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case UPDATE_QUERY:
-      console.log('UPDATE_QUERY', action);
+      // console.log('UPDATE_QUERY', action);
       return {
         ...state,
         queryInput: action.query,

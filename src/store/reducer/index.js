@@ -7,6 +7,7 @@ import mapReducer from 'src/store/reducer/MapReducer/mapReducer';
 import postsListReducer from 'src/store/reducer/PostsListReducer/postsListReducer';
 import authReducer from 'src/store/reducer/Authreducer/authreducer';
 import adressSearch from 'src/store/reducer/AdressSearchReducer/AdressSearchReducer';
+// import userReducer from 'src/store/reducer/userReducer/UserReducer';
 
 // https://redux.js.org/api/combinereducers
 const reducer = combineReducers({
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   //From Redux-From
   form: formReducer,
   auth: authReducer,
+  // user: userReducer,
 });
 
 export default reducer;

@@ -10,8 +10,8 @@ import {
 } from 'src/store/reducer/AdressSearchReducer/AdressSearchReducer';
 
 const adressSearchMiddleware = (store) => (next) => (action) => {
-  console.log('je suis une action', action);
-  console.log('je suis la l adresse', action.query);
+  // console.log('je suis une action', action);
+  // console.log('je suis la l adresse', action.query);
   switch (action.type) {
     case FETCH_QUERY:
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
@@ -20,7 +20,7 @@ const adressSearchMiddleware = (store) => (next) => (action) => {
           `https://api-adresse.data.gouv.fr/search/?q=${action.query}&limit=5`,
         )
         .then((response) => {
-          console.log('succès', response.data.features);
+          // console.log('succès', response.data.features);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receiveResultsAction = receiveResults(response.data.features);
           store.dispatch(receiveResultsAction);
