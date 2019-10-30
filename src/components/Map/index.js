@@ -10,7 +10,16 @@ import * as parkDate from '../../data/skateboard-parks.json';
 import 'src/styles/mapbox-gl.css';
 import './map.scss';
 
-const Map = ({ viewport, mapboxApiAccessToken, mapStyle, updateViewport }) => {
+const Map = ({
+  viewport,
+  mapboxApiAccessToken,
+  mapStyle,
+  updateViewport,
+  lat,
+  lon,
+}) => {
+  const latLon = { lat, lon };
+  // console.log('je suis lat lon', latLon);
   const geolocateStyle = {
     position: 'absolute',
     top: 0,

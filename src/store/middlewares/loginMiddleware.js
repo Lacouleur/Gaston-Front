@@ -4,7 +4,7 @@ export const AUTHENTICATED = 'authenticated_user';
 export const UNAUTHENTICATED = 'unauthenticated_user';
 export const AUTHENTICATION_ERROR = 'authentication_error';
 
-const URL = 'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api';
+const URL = 'http://backend.dumpsters.grxl.fr/api';
 
 
 export function logInAction({ username, password }, history) {

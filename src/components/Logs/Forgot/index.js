@@ -28,12 +28,12 @@ const Forgot = () => {
               style="forgot"
             />
 
-            <NavLink exact to="/sign/up"exact>
+            <NavLink exact to="/sign/up">
               <button className="forgot-form-submit" type="submit">Réinitialiser</button>
             </NavLink>
             
           </form>
-          <NavLink exact to="/sign" exact>
+          <NavLink exact to="/sign/in" >
             <button className="forgot-retour" type="button">retour</button> 
           </NavLink>
           

@@ -27,7 +27,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
       axios
         .get(
-          '//projet-Gaston.vpnuser.lan/projet-Gaston/website-skeleton/public/api/posts',
+          'http://backend.dumpsters.grxl.fr/api/posts',
           { crossdomain: true },
           {
             headers: {
@@ -57,7 +57,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
       axios
         .get(
-          '//184.72.109.29/projet-Gaston/website-skeleton/public/api/users',
+          'http://backend.dumpsters.grxl.fr/api/users',
           { crossdomain: true },
           {
             headers: {
@@ -83,7 +83,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
       axios
         .get(
-          '//184.72.109.29/projet-Gaston/website-skeleton/public/api/categories',
+          'http://backend.dumpsters.grxl.fr/api/categories',
           { crossdomain: true },
           {
             headers: {

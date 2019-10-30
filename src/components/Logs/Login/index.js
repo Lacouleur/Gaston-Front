@@ -37,12 +37,14 @@ class Login extends React.Component {
         <p className="login-text">
           Renseignez votre email et votre mot de passe pour vous connecter
       </p>
+      <span>{this.errorMessage()}</span>
         <form className="login-form" onSubmit={handleSubmit(this.submit)/* handleSubmit comming from Redux-Form */} >
           <Field
             name="username"
             component="input"
             placeholder="Pseudo"
             type="text"
+            className="login-form-input"
             //style="login"
           />
           <Field
@@ -50,6 +52,7 @@ class Login extends React.Component {
             component="input"
             placeholder="Mot de passe"
             type="password"
+            className="login-form-input"
             //style="login"
           />
 
@@ -57,7 +60,7 @@ class Login extends React.Component {
 
 
         </form>
-      {this.errorMessage()}
+      
         <NavLink exact to="/sign/up">
           <button className="login-form-submit login-form-submit--inscription" type="button">inscription</button>
         </NavLink>

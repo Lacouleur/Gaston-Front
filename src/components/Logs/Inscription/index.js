@@ -8,29 +8,31 @@ import { connect } from 'react-redux';
 // == Import : local
 import './register.scss';
 import fieldsData from './fieldsData';
+import AdressSearch from 'src/containers/AdressSearch';
 
-// 1- Comment on récupè_re le state de Field ?
-//    /---> state.field
-//      Essayer un console.log de state.field <- Normalement c'est un objet.
-// 2- ajouter une fonction "onSubmit" sur le forme, et balancer notre state au middleware.
-// 3- Trouver le bon format de donné pour l'envoi + Gestions des messages d'erreurs.
 
 // == Composant
 class Register extends React.Component {
   submit = (values) => {
-    this.props.registerAction(values, this.props.history);
-    console.log("i'm value in Register.component values", values)  };
-  errorMessage() {
-    if (this.props.errorMessage) {
-      return (
-        <div className="inscription-info-red">{this.props.errorMessage}</div>
-      );
-    }
-  }
-
+    const { addressLabel, lat, lng } = this.props;
+    const latitude = { lat: parseFloat(lat) };
+    const longitude = { lng: parseFloat(lng) };
+    const allValues = { ...values, addressLabel, ...latitude, ...longitude };
+    this.props.registerAction(allValues, this.props.history);
+    console.log('Value soumission:', allValues);
+  };
+  /* SOUCIS : Le mlessage d'erreur est aussi déclenché par les erreurs dans le champ login ... même state : state.auth
+  // errorMessage() {
+  //   if (this.props.errorMessage) {
+  //     return (
+  //       <div className="inscription-info-red">{this.props.errorMessage}</div>
+  //     );
+  //   }
+  // }
+ */
   render() {
     // Field infos import from ./fieldsdata
-    const { handleSubmit } = this.props;
+    const { handleSubmit, adresse } = this.props;
     const datasFields = fieldsData.fields;
     return (
       <div className="inscription">
@@ -43,7 +45,7 @@ class Register extends React.Component {
         <p className="inscription-text">
           Merci de bien vouloir remplir ces champs pour vous inscrire
         </p>
-        {this.errorMessage()}
+        {/*this.errorMessage()*/}
         <form
           className="inscription-form"
           onSubmit={
@@ -57,14 +59,16 @@ class Register extends React.Component {
               component="input"
               placeholder={field.placeholder}
               type={field.type}
+              className="inscription-form-input"
             />
           ))}
-            <button className="inscription-form-submit" type="submit">
-              S'inscrire
-            </button>
-
+          <AdressSearch />
+          <button className="inscription-form-submit" type="submit">
+            S'inscrire
+          </button>
         </form>
-        {this.errorMessage()}
+
+        {/*this.errorMessage()*/}
         <NavLink exact to="/sign/in" exact>
           <button className="inscription-retour" type="button">
             Retour
@@ -75,9 +79,14 @@ class Register extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { errorMessage: state.auth.error };
-}
+const mapStateToProps = (state) => {
+  return {
+    errorMessage: state.auth.error,
+    addressLabel: state.adressSearch.queryInput,
+    lat: state.adressSearch.lat,
+    lng: state.adressSearch.lon,
+  };
+};
 
 const reduxFormRegister = reduxForm({
   form: 'register',

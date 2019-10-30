@@ -1,67 +1,68 @@
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import faker from 'faker';
-import React, { Component } from 'react';
+import React from 'react';
+
+import Suggestions from 'src/components/AdressSearch/Suggestions';
+import './adressSearch.scss';
 import { Search, Grid, Header, Segment, Label } from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
 
-const source = _.times(5, () => ({
-  title: faker.company.companyName(),
-  description: faker.company.catchPhrase(),
-  image: faker.internet.avatar(),
-  price: faker.finance.amount(0, 100, 2, '$'),
-}));
-
-const resultRenderer = ({ title }) => <Label content={title} />;
-
-resultRenderer.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-};
-
-const initialState = { isLoading: false, results: [], value: '' };
-
-export default class AdressSearch extends Component {
-  state = initialState;
-
-  handleResultSelect = (e, { result }) =>
-    this.setState({ value: result.title });
-
-  handleSearchChange = (e, { value }) => {
-    this.setState({ isLoading: true, value });
-
-    setTimeout(() => {
-      if (this.state.value.length < 1) return this.setState(initialState);
-
-      const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
-      const isMatch = (result) => re.test(result.title);
-
-      this.setState({
-        isLoading: false,
-        results: _.filter(source, isMatch),
-      });
-    }, 300);
-  };
-
+class SearchAdress extends React.Component {
   render() {
-    const { isLoading, value, results } = this.state;
+    const { queryInput, loading, results, isSelected } = this.props;
+    // console.log('je suis le queryInput', queryInput);
+    const handleInputChange = (event) => {
+      const {
+        changeQuery,
+        handleFetchQuery,
+        HandeChangeSelectedAdress,
+      } = this.props;
+      // this.setState({
+      //   query: this.search.value,
+      // });
+      HandeChangeSelectedAdress();
+      let currentQuery = event.target.value;
+      handleFetchQuery(currentQuery);
+      changeQuery(currentQuery);
+    };
+    const HandleClickAdress = (event) => {
+      const { changeAdress } = this.props;
+      // console.log('je suis le click', event.target.name);
+      let lon = event.target.dataset.lon;
+      let lat = event.target.dataset.lat;
+      let adress = event.target.dataset.adress;
 
+      changeAdress(adress, lat, lon);
+    };
+    // console.log('selectionner ou pas ?', isSelected);
     return (
-      <Grid>
-        <Grid.Column width={6}>
-          <Search
-            loading={isLoading}
-            onResultSelect={this.handleResultSelect}
-            onSearchChange={_.debounce(this.handleSearchChange, 500, {
-              leading: true,
-            })}
-            results={results}
-            value={value}
-            resultRenderer={resultRenderer}
-            {...this.props}
-          />
-        </Grid.Column>
-      </Grid>
+      <div className="adress-search">
+        <label>Adresse Pour vous Geolocaliser</label>
+        <input
+          className="adress-search-input"
+          name="adressSearch"
+          value={queryInput}
+          data-placeholder=" "
+          multiple
+          placeholder="Adresse ?"
+          // ref={(queryInput) => queryInput}
+          onChange={handleInputChange}
+        />
+        {!isSelected && (
+          <ul>
+            {results.map((result) => (
+              <li
+                key={result.properties.id}
+                onClick={HandleClickAdress}
+                data-adress={result.properties.label}
+                data-lon={result.geometry.coordinates[0]}
+                data-lat={result.geometry.coordinates[1]}
+              >
+                {result.properties.label}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     );
   }
 }
+
+export default SearchAdress;
