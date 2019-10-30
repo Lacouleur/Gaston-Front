@@ -9,12 +9,7 @@
   font-size: 1.2em;
   background-color: $white-backgroud-color;
 }
-.navBar {
-  background-color: green;
-  width: 100%;
-  min-height: 2rem;
-  display: block;
-}
+
 
 .maincontainer {
   display: flex;
@@ -22,10 +17,6 @@
   height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 .marker-btn {
   background: none;
@@ -46,6 +37,7 @@ code {
   padding-left: $gutter / 2;
   background-color: $white-backgroud-color;
   display: inline-block;
+  position: relative;
 }
 
 .mapContainer {
