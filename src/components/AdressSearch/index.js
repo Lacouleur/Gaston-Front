@@ -1,67 +1,50 @@
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import faker from 'faker';
-import React, { Component } from 'react';
+import React from 'react';
+
+import Suggestions from 'src/components/AdressSearch/Suggestions';
+import './adressSearch.scss';
 import { Search, Grid, Header, Segment, Label } from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
 
-const source = _.times(5, () => ({
-  title: faker.company.companyName(),
-  description: faker.company.catchPhrase(),
-  image: faker.internet.avatar(),
-  price: faker.finance.amount(0, 100, 2, '$'),
-}));
-
-const resultRenderer = ({ title }) => <Label content={title} />;
-
-resultRenderer.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-};
-
-const initialState = { isLoading: false, results: [], value: '' };
-
-export default class AdressSearch extends Component {
-  state = initialState;
-
-  handleResultSelect = (e, { result }) =>
-    this.setState({ value: result.title });
-
-  handleSearchChange = (e, { value }) => {
-    this.setState({ isLoading: true, value });
-
-    setTimeout(() => {
-      if (this.state.value.length < 1) return this.setState(initialState);
-
-      const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
-      const isMatch = (result) => re.test(result.title);
-
-      this.setState({
-        isLoading: false,
-        results: _.filter(source, isMatch),
-      });
-    }, 300);
-  };
+class SearchAdress extends React.Component {
+  componentDidMount() {
+    //     const { updateQuery,loading, results } = this.props;
+    // console.log(updateQuery);
+    // console.log(this.props);
+    //1 faire un requete recherche avec le contenu de queryInput
+  }
 
   render() {
-    const { isLoading, value, results } = this.state;
+    const { queryInput, loading, results } = this.props;
+
+    const handleInputChange = (event) => {
+      const { changeQuery } = this.props;
+      // this.setState({
+      //   query: this.search.value,
+      // });
+      let currentQuery = event.target.value;
+      changeQuery(currentQuery);
+      // fetchQuery();
+    };
 
     return (
-      <Grid>
-        <Grid.Column width={6}>
-          <Search
-            loading={isLoading}
-            onResultSelect={this.handleResultSelect}
-            onSearchChange={_.debounce(this.handleSearchChange, 500, {
-              leading: true,
-            })}
-            results={results}
-            value={value}
-            resultRenderer={resultRenderer}
-            {...this.props}
-          />
-        </Grid.Column>
-      </Grid>
+      <div classeName="adress-search">
+        <label>Adresse Pour vous Geolocaliser</label>
+        <input
+          classeName="adress-search-input"
+          name=""
+          data-placeholder=" "
+          multiple
+          placeholder="Adresse?"
+          ref={(queryInput) => queryInput}
+          onChange={handleInputChange}
+        />
+        <ul>
+          {results.map((result) => (
+            <li key={result.properties.label.id}>{result.properties.label}</li>
+          ))}
+        </ul>
+      </div>
     );
   }
 }
+
+export default SearchAdress;

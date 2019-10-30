@@ -2,21 +2,21 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
-
 import appReducer from 'src/store/reducer/AppReducer/appReducer';
 import mapReducer from 'src/store/reducer/MapReducer/mapReducer';
 import postsListReducer from 'src/store/reducer/PostsListReducer/postsListReducer';
 import authReducer from 'src/store/reducer/Authreducer/authreducer';
+import adressSearch from 'src/store/reducer/AdressSearchReducer/AdressSearchReducer';
 
 // https://redux.js.org/api/combinereducers
 const reducer = combineReducers({
-
-app : appReducer,
-map : mapReducer,
-postsList : postsListReducer,
-//From Redux-From
-form: formReducer,
-auth: authReducer
+  app: appReducer,
+  map: mapReducer,
+  postsList: postsListReducer,
+  adressSearch: adressSearch,
+  //From Redux-From
+  form: formReducer,
+  auth: authReducer,
 });
 
 export default reducer;
