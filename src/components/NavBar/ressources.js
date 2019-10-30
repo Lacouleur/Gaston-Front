@@ -19,7 +19,7 @@ export const postListButton = (
 //ADDPOST BUTTON
 export const addPostButton = (
   <NavLink
-    to="/addpost"
+    to="/addPost"
     key="addpost"
     exact
     activeClassName="navigation-item--active"

@@ -23,6 +23,7 @@
         border-color : #ffdb26;
         text-align:center;
         align-self: center;
+        margin-bottom:8%;
     
     }
 
@@ -31,6 +32,8 @@
         // background-color: aqua;
         width : 100%;
         align-self: center;
+        margin-top:4%;
+        margin-bottom: 6%;
        
 
         &-avatar {
@@ -187,39 +190,24 @@
         }
         
         &-submit{
-            &--don {
-                @extend .field ;
-                border-color: $cat-don-color;
-                width : 100%;
-            }
 
-            &--event {
-                @extend .field ;
-                border-color: $cat-event-color;
-                width : 100%;
-            }
-
-            &--tresor {
-                @extend .field ;
-                border-color: $cat-treasure-color;
-                width : 100%;
-            }
-
-            &--help {
-                @extend .field ;
-                border-color: $cat-help-color;
-                width : 100%;
-            }
-        margin-left: 5em;
+        @extend .field ;
+        border-color: $cat-don-color;
+        width : 60%;
+        margin : auto;
+        margin-top: 3%;
         }
     
+        &-retour {
+            justify-self: center;
+            text-align: center;
+            margin-top: 3em;
+            
+        }
     }
 
 
 
-    &-retour {
-      justify-self: flex-end; 
-    }
 
 
 
