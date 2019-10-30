@@ -19,7 +19,7 @@ const Map = ({
   lon,
 }) => {
   const latLon = { lat, lon };
-  console.log('je suis lat lon', latLon);
+  // console.log('je suis lat lon', latLon);
   const geolocateStyle = {
     position: 'absolute',
     top: 0,

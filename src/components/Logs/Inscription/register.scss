@@ -7,6 +7,20 @@ b {
 .inscription {
   width: 100%;
 
+
+  &-form {
+
+    &-input {
+        margin : auto;
+        width : 70%;
+        text-align: center;
+        height: 2.5em;
+        margin-bottom: 3%;
+            @extend .button--inscription ;
+            cursor: pointer;
+
+    }
+} 
   &-text {
     width: 100%;
     font-family: $typo;
@@ -15,6 +29,8 @@ b {
     color: $black-text-color;
     padding: 0 2em 0 2em;
     line-height: 1.5em;
+    margin-bottom: 2em;
+    text-align: center;
 
     &-link {
       color: $add-button-color;

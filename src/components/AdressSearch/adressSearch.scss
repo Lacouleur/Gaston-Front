@@ -4,18 +4,16 @@ label {
   font-size: 0.9rem;
   color: #999;
   margin-bottom: 0.3rem;
+  text-align: center;
 }
 
-.adress-search {
-  width: 100%;
-  &-input {
-    width: 100%;
-  }
-}
-input {
-  width: 80%;
-}
 
-li:hover {
-  background-color: yellow;
+.adress-search-input {
+  margin : auto;
+  width : 70%;
+  text-align: center;
+  height: 2.5em;
+  margin-bottom: 3%;
+      @extend .button--inscription ;
+      cursor: pointer;
 }

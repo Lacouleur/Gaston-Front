@@ -26,7 +26,7 @@ export const addPostButton = (
     className="navigation-item"
   >
     <button className="navbar-button-addpost" type="button">
-      Ajouter une annoncer
+      Ajouter une annonce
     </button>
   </NavLink>
 );

@@ -41,7 +41,7 @@ class SearchAdress extends React.Component {
           value={queryInput}
           data-placeholder=" "
           multiple
-          placeholder="Adresse?"
+          placeholder="Adresse ?"
           // ref={(queryInput) => queryInput}
           onChange={handleInputChange}
         />

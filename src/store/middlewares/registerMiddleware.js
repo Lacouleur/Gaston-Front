@@ -6,7 +6,7 @@ export const NOT_REGISTRED = 'not_registred_user';
 export const REGISTER_ERROR = 'register_error';
 
 const URL =
-  'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public';
+  'http://backend.dumpsters.grxl.fr';
 
 // {
 //     "username": "test",

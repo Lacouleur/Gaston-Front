@@ -6,7 +6,7 @@ import { Route, Switch,} from 'react-router-dom';
 
 
 // == Import : local
-// import './maincontent.scss';
+import './maincontent.scss';
 // import { AUTHENTICATED } from 'src/store/middlewares/loginMiddleware.js';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';

@@ -33,7 +33,7 @@ const Forgot = () => {
             </NavLink>
             
           </form>
-          <NavLink exact to="/sign" exact>
+          <NavLink exact to="/sign/in" exact>
             <button className="forgot-retour" type="button">retour</button> 
           </NavLink>
           
