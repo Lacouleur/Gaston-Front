@@ -6,13 +6,19 @@ import AdressSearch from 'src/components/AdressSearch';
 
 // Action Creators
 
-import { updateQuery } from 'src/store/reducer/AdressSearchReducer/AdressSearchReducer';
+import {
+  updateQuery,
+  selectAdress,
+  changeSelectAdress,
+  fetchQuery,
+} from 'src/store/reducer/AdressSearchReducer/AdressSearchReducer';
 /* === State (données) === */
 const mapStateToProps = (state) => {
   return {
     loading: state.adressSearch.isLoading,
     queryInput: state.adressSearch.queryInput,
     results: state.adressSearch.results,
+    isSelected: state.adressSearch.isSelected,
   };
 };
 /* === Actions === */
@@ -21,10 +27,20 @@ const mapDispatchToProps = (dispatch) => ({
     const action = updateQuery(value);
     dispatch(action);
   },
-  // fetchQuery: () => {
-  //   const action = fetchQuery();
-  //   dispatch(action);
-  // },
+
+  handleFetchQuery: (value) => {
+    const action = fetchQuery(value);
+    dispatch(action);
+  },
+
+  changeAdress: (adresseSelected, lat, long) => {
+    const action = selectAdress(adresseSelected, lat, long);
+    dispatch(action);
+  },
+  HandeChangeSelectedAdress: () => {
+    const action = changeSelectAdress();
+    dispatch(action);
+  },
 });
 
 // Container

@@ -31,6 +31,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   // doSomething: () => {
   //   dispatch(doSomething("Coucou"));
   // }
+
   updateViewport: (mapChange) => {
     dispatch(updateViewport(mapChange));
     // console.log(mapChange);
