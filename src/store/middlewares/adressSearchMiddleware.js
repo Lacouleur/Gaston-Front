@@ -2,20 +2,22 @@ import axios from 'axios';
 
 import {
   UPDATE_QUERY,
+  FETCH_QUERY,
   stopLoad,
   receiveResults,
   updateQuery,
+  fetchQuery,
 } from 'src/store/reducer/AdressSearchReducer/AdressSearchReducer';
 
 const adressSearchMiddleware = (store) => (next) => (action) => {
   console.log('je suis une action', action);
   console.log('je suis la l adresse', action.query);
   switch (action.type) {
-    case UPDATE_QUERY:
+    case FETCH_QUERY:
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
       axios
         .get(
-          `https://api-adresse.data.gouv.fr/search/?q=${action.query}&limit=15`,
+          `https://api-adresse.data.gouv.fr/search/?q=${action.query}&limit=5`,
         )
         .then((response) => {
           console.log('succès', response.data.features);
@@ -28,8 +30,8 @@ const adressSearchMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           // dans tous les cas j'arrête de considérer qu'on charge
-          const stopLoadAction = stopLoad();
-          store.dispatch(stopLoadAction);
+          // const receiveUpdateQueryAction = updateQuery(action.query);
+          // store.dispatch(receiveUpdateQueryAction);
         });
       // dans un switch on stoppe l'execution du switch à la fin de chaque case à l'aide de l'instruction break
       // l'instruction break permet de sortir du switch (fonctionne également dans un for, while)
