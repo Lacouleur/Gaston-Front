@@ -64,6 +64,23 @@ body{
   border: 1px solid lighten($grey-text-color, 30%);
   margin-bottom: $boxMargin;
 }
+
+//FIELDS
+.field {
+  border: $border-regular solid $add-button-color;
+  border-radius: 10px;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  background-color: $white-backgroud-color;
+  font-size: $typo-size-Small;
+  display: block;
+  margin-top: $boxMargin;
+  margin-bottom: $boxMargin;
+  &:hover {
+      opacity: .8;
+  }
+  
+}
+
 //BOUTONS
 
 .button {
@@ -75,7 +92,7 @@ body{
     display: block;
     margin-top: $boxMargin;
     margin-bottom: $boxMargin;
-    text-transform: lowercase;
+    text-transform: capitalize;
     &:first-letter {
         text-transform: uppercase!important;
     }

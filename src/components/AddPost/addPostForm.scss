@@ -1,0 +1,228 @@
+@import 'src/styles/vars'; 
+
+
+
+.addPostForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    position: absolute;
+    width : 70%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    &-cat {
+        @extend .button ; 
+        text-transform: uppercase;
+        font-weight: $medium;
+        font-size : 1em; 
+        width : 50%;
+        min-width : 90px; 
+        border-color : #ffdb26;
+        text-align:center;
+        align-self: center;
+    
+    }
+
+    &-user {
+        display : flex;
+        // background-color: aqua;
+        width : 100%;
+        align-self: center;
+       
+
+        &-avatar {
+            border-radius : 50%;
+            width : 4em;
+            height : 4em;
+            display : block;
+       
+    
+        }
+
+
+        &-username {
+            display : block;
+        
+            width : 40%;
+            font-weight: $medium;
+            border-bottom : solid 1px $dark-grey-text-color;
+            margin: 1em 0 1em 1em ;
+
+        
+        }
+
+    }
+
+   
+
+    &-form {
+ 
+        width : 100%;
+
+        &-desc {
+            font-size: 0.8em;
+            padding-top : 0.2em;
+            margin-bottom : 0.5em;
+        }
+    
+        &-title {
+            
+            &--don {
+                @extend .field ;
+                border-color: $cat-don-color;
+                width : 100%;
+            }
+
+            &--event {
+                @extend .field ;
+                border-color: $cat-event-color;
+                width : 100%;
+            }
+
+            &--tresor {
+                @extend .field ;
+                border-color: $cat-treasure-color;
+                width : 100%;
+            }
+
+            &--help {
+                @extend .field ;
+                border-color: $cat-help-color;
+                width : 100%;
+            }
+            }
+    
+        &-description {
+            &--don {
+                @extend .field ;
+                border-color: $cat-don-color;
+                width : 100%;
+                height : 30vh;
+            }
+
+            &--event {
+                @extend .field ;
+                border-color: $cat-event-color;
+                width : 100%;
+                height : 30vh;
+            }
+
+            &--tresor {
+                @extend .field ;
+                border-color: $cat-treasure-color;
+                width : 100%;
+                height : 30vh;
+            }
+
+            &--help {
+                @extend .field ;
+                border-color: $cat-help-color;
+                width : 100%;
+                height : 30vh;
+            }
+
+       
+        }
+    
+        &-adresse {
+            &--don {
+                @extend .field ;
+                border-color: $cat-don-color;
+                width : 100%;
+            }
+
+            &--event {
+                @extend .field ;
+                border-color: $cat-event-color;
+                width : 100%;
+            }
+
+            &--tresor {
+                @extend .field ;
+                border-color: $cat-treasure-color;
+                width : 100%;
+            }
+
+            &--help {
+                @extend .field ;
+                border-color: $cat-help-color;
+                width : 100%;
+            }
+       
+        width : 100%;
+        width : 100%;
+        }
+    
+        &-addImage {
+            &--don {
+                @extend .field ;
+                border-color: $cat-don-color;
+                width : 100%;
+            }
+
+            &--event {
+                @extend .field ;
+                border-color: $cat-event-color;
+                width : 100%;
+            }
+
+            &--tresor {
+                @extend .field ;
+                border-color: $cat-treasure-color;
+                width : 100%;
+            }
+
+            &--help {
+                @extend .field ;
+                border-color: $cat-help-color;
+                width : 100%;
+            }
+       
+        width : 15vh;
+        height: 15vh;
+        align-self : center;
+        }
+        
+        &-submit{
+            &--don {
+                @extend .field ;
+                border-color: $cat-don-color;
+                width : 100%;
+            }
+
+            &--event {
+                @extend .field ;
+                border-color: $cat-event-color;
+                width : 100%;
+            }
+
+            &--tresor {
+                @extend .field ;
+                border-color: $cat-treasure-color;
+                width : 100%;
+            }
+
+            &--help {
+                @extend .field ;
+                border-color: $cat-help-color;
+                width : 100%;
+            }
+        margin-left: 5em;
+        }
+    
+    }
+
+
+
+    &-retour {
+      justify-self: flex-end; 
+    }
+
+
+
+
+
+}
