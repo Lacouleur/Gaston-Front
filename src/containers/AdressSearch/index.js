@@ -6,32 +6,25 @@ import AdressSearch from 'src/components/AdressSearch';
 
 // Action Creators
 
-import { changeView } from 'src/store/reducer/AppReducer/appReducer';
-
+import { updateQuery } from 'src/store/reducer/AdressSearchReducer/AdressSearchReducer';
 /* === State (données) === */
 const mapStateToProps = (state) => {
-  // console.log ("STATE App = ", state);
   return {
-
-  }
+    loading: state.adressSearch.isLoading,
+    queryInput: state.adressSearch.queryInput,
+    results: state.adressSearch.results,
+  };
 };
 /* === Actions === */
 const mapDispatchToProps = (dispatch) => ({
- 
-  //   updateViewport: (mapChange) => {
-  //   dispatch(updateViewport(mapChange));
-  //   // console.log(mapChange);
+  changeQuery: (value) => {
+    const action = updateQuery(value);
+    dispatch(action);
+  },
+  // fetchQuery: () => {
+  //   const action = fetchQuery();
+  //   dispatch(action);
   // },
-
-  // const mapDispatchToProps = (dispatch, ownProps) => ({
-  // // doSomething: () => {
-  // //   dispatch(doSomething("Coucou"));
-  // // }
-  // fetchPosts: (posts) => {
-  //   dispatch(fetchPosts(posts));
-  //   // console.log(mapChange);
-  // },
-  // });
 });
 
 // Container
@@ -41,4 +34,4 @@ const AdressSearchContainer = connect(
 )(AdressSearch);
 
 // == Export
-export default AdressSearch;
+export default AdressSearchContainer;

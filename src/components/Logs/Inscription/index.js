@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 // == Import : local
 import './register.scss';
 import fieldsData from './fieldsData';
+import AdressSearch from 'src/containers/AdressSearch';
 
 // 1- Comment on récupè_re le state de Field ?
 //    /---> state.field
@@ -59,11 +60,13 @@ class Register extends React.Component {
               type={field.type}
             />
           ))}
+          <AdressSearch/>
             <button className="inscription-form-submit" type="submit">
               S'inscrire
             </button>
 
         </form>
+
         {this.errorMessage()}
         <NavLink exact to="/sign/in" exact>
           <button className="inscription-retour" type="button">

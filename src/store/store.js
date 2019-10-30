@@ -7,7 +7,8 @@ import reduxThunk from 'redux-thunk';
 // ce que j'importe c'est LE reducer parent
 import reducer from 'src/store/reducer';
 // import logMiddleware from './logMiddleware';
-import postsListMiddleware from 'src/store/middlewares/postsListMiddleware.js';
+import postsListMiddleware from 'src/store/middlewares/postsListMiddleware';
+import adressSearchMiddleware from 'src/store/middlewares/adressSearchMiddleware';
 
 // == Store
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -16,7 +17,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancers = composeEnhancers(
   applyMiddleware(
     postsListMiddleware,
-    reduxThunk
+    reduxThunk,
+    adressSearchMiddleware,
     // logMiddleware,
     // secondMiddleware,
   ),
