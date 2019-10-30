@@ -10,6 +10,8 @@ import './maincontent.scss';
 // import { AUTHENTICATED } from 'src/store/middlewares/loginMiddleware.js';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
+import AddPost from 'src/components/AddPost/';
+import AddPostForm from "src/components/AddPost/AddPostForm";
 import PostsList from 'src/containers/PostsList';
 import Welcome from 'src/containers/Logs/Welcome/welcomeContainer.js';
 import AdressSearch from 'src/components/AdressSearch';
@@ -38,11 +40,11 @@ class MainContent extends React.Component {
           <Switch>
             <Route exact path="/" component={Welcome} />
             <Route exact path="/postlist" component={requireAuth(PostsList)} />
-            <Route exact path="/addpost" component={requireAuth(PostsList)} />
             <Route path="/sign/in" component={noRequireAuth(Logs)} />
             <Route path="/sign/up" component={noRequireAuth(Inscription)} />
             <Route path="/sign/forgot" component={noRequireAuth(Forgot)} />
-
+            <Route exact path path="/addPost" component={requireAuth(AddPost)} />
+            <Route exact path path="/addPost/form" component={requireAuth(AddPostForm)} />
             <Route>
               <div>
                 <AdressSearch />
