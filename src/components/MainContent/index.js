@@ -1,24 +1,21 @@
 // == Import : npm
 import React from 'react';
-import { Route, Switch,} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 // import { connect } from 'react-redux';
 // import store from 'src/store/store.js';
-
 
 // == Import : local
 import './maincontent.scss';
 // import { AUTHENTICATED } from 'src/store/middlewares/loginMiddleware.js';
 import Logs from 'src/components/Logs';
 import Map from 'src/containers/Map';
-import AddPost from 'src/components/AddPost/';
-import AddPostForm from "src/components/AddPost/AddPostForm";
+import AddPostForm from 'src/components/AddPost/AddPostForm';
 import PostsList from 'src/containers/PostsList';
 import Welcome from 'src/containers/Logs/Welcome/welcomeContainer.js';
 import AdressSearch from 'src/components/AdressSearch';
 import Forgot from 'src/components/Logs/Forgot';
 import Inscription from 'src/components/Logs/Inscription';
-import AddPost from 'src/components/AddPost'
-import AddPostForm from 'src/components/AddPost/AddPostForm'
+import AddPost from 'src/components/AddPost';
 
 //== Securtity
 import requireAuth from 'src/security/requireAuth';
@@ -45,8 +42,18 @@ class MainContent extends React.Component {
             <Route path="/sign/in" component={noRequireAuth(Logs)} />
             <Route path="/sign/up" component={noRequireAuth(Inscription)} />
             <Route path="/sign/forgot" component={noRequireAuth(Forgot)} />
-            <Route exact path path="/addPost" component={requireAuth(AddPost)} />
-            <Route exact path path="/addPost/form" component={requireAuth(AddPostForm)} />
+            <Route
+              exact
+              path
+              path="/addPost"
+              component={requireAuth(AddPost)}
+            />
+            <Route
+              exact
+              path
+              path="/addPost/form"
+              component={requireAuth(AddPostForm)}
+            />
             <Route>
               <div>
                 <AdressSearch />
