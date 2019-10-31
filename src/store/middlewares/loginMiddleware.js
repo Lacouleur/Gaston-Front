@@ -1,5 +1,6 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
+import { getUserInformations } from 'src/store/reducer/UserReducer/userReducer';
 
 export const AUTHENTICATED = 'authenticated_user';
 export const UNAUTHENTICATED = 'unauthenticated_user';
@@ -17,8 +18,11 @@ export function logInAction({ username, password }, history) {
       });
       let token = res.data.token;
       let tokenDecoded = jwt_decode(token);
+      const { user_id } = tokenDecoded;
+      console.log(user_id);
 
-      console.log(tokenDecoded);
+      const getUserInformationsAction = getUserInformations(username, user_id);
+      store.dispatch(getUserInformationsAction);
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', res.data.token);
 
