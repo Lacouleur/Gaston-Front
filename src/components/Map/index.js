@@ -36,10 +36,18 @@ const Map = ({
   const [windowWidth, setWindowWidth] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
   const [navbarHeight, setNavbarHeight] = useState(0);
+  const [contentContainerWidth, setContentContainerWidth] = useState(0);
+
   const [mapLoading, setMapLoading] = useState(true);
+
+  //calculer la largeur de la carte en fonction de la taille de l'ecran
+  // document.querySelector('.contentContainer').offsetWidth
 
   let resizeWindow = () => {
     setNavbarHeight(document.querySelector('.navbar').offsetHeight);
+    setContentContainerWidth(
+      document.querySelector('.contentContainer').offsetWidth,
+    );
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
   };
@@ -93,7 +101,7 @@ const Map = ({
         reuseMaps={true}
         // asyncRender={true} Make the Marker Move on Scroll
         {...viewport}
-        width={windowWidth}
+        width={windowWidth - contentContainerWidth}
         height={windowHeight - navbarHeight}
         // onResize={handleResize}
         transitionDuration={250}
