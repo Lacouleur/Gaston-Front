@@ -15,6 +15,7 @@ const initialState = {
 
 // - Actions Types
 export const FETCH_POSTS = 'FETCH_POST';
+export const FETCH_POSTS_ONMAP_CHANGE ='FETCH_POSTS_ONMAP_CHANGE';
 const RECEIVE_POSTS = 'RECEIVE_POSTS';
 const STOP_LOAD = 'STOP_LOAD';
 export const FETCH_USERS = 'FETCH_USERS';
@@ -52,6 +53,10 @@ const reducer = (state = initialState, action = {}) => {
 // - Actions Creators
 export const fetchPosts = () => ({
   type: FETCH_POSTS,
+  fetch,
+});
+export const fetchPostsOnMapChange = () => ({
+  type: FETCH_POSTS_ONMAP_CHANGE,
   fetch,
 });
 export const stopLoad = () => ({
