@@ -15,6 +15,7 @@ const Map = ({
   mapboxApiAccessToken,
   mapStyle,
   updateViewport,
+  updateFetchPosts,
   lat,
   lon,
 }) => {
@@ -79,6 +80,7 @@ const Map = ({
     };
   }, []);
   const handleChange = (mapChange) => {
+    updateFetchPosts();
     updateViewport(mapChange);
   };
   // const handleResize = (event)=>{
