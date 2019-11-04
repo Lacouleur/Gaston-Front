@@ -22,29 +22,44 @@ X  4- l'action getReposFromAxios définit un state
 */
 
 const postsListMiddleware = (store) => (next) => (action) => {
-
-  // console.log(store.getState());
+  const JWTToken = localStorage.user;
+  let userState = store.getState();
+  // console.log(userState);
+  // console.log(userState.user);
+  const { viewport } = userState.user;
+  console.log(viewport.zoom, viewport.latitude, viewport.longitude);
   switch (action.type) {
     case FETCH_POSTS:
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
-      axios
-        .get(
-          'http://backend.dumpsters.grxl.fr/api/posts',
-          { crossdomain: true },
-          {
-            headers: {
-              'Access-Control-Allow-Origin': '*',
-            },
-          },
-        )
+      axios({
+        method: 'POST',
+        url:
+          'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/map',
+        headers: { Authorization: `Bearer ${JWTToken}` },
+        data: {
+          zoom: viewport.zoom,
+          lat: viewport.latitude,
+          lng: viewport.longitude,
+        },
+      })
+        // .post(
+        //   'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/map',
+        //   { headers: { Authorization: `Bearer ${JWTToken}` } },
+        //   {
+        // zoom: viewport.zoom,
+        // lat: viewport.latitude,
+        // lng: viewport.longitude,
+        //   },
+        // )
         .then((response) => {
+          console.log('je suis la réponse ZEN', response);
           // console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receivePostsAction = receivePosts(response.data);
           store.dispatch(receivePostsAction);
         })
         .catch((error) => {
-          // console.error(error);
+          console.error(error);
         })
         .finally(() => {
           // dans tous les cas j'arrête de considérer qu'on charge
