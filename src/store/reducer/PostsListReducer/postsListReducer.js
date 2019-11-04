@@ -33,7 +33,7 @@ const reducer = (state = initialState, action = {}) => {
         loading: false,
       };
     case RECEIVE_POSTS:
-      console.log(action);
+      // console.log(action);
       return {
         ...state,
         posts: action.posts,

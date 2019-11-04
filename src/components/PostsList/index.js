@@ -13,7 +13,7 @@ import PostsCard from './PostsCard';
 // const PostsList = ({ postsLists, loading }) => {
 class PostsList extends React.Component {
   componentDidMount() {
-    console.log("je suis ici");
+    // console.log("je suis ici");
     const { fetchPosts } = this.props;
     fetchPosts();
   }

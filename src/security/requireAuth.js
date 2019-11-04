@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default function (ComposedComponent) {
 
   class Authentication extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
       if (!this.props.authenticated) {
         this.props.history.push('/sign/in');
       }

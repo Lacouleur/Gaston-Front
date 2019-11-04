@@ -69,19 +69,19 @@ const reducer = (state = initialState, action = {}) => {
         // viewport: action.viewport,
       };
     case FETCH_POSTS:
-      console.log(action);
+      //console.log(action);
       return {
         ...state,
         loading: false,
       };
       case FETCH_CATEGORIES:
-      console.log(action);
+      //console.log(action);
       return {
         ...state,
         loading: false,
       };
       case FETCH_USERS:
-      console.log(action);
+      //console.log(action);
       return {
         ...state,
         loading: false,

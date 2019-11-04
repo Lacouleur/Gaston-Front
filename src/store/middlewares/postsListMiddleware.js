@@ -22,6 +22,8 @@ X  4- l'action getReposFromAxios définit un state
 */
 
 const postsListMiddleware = (store) => (next) => (action) => {
+
+  // console.log(store.getState());
   switch (action.type) {
     case FETCH_POSTS:
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
@@ -36,13 +38,13 @@ const postsListMiddleware = (store) => (next) => (action) => {
           },
         )
         .then((response) => {
-          console.log('succès', response.data);
+          // console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receivePostsAction = receivePosts(response.data);
           store.dispatch(receivePostsAction);
         })
         .catch((error) => {
-          console.error(error);
+          // console.error(error);
         })
         .finally(() => {
           // dans tous les cas j'arrête de considérer qu'on charge
@@ -66,7 +68,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
           },
         )
         .then((response) => {
-          console.log('succès', response.data);
+          // console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receiveUsersAction = receiveUsers(response.data);
           store.dispatch(receiveUsersAction);
@@ -92,7 +94,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
           },
         )
         .then((response) => {
-          console.log('succès', response.data);
+          // console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receiveCategoriesAction = receiveCategories(response.data);
           store.dispatch(receiveCategoriesAction);
