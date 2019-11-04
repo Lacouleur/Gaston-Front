@@ -21,7 +21,8 @@ export function logInAction({ username, password }, history) {
       let token = res.data.token;
       let tokenDecoded = jwt_decode(token);
       const { user_id } = tokenDecoded;
-
+      //je recupere les informations de l'utilisateur en decryptant le token
+      console.log(tokenDecoded);
       localStorage.setItem('user', res.data.token);
       const getUserInformationsAction = getUserInformations(username, user_id);
       dispatch(getUserInformationsAction);

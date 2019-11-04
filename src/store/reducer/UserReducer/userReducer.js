@@ -1,5 +1,5 @@
 const initialState = {
-  userID:'',
+  userID: '',
   username: '',
   viewport: {
     // !Order : latitude Longitude!
@@ -11,7 +11,7 @@ const initialState = {
 
 // - Actions Types
 const UPDATE_VIEWPORT = 'UPDATE_VIEWPORT';
-const GET_USER_INFORMATIONS = 'GET_USER_INFORMATIONS';
+export const GET_USER_INFORMATIONS = 'GET_USER_INFORMATIONS';
 // - Reducer
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -19,6 +19,8 @@ const reducer = (state = initialState, action = {}) => {
       console.log(action);
       return {
         ...state,
+        userID: action.userID,
+        username: action.username,
         // viewport: action.viewport,
       };
     default:
@@ -31,9 +33,10 @@ export const updateViewport = (viewport) => ({
   type: UPDATE_VIEWPORT,
   viewport,
 });
-export const getUserInformations = (userInformations) => ({
+export const getUserInformations = (username, userID) => ({
   type: GET_USER_INFORMATIONS,
-  userInformations,
+  username,
+  userID,
 });
 
 // - Selectors

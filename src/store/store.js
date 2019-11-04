@@ -9,7 +9,7 @@ import reducer from 'src/store/reducer';
 // import logMiddleware from './logMiddleware';
 import postsListMiddleware from 'src/store/middlewares/postsListMiddleware';
 import adressSearchMiddleware from 'src/store/middlewares/adressSearchMiddleware';
-
+import userMiddleware from 'src/store/middlewares/userMiddleware';
 // == Store
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
@@ -19,6 +19,7 @@ const enhancers = composeEnhancers(
     postsListMiddleware,
     reduxThunk,
     adressSearchMiddleware,
+    userMiddleware,
     // logMiddleware,
     // secondMiddleware,
   ),
