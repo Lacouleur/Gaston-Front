@@ -16,18 +16,21 @@ export function logInAction({ username, password }, history) {
         username,
         password,
       });
+      // console.log(res.data.token);
+
       let token = res.data.token;
       let tokenDecoded = jwt_decode(token);
       const { user_id } = tokenDecoded;
-      console.log(user_id);
 
+      localStorage.setItem('user', res.data.token);
       const getUserInformationsAction = getUserInformations(username, user_id);
-      store.dispatch(getUserInformationsAction);
+      dispatch(getUserInformationsAction);
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', res.data.token);
 
       history.push('/postList');
     } catch (error) {
+      console.log(error);
       dispatch({
         type: AUTHENTICATION_ERROR,
         payload: 'Pseudo ou Password invalide',
