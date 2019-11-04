@@ -22,16 +22,19 @@ export function logInAction({ username, password }, history) {
       let token = res.data.token;
       let tokenDecoded = jwt_decode(token);
       const { user_id } = tokenDecoded;
-
+      //je recupere les informations de l'utilisateur en decryptant le token
+      // console.log(tokenDecoded);
       localStorage.setItem('user', res.data.token);
+      // console.log(getUserInformations);
       const getUserInformationsAction = getUserInformations(username, user_id);
       dispatch(getUserInformationsAction);
+      // console.log('j envois username id au state');
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', res.data.token);
 
       history.push('/postList');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       dispatch({
         type: AUTHENTICATION_ERROR,
         payload: 'Pseudo ou Password invalide',

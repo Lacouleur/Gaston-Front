@@ -19,7 +19,7 @@ class Register extends React.Component {
     const longitude = { lng: parseFloat(lng) };
     const allValues = { ...values, addressLabel, ...latitude, ...longitude };
     this.props.registerAction(allValues, this.props.history);
-    console.log('Value soumission:', allValues);
+    // console.log('Value soumission:', allValues);
   };
   /* SOUCIS : Le mlessage d'erreur est aussi déclenché par les erreurs dans le champ login ... même state : state.auth
   // errorMessage() {

@@ -11,42 +11,46 @@ import {
   stopLoad,
 } from 'src/store/reducer/PostsListReducer/postsListReducer';
 
-// token : 63535622ff913a1c37312859b1be50666de3008e
-/*
-X 1 - On envoi la requete "SEARCH_REPOS" depuis le reducer InputSearch
-X 2 - On fait une requête Axios dans le middleware
-X 3 - On récupère la réponse d'axios dans le reducer results.js 
-X  4- l'action getReposFromAxios définit un state
-5- On recupère ce state dans le container de Results.js
-6- on prend la props, et on l'utilise dans le component Results.js
-7 - On envoi les Repo en OwnProps à Repo.js (et on map pour affiche)
-
-
-*/
-
+import { UPDATE_VIEWPORT } from 'src/store/reducer/PostsListReducer/postsListReducer';
 const postsListMiddleware = (store) => (next) => (action) => {
+  const JWTToken = localStorage.user;
+  let userState = store.getState();
+  console.log(userState.user);
+  // console.log(userState.user);
+  const { viewport } = userState.user;
   switch (action.type) {
     case FETCH_POSTS:
+      console.log('JE RECOIS LES POSTES §');
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
-      axios
-        .get(
-          UrlDev,
-          //UrlPost,
-          { crossdomain: true },
-          {
-            headers: {
-              'Access-Control-Allow-Origin': '*',
-            },
-          },
-        )
+      axios({
+        method: 'POST',
+        url:
+          'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/map',
+        headers: { Authorization: `Bearer ${JWTToken}` },
+        data: {
+          zoom: viewport.zoom,
+          lat: viewport.latitude,
+          lng: viewport.longitude,
+        },
+      })
+        // .post(
+        //   'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/map',
+        //   { headers: { Authorization: `Bearer ${JWTToken}` } },
+        //   {
+        // zoom: viewport.zoom,
+        // lat: viewport.latitude,
+        // lng: viewport.longitude,
+        //   },
+        // )
         .then((response) => {
-          console.log('succès', response.data);
+          console.log('je suis la réponse ZEN', response);
+          // console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receivePostsAction = receivePosts(response.data);
           store.dispatch(receivePostsAction);
         })
         .catch((error) => {
-          console.error(error);
+          console.log(error);
         })
         .finally(() => {
           // dans tous les cas j'arrête de considérer qu'on charge

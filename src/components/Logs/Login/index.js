@@ -12,7 +12,7 @@ import './login.scss';
 class Login extends React.Component {
   submit = (values) => {
     this.props.logInAction(values, this.props.history);
-    console.log(values);
+    // console.log(values);
   }
   errorMessage() {
     if (this.props.errorMessage) {
