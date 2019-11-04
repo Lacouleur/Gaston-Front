@@ -3,15 +3,17 @@ const initialState = {
   username: '',
   viewport: {
     // !Order : latitude Longitude!
-    latitude: 45.4211,
-    longitude: -75.6903,
-    zoom: 10,
+    latitude: 42.703004,
+    longitude: 9.449623,
+    zoom: 15,
   },
 };
 
 // - Actions Types
 const UPDATE_VIEWPORT = 'UPDATE_VIEWPORT';
 export const GET_USER_INFORMATIONS = 'GET_USER_INFORMATIONS';
+export const GET_USER_ADRESS_DETAILS = 'GET_USER_ADRESS_DETAILS';
+export const GET_USER_GEOGRAPHICAL_DETAILS = 'GET_USER_GEOGRAPHICAL_DETAILS';
 // - Reducer
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -22,6 +24,23 @@ const reducer = (state = initialState, action = {}) => {
         userID: action.userID,
         username: action.username,
         // viewport: action.viewport,
+      };
+    case GET_USER_GEOGRAPHICAL_DETAILS:
+      console.log(action);
+      return {
+        ...state,
+        viewport: {
+          latitude: action.latitude,
+          longitude: action.longitude,
+          zoom: 15,
+        },
+        // viewport: action.viewport,
+      };
+    case UPDATE_VIEWPORT:
+      // console.log(action);
+      return {
+        ...state,
+        viewport: action.viewport,
       };
     default:
       return state;
@@ -37,6 +56,11 @@ export const getUserInformations = (username, userID) => ({
   type: GET_USER_INFORMATIONS,
   username,
   userID,
+});
+export const getGeographicalInformations = (latitude, longitude) => ({
+  type: GET_USER_GEOGRAPHICAL_DETAILS,
+  latitude,
+  longitude,
 });
 
 // - Selectors

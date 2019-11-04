@@ -3,21 +3,31 @@ import axios from 'axios';
 import {
   GET_USER_INFORMATIONS,
   getUserInformations,
+  getGeographicalInformations,
 } from 'src/store/reducer/UserReducer/userReducer';
 
 const postsListMiddleware = (store) => (next) => (action) => {
   const JWTToken = localStorage.user;
-  console.log('je suis le token', JWTToken);
   switch (action.type) {
     case GET_USER_INFORMATIONS:
-      console.log('je suis le middleWare', action);
+      const { username, userID } = action;
       axios
         .get(
-          `//alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/user/${action.userID}`,
+          `//alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/user/${userID}`,
           { headers: { Authorization: `Bearer ${JWTToken}` } },
         )
         .then((res) => {
           console.log('CA MARCHHHHHHHHHHHHHE!!!:', res.data);
+          const getUserInformationsAction = getUserInformations(
+            username,
+            userID,
+          );
+          const { lat, lng } = res.data;
+          const getGeographicalInformationsAction = getGeographicalInformations(
+            lat,
+            lng,
+          );
+          store.dispatch(getGeographicalInformationsAction);
         })
         .catch((error) =>
           console.log('CA MARCHHHHHHHHHHHHHEPASSSSSSSSSSS!!!:', error),
