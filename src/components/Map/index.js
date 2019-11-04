@@ -37,7 +37,6 @@ const Map = ({
   const [windowHeight, setWindowHeight] = useState(0);
   const [navbarHeight, setNavbarHeight] = useState(0);
   const [contentContainerWidth, setContentContainerWidth] = useState(0);
-
   const [mapLoading, setMapLoading] = useState(true);
 
   //calculer la largeur de la carte en fonction de la taille de l'ecran

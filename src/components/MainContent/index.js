@@ -23,8 +23,26 @@ import noRequireAuth from 'src/security/noRequireAuth';
 
 // == Composant
 class MainContent extends React.Component {
+  state = {
+    isMobile: false,
+  };
+
+  handleWindowResize = () => {
+    this.setState({ isMobile: document.documentElement.clientWidth < 480 });
+  };
+
+  componentDidMount() {
+    this.setState({ isMobile: document.documentElement.clientWidth < 480 });
+    window.addEventListener('resize', this.handleWindowResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowResize);
+  }
   render() {
     const user = localStorage.getItem('user');
+    const { isMobile } = this.state;
+    console.log(isMobile);
     //DEBUG
     // console.log("requireAuth ===> ", requireAuth);
     // console.log("noRequireAuth ===> ", noRequireAuth);
@@ -62,9 +80,11 @@ class MainContent extends React.Component {
             </Route>
           </Switch>
         </section>
-        <div className="mapContainer">
-          <Map />
-        </div>
+        {!isMobile && (
+          <div className="mapContainer">
+            <Map />
+          </div>
+        )}
       </main>
     );
   }
