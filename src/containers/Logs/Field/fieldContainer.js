@@ -9,7 +9,7 @@ import { handleInput } from 'src/store/reducer/LogsReducer/fieldReducer';
 
 /* === State (données) === */
 const mapStateToProps = (state, ownProps) => {
-  console.log("Input state =", state);
+  // console.log("Input state =", state);
   return {
   fieldState: state.field
 
