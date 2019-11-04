@@ -6929,6 +6929,11 @@ react-dom@^16.8.6:
     prop-types "^15.6.2"
     scheduler "^0.16.2"
 
+react-image-upload@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-image-upload/-/react-image-upload-0.0.1.tgz#691040bee33a865a06f379c9da79ea617209e9d0"
+  integrity sha1-aRBAvuM6hloG83nJ2nnqYXIJ6dA=
+
 react-is@^16.6.0:
   version "16.11.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.11.0.tgz#b85dfecd48ad1ce469ff558a882ca8e8313928fa"

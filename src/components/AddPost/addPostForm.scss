@@ -69,6 +69,7 @@
             font-size: 0.8em;
             padding-top : 0.2em;
             margin-bottom : 0.5em;
+
         }
     
         &-title {
@@ -101,8 +102,8 @@
         &-description {
             &--don {
                 @extend .field ;
-                border-color: $cat-don-color;
                 width : 100%;
+                border-color: $cat-don-color;
                 height : 30vh;
             }
 
