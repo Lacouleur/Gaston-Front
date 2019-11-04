@@ -16,8 +16,9 @@ b {
         text-align: center;
         height: 2.5em;
         margin-bottom: 3%;
-            @extend .button--inscription ;
-            cursor: pointer;
+        @extend .field ;
+        border-color: $cat-event-color;
+        cursor: pointer;
 
     }
 } 

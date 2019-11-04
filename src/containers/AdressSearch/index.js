@@ -13,7 +13,7 @@ import {
   fetchQuery,
 } from 'src/store/reducer/AdressSearchReducer/AdressSearchReducer';
 /* === State (données) === */
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     loading: state.adressSearch.isLoading,
     queryInput: state.adressSearch.queryInput,

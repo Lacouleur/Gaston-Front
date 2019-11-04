@@ -8,6 +8,10 @@ import {
   REGISTRED,
   NOT_REGISTRED,
 } from 'src/store/middlewares/registerMiddleware';
+import {
+  ADD_POST,
+  ADDPOST_ERROR,
+} from 'src/store/middlewares/addPostMiddleware';
 
 export default function(state = {}, action) {
   switch (action.type) {
@@ -26,6 +30,14 @@ export default function(state = {}, action) {
       return { ...state, authenticated: false };
     case REGISTER_ERROR:
       return { ...state, error: action.payload };
+
+    //ADDPOST
+    case ADD_POST :
+        return {...state, validation: "Nouveau post ajouté"};
+    case ADDPOST_ERROR:
+        return { ...state, error: action.payloadAddPost};
   }
+
+
   return state;
 }

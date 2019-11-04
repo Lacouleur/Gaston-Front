@@ -6,13 +6,14 @@ export const AUTHENTICATED = 'authenticated_user';
 export const UNAUTHENTICATED = 'unauthenticated_user';
 export const AUTHENTICATION_ERROR = 'authentication_error';
 
-const URL =
-  'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api';
+import { UrlDev, UrlProd } from "src/store/middlewares/connect_data.js";
+
+
 
 export function logInAction({ username, password }, history) {
   return async (dispatch) => {
     try {
-      const res = await axios.post(`${URL}/login_check`, {
+      const res = await axios.post(`${UrlDev}/api/login_check`, {
         username,
         password,
       });

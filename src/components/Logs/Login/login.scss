@@ -14,8 +14,8 @@ b {
             width : 70%;
             text-align: center;
             height: 2.5em;
-            margin-bottom: 3%;
-                @extend .button--add ;
+            margin-bottom: 2em;
+                @extend .field ;
                 cursor: pointer;
     
         }

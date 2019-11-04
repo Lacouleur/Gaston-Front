@@ -62,7 +62,7 @@ class Register extends React.Component {
               className="inscription-form-input"
             />
           ))}
-          <AdressSearch />
+          <AdressSearch css={"inscription-form-input"} />
           <button className="inscription-form-submit" type="submit">
             S'inscrire
           </button>

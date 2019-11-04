@@ -1,31 +1,19 @@
 @import 'src/styles/vars'; 
 
-.field {
+.fields {
        
         &-input {
-
-            &-incription {
-                width : 80%;
-                height : 3em; 
-                margin : 3% auto 3% auto;
-                @extend .button--inscription;
-            }
-
-            &-forgot {
-                width : 80%;
-                height : 3em; 
-                margin : 3% auto 3% auto;
-                @extend .button--forgot;
-            }
-
-            &-login {
-                width : 80%;
-                height : 3em; 
-                margin : 3% auto 3% auto;
-                @extend .button--connexion;
+            margin : auto;
+            width : 70%;
+            text-align: center;
+            height: 2.5em;
+            margin-bottom: 3%;
+            margin-top:2em;
+            @extend .field ;
+            border-color: $cat-treasure-color;
+            cursor: pointer;
 
             }
-        }
-
+    
 
 } 
