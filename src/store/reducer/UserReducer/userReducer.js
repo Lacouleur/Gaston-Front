@@ -31,11 +31,11 @@ export const updateViewport = (viewport) => ({
   type: UPDATE_VIEWPORT,
   viewport,
 });
-
 export const getUserInformations = (userInformations) => ({
   type: GET_USER_INFORMATIONS,
   userInformations,
 });
+
 // - Selectors
 
 // - Export
