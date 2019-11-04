@@ -25,7 +25,6 @@ const Forgot = () => {
               name="email-forgot"
               placeholder="Courriel"
               type="email"
-              style="forgot"
             />
 
             <NavLink exact to="/sign/up">
@@ -34,7 +33,7 @@ const Forgot = () => {
             
           </form>
           <NavLink exact to="/sign/in" >
-            <button className="forgot-retour" type="button">retour</button> 
+            <button className="forgot-retour" type="button">Retour</button> 
           </NavLink>
           
       </div>

@@ -34,9 +34,9 @@ class Login extends React.Component {
         />
         <h2 className="login-subTitle"> Connexion </h2>
 
-        <p className="login-text">
+        {/* <p className="login-text">
           Renseignez votre email et votre mot de passe pour vous connecter
-      </p>
+      </p> */}
       <span>{this.errorMessage()}</span>
         <form className="login-form" onSubmit={handleSubmit(this.submit)/* handleSubmit comming from Redux-Form */} >
           <Field

@@ -2,11 +2,16 @@ import React from 'react';
 
 import Suggestions from 'src/components/AdressSearch/Suggestions';
 import './adressSearch.scss';
+import 'src/components/AddPost/addPostForm.scss';
+import 'src/components/Logs/Inscription/register.scss';
 import { Search, Grid, Header, Segment, Label } from 'semantic-ui-react';
 
 class SearchAdress extends React.Component {
+
+
+
   render() {
-    const { queryInput, loading, results, isSelected } = this.props;
+    const { queryInput, loading, results, isSelected, css } = this.props;
     // console.log('je suis le queryInput', queryInput);
     const handleInputChange = (event) => {
       const {
@@ -34,9 +39,9 @@ class SearchAdress extends React.Component {
     // console.log('selectionner ou pas ?', isSelected);
     return (
       <div className="adress-search">
-        <label>Adresse Pour vous Geolocaliser</label>
+        <label>Adresse pour Geolocaliser</label>
         <input
-          className="adress-search-input"
+          className={css}
           name="adressSearch"
           value={queryInput}
           data-placeholder=" "

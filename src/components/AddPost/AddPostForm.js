@@ -67,7 +67,7 @@ class AddPostForm extends React.Component {
                         className={`addPostForm-form-description--${stylecss}`}
                     />
 
-                    <AdressSearch />
+                    <AdressSearch  css={`addPostForm-form-adress--${stylecss}`} />
 
                     {/* 
                 <p className="addPostForm-form-desc">Ajouter une image</p>
@@ -81,11 +81,11 @@ class AddPostForm extends React.Component {
                     /> */}
 
 
-                    <button className="addPostForm-form-submit" type="submit">Publier</button>
+                    <button className={`addPostForm-form-submit--${stylecss}`}  type="submit">Publier</button>
                 </form>
-                <NavLink to="/addPost" key="back" className="addPost-form-retour">
-                    Retour
-            </NavLink>
+                <NavLink to="/addPost" key="back" >
+                    <p className="addPostForm-form-retour" >Retour</p>
+                </NavLink>
             </div>
         )
     };

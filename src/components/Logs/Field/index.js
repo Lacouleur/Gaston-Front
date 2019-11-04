@@ -16,10 +16,10 @@ const Field = ({
   changeHandler
 }) => {
 
-  const className = `field-input-${style}`
+  const className = `fields-input`
 
     return (
-        <div className="field">
+        <div className="fields">
         <input
             className= {className}
             name={name}
