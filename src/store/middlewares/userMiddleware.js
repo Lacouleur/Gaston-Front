@@ -2,8 +2,8 @@ import axios from 'axios';
 // Import Reducer
 import {
   GET_USER_INFORMATIONS,
-  getUserInformations,
   getGeographicalInformations,
+  saveUserInformations,
 } from 'src/store/reducer/UserReducer/userReducer';
 
 const postsListMiddleware = (store) => (next) => (action) => {
@@ -17,20 +17,21 @@ const postsListMiddleware = (store) => (next) => (action) => {
           { headers: { Authorization: `Bearer ${JWTToken}` } },
         )
         .then((res) => {
-          console.log('CA MARCHHHHHHHHHHHHHE!!!:', res.data);
-          const getUserInformationsAction = getUserInformations(
-            username,
-            userID,
-          );
+          // console.log('CA MARCHHHHHHHHHHHHHE!!!:', res.data);
           const { lat, lng } = res.data;
           const getGeographicalInformationsAction = getGeographicalInformations(
             lat,
             lng,
           );
           store.dispatch(getGeographicalInformationsAction);
+          const saveUserInformationsAction = saveUserInformations(
+            username,
+            userID,
+          );
+          store.dispatch(saveUserInformationsAction);
         })
         .catch((error) =>
-          console.log('CA MARCHHHHHHHHHHHHHEPASSSSSSSSSSS!!!:', error),
+         console.log('CA MARCHHHHHHHHHHHHHEPASSSSSSSSSSS!!!:', error),
         );
       break;
     default:

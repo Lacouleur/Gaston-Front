@@ -42,7 +42,7 @@ class MainContent extends React.Component {
   render() {
     const user = localStorage.getItem('user');
     const { isMobile } = this.state;
-    console.log(isMobile);
+    //console.log(isMobile);
     //DEBUG
     // console.log("requireAuth ===> ", requireAuth);
     // console.log("noRequireAuth ===> ", noRequireAuth);

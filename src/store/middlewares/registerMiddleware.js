@@ -18,9 +18,9 @@ const URL =
 //   }
 
 export function registerAction(values) {
-  console.log('registerMiddleware is working');
+  // console.log('registerMiddleware is working');
   //   console.log('Here is a state Sir :', adresse{adresse}, ...values);
-  console.log('History, second argument of registerAction :', history);
+  // console.log('History, second argument of registerAction :', history);
   // console.log("TOKEN ?", res.data.token)
   return async (dispatch) => {
     //https://github.com/O-clock-Universe/react-e17-challenge-github-login-Lacouleur-v2-/blob/master/src/store/middlewares/ajaxMiddleware.js

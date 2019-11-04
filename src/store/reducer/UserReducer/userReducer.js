@@ -12,13 +12,14 @@ const initialState = {
 // - Actions Types
 const UPDATE_VIEWPORT = 'UPDATE_VIEWPORT';
 export const GET_USER_INFORMATIONS = 'GET_USER_INFORMATIONS';
+export const SAVE_USER_INFORMATIONS = 'SAVE_USER_INFORMATIONS';
 export const GET_USER_ADRESS_DETAILS = 'GET_USER_ADRESS_DETAILS';
 export const GET_USER_GEOGRAPHICAL_DETAILS = 'GET_USER_GEOGRAPHICAL_DETAILS';
 // - Reducer
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case GET_USER_INFORMATIONS:
-      console.log(action);
+    case SAVE_USER_INFORMATIONS:
+      // console.log('je passe ca au state', action);
       return {
         ...state,
         userID: action.userID,
@@ -26,7 +27,7 @@ const reducer = (state = initialState, action = {}) => {
         // viewport: action.viewport,
       };
     case GET_USER_GEOGRAPHICAL_DETAILS:
-      console.log(action);
+      // console.log(action);
       return {
         ...state,
         viewport: {
@@ -54,6 +55,11 @@ export const updateViewport = (viewport) => ({
 });
 export const getUserInformations = (username, userID) => ({
   type: GET_USER_INFORMATIONS,
+  username,
+  userID,
+});
+export const saveUserInformations = (username, userID) => ({
+  type: SAVE_USER_INFORMATIONS,
   username,
   userID,
 });

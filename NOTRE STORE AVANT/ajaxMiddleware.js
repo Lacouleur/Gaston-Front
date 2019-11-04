@@ -17,7 +17,7 @@ const ajaxMiddleware = (store) => (next) => (action) => {
           },
         )
         .then((response) => {
-          console.log('succès', response.data);
+          //console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receivePostsAction = receivePosts(response.data);
           store.dispatch(receivePostsAction);
@@ -47,7 +47,7 @@ const ajaxMiddleware = (store) => (next) => (action) => {
           },
         )
         .then((response) => {
-          console.log('succès', response.data);
+          //console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receiveUsersAction = receiveUsers(response.data);
           store.dispatch(receiveUsersAction);
@@ -73,7 +73,7 @@ const ajaxMiddleware = (store) => (next) => (action) => {
           },
         )
         .then((response) => {
-          console.log('succès', response.data);
+          //console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receiveCategoriesAction = receiveCategories(response.data);
           store.dispatch(receiveCategoriesAction);
