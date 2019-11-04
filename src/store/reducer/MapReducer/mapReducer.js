@@ -29,10 +29,10 @@ const reducer = (state = initialState, action = {}) => {
 };
 
 // - Actions Creators
-export const updateViewport = (viewport) => ({
-  type: UPDATE_VIEWPORT,
-  viewport,
-});
+// export const updateViewport = (viewport) => ({
+//   type: UPDATE_VIEWPORT,
+//   viewport,
+// });
 // - Selectors
 
 // - Export
