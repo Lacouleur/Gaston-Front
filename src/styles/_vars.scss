@@ -99,10 +99,6 @@ body::-webkit-scrollbar {
   display: block;
   margin-top: $boxMargin;
   margin-bottom: $boxMargin;
-  text-transform: capitalize;
-  &:first-letter {
-    text-transform: uppercase !important;
-  }
   &:hover {
     opacity: 0.8;
   }
