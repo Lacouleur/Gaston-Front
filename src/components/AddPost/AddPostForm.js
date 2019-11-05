@@ -14,27 +14,51 @@ import './addPostForm.scss';
 class AddPostForm extends React.Component {
   submit = (values) => {
     const { addressLabel, lat, lng } = this.props;
-
+    const { category } = this.props.location.infos;
     const latitude = { lat: parseFloat(lat) };
     const longitude = { lng: parseFloat(lng) };
-    const allValues = { ...values, addressLabel, ...latitude, ...longitude };
-    this.props.addPostAction(allValues, this.props.history);
-    console.log('Value soumission:', allValues);
+    const allValues = {
+      ...values,
+      category,
+      addressLabel,
+      ...latitude,
+      ...longitude,
+    };
+
+    this.convertToFormData(allValues);
+
+    // this.props.addPostAction(allValues, this.props.history);
+    // // console.log('Value soumission:', allValues);
+  };
+
+  convertToFormData = (fields) => {
+    if (fields) {
+      const form_data = new FormData();
+
+      for (var key in fields) {
+        if (key === 'file') {
+          form_data.append(key, fields[key][0]);
+        } else {
+          form_data.append(key, fields[key]);
+        }
+      }
+      this.props.addPostAction(form_data, this.props.history);
+    }
   };
 
   render() {
-  // const stylecss = 'don';
-  const userName = 'Raton Généreux';
-  const { handleSubmit } = this.props;
-  console.log("CATEGORY", this.props.location.infos);
+    // const stylecss = 'don';
+    const userName = 'Raton Généreux';
+    const { handleSubmit } = this.props;
+    // console.log('CATEGORY', this.props.location.infos);
 
-  const {stylecss, category, catNum} = this.props.location.infos;
-  // console.log ("STYLECSS", stylecss);
+    const { stylecss, category, catNum } = this.props.location.infos;
+    // console.log ("STYLECSS", stylecss);
 
     return (
       <div className="addPostForm">
         <div className={`addPostForm-cat--${stylecss}`}>{category}</div>
-        <div className="addPostForm-user">     
+        <div className="addPostForm-user">
           <img
             src="/public/petit-raton-laveur.jpg"
             alt="user avatar"
@@ -63,8 +87,8 @@ class AddPostForm extends React.Component {
 
           <p className="addPostForm-form-desc">description</p>
           <Field
-            key="descAddPost"
-            name="descAddPost"
+            key="description"
+            name="description"
             component="textarea"
             placeholder="Description de l'annonce"
             type="text"
