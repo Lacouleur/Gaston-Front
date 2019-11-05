@@ -23,11 +23,15 @@ class AddPostForm extends React.Component {
 
 
   submit = (values) => {
-    const { addressLabel, lat, lng } = this.props;
+    const { addressLabel, imageForm, lat, lng } = this.props;
+
+    const { file: image } = imageForm.values.imageToUpload;
+    console.log('what the fuck', image);
     const { category } = this.props.location.infos;
     const latitude = { lat: parseFloat(lat) };
     const longitude = { lng: parseFloat(lng) };
     const allValues = {
+      image,
       ...values,
       category,
       addressLabel,
@@ -109,7 +113,7 @@ class AddPostForm extends React.Component {
 
           <AdressSearch css={`addPostForm-form-adress--${stylecss}`} />
           <UploadForm />
-          
+
 
 
           <button
@@ -119,7 +123,7 @@ class AddPostForm extends React.Component {
             Publier
           </button>
         </form>
-        
+
         <NavLink to="/addPost" key="back">
           <p className="addPostForm-form-retour">Retour</p>
         </NavLink>
@@ -133,6 +137,7 @@ const mapStateToProps = (state, ownProps) => {
     addressLabel: state.adressSearch.queryInput,
     lat: state.adressSearch.lat,
     lng: state.adressSearch.lon,
+    imageForm: state.form.UploadImageForm,
   };
 };
 
@@ -168,4 +173,5 @@ AddPostForm.propTypes = {
 
 AddPostForm.defaultProps = {
   stylecss: "don",
+  imageForm: "",
 };

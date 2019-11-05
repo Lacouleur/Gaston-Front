@@ -7,7 +7,7 @@ export const ADDPOST_ERROR = 'addpost_error';
 import { UrlDev, UrlProd } from 'src/store/middlewares/connect_data.js';
 
 export function addPostAction(values) {
-  console.log('testttt', values);
+  console.log('testttt TOOTOT', values);
   // var bodyFormData = new FormData();
   // bodyFormData.append('category', values.category);
   // const catTest =
