@@ -15,12 +15,12 @@ import { UPDATE_VIEWPORT } from 'src/store/reducer/PostsListReducer/postsListRed
 const postsListMiddleware = (store) => (next) => (action) => {
   const JWTToken = localStorage.user;
   let userState = store.getState();
-  console.log(userState.user);
+  // console.log(userState.user);
   // console.log(userState.user);
   const { viewport } = userState.user;
   switch (action.type) {
     case FETCH_POSTS:
-      console.log('JE RECOIS LES POSTES §');
+      // console.log('JE RECOIS LES POSTES §');
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
       axios({
         method: 'POST',
@@ -43,7 +43,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
         //   },
         // )
         .then((response) => {
-          console.log('je suis la réponse ZEN', response);
+          // console.log('je suis la réponse ZEN', response);
           // console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receivePostsAction = receivePosts(response.data);
@@ -71,7 +71,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
           },
         )
         .then((response) => {
-          console.log('succès', response.data);
+          // console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receiveCategoriesAction = receiveCategories(response.data);
           store.dispatch(receiveCategoriesAction);

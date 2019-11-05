@@ -14,6 +14,7 @@ import './addPostForm.scss';
 class AddPostForm extends React.Component {
   submit = (values) => {
     const { addressLabel, lat, lng } = this.props;
+
     const latitude = { lat: parseFloat(lat) };
     const longitude = { lng: parseFloat(lng) };
     const allValues = { ...values, addressLabel, ...latitude, ...longitude };
@@ -22,13 +23,18 @@ class AddPostForm extends React.Component {
   };
 
   render() {
-    const stylecss = 'don';
-    const userName = 'Raton Généreux';
-    const { handleSubmit } = this.props;
+  // const stylecss = 'don';
+  const userName = 'Raton Généreux';
+  const { handleSubmit } = this.props;
+  console.log("CATEGORY", this.props.location.infos);
+
+  const {stylecss, category, catNum} = this.props.location.infos;
+  // console.log ("STYLECSS", stylecss);
+
     return (
       <div className="addPostForm">
-        <div className="addPostForm-cat">Don</div>
-        <div className="addPostForm-user">
+        <div className={`addPostForm-cat--${stylecss}`}>{category}</div>
+        <div className="addPostForm-user">     
           <img
             src="/public/petit-raton-laveur.jpg"
             alt="user avatar"
@@ -93,7 +99,7 @@ class AddPostForm extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     addressLabel: state.adressSearch.queryInput,
     lat: state.adressSearch.lat,
