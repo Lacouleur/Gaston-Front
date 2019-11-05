@@ -4,7 +4,7 @@ import { UrlDev, UrlProd } from "src/store/middlewares/connect_data.js";
 
 // Import Reducer
 import {
-  FETCH_POSTS,
+  FETCH_POSTS, 
   FETCH_USERS,
   FETCH_CATEGORIES,
   receivePosts,
