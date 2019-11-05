@@ -5,6 +5,13 @@ import { NavLink } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { addPostAction } from 'src/store/middlewares/addPostMiddleware';
 import { connect } from 'react-redux';
+import { Receiver } from 'react-file-uploader';
+
+//FOR UPLOAD IMAGES
+import UploadForm from "src/containers/UploadForm";
+import "uikit/dist/css/uikit.min.css";
+
+
 // == Import : local
 import AdressSearch from 'src/containers/AdressSearch';
 import './addPostForm.scss';
@@ -12,6 +19,9 @@ import './addPostForm.scss';
 //hum ?
 // == Composant
 class AddPostForm extends React.Component {
+
+
+
   submit = (values) => {
     const { addressLabel, lat, lng } = this.props;
 
@@ -28,7 +38,9 @@ class AddPostForm extends React.Component {
   const { handleSubmit } = this.props;
   console.log("CATEGORY", this.props.location.infos);
 
-  const {stylecss, category, catNum} = this.props.location.infos;
+  // const {stylecss, category, catNum} = this.props.location.infos;
+  const stylecss = 'don';
+  const category = 'don';
   // console.log ("STYLECSS", stylecss);
 
     return (
@@ -72,17 +84,9 @@ class AddPostForm extends React.Component {
           />
 
           <AdressSearch css={`addPostForm-form-adress--${stylecss}`} />
+          <UploadForm />
+          
 
-          {/* 
-                <p className="addPostForm-form-desc">Ajouter une image</p>
-                <Field
-                    key="titleAddPost"
-                    name="titleAddPost"
-                    component="input"
-                    placeholder="Titre de l'annonce" 
-                    type="text"
-                    className={`addPostForm-form-title--${stylecss}`}
-                    /> */}
 
           <button
             className={`addPostForm-form-submit--${stylecss}`}
@@ -91,6 +95,7 @@ class AddPostForm extends React.Component {
             Publier
           </button>
         </form>
+        
         <NavLink to="/addPost" key="back">
           <p className="addPostForm-form-retour">Retour</p>
         </NavLink>
@@ -133,4 +138,10 @@ export default connect(
 //   )(reduxFormRegister);
 //PropTypes
 
-AddPostForm.propTypes = {};
+AddPostForm.propTypes = {
+
+};
+
+AddPostForm.defaultProps = {
+  stylecss: "don",
+};
