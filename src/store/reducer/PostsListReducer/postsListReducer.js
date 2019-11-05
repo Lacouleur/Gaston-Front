@@ -1,13 +1,13 @@
 // == Initial State
 // import de test pour recherche SearchCity
 // import SearchData from '../data/searchcity'
-import postsLists from 'src/data/tresorsBack';
+// import postsListsDetails from 'src/data/tresorsBack';
 import postsCategories from 'src/data/postsCategories';
 import postsUsers from 'src/data/postsUsers';
 
 const initialState = {
   loading: true,
-  postsLists,
+  postsListsDetails: [],
   postsCategories,
   postsUsers,
   posts: [],
@@ -18,11 +18,10 @@ export const FETCH_POSTS = 'FETCH_POST';
 const RECEIVE_POSTS = 'RECEIVE_POSTS';
 const STOP_LOAD = 'STOP_LOAD';
 export const FETCH_USERS = 'FETCH_USERS';
-// const STOP_FETCH_USERS ='STOP_FETCH_USERS';
-// const RECEIVE_FETCH_USERS ='RECEIVE_FETCH_USERS';
+export const STORE_POSTS_DETAILS = 'STORE_POSTS_DETAILS';
+export const FETCH_POSTS_DETAILS = 'FETCH_POSTS_DETAILS';
+
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
-// const STOP_FETCH_CATEGORIES ='STOP_FETCH_CATEGORIES';
-// const RECEIVE_FETCH_CATEGORIES ='RECEIVE_FETCH_CATEGORIES';
 
 // - Reducer
 const reducer = (state = initialState, action = {}) => {
@@ -37,6 +36,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         posts: action.posts,
+        loading: false,
+      };
+    case STORE_POSTS_DETAILS:
+      // console.log(action);
+      return {
+        ...state,
+        postsListsDetails: [...state.postsListsDetails, action.postDetails],
         loading: false,
       };
     case STOP_LOAD:
@@ -60,6 +66,14 @@ export const stopLoad = () => ({
 export const receivePosts = (posts) => ({
   type: RECEIVE_POSTS,
   posts,
+});
+
+export const fetchPostsDetails = () => ({
+  type: FETCH_POSTS_DETAILS,
+});
+export const storePostsDetails = (postDetails) => ({
+  type: STORE_POSTS_DETAILS,
+  postDetails,
 });
 // - Selectors
 

@@ -10,7 +10,7 @@ import PostsCard from './PostsCard';
 
 // == Composant
 
-// const PostsList = ({ postsLists, loading }) => {
+// const PostsList = ({ postsListsDetails, loading }) => {
 class PostsList extends React.Component {
   componentDidMount() {
     // console.log("je suis ici");
@@ -18,7 +18,7 @@ class PostsList extends React.Component {
     fetchPosts();
   }
   render() {
-    const { loading,postsLists } = this.props;
+    const { loading,postsListsDetails } = this.props;
     return (
       <>
         <PostsFilters />
@@ -31,7 +31,7 @@ class PostsList extends React.Component {
         )}
         {!loading && (
           <article className="posts-container">
-            {postsLists.map((post) => (
+            {postsListsDetails.map((post) => (
               <PostsCard postdetails={post} key={post.id} />
             ))}
           </article>
@@ -42,7 +42,7 @@ class PostsList extends React.Component {
 }
 
 PostsList.propTypes = {
-  postsLists: PropTypes.arrayOf(
+  postsListsDetails: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
     }),

@@ -15,7 +15,7 @@ import {fetchPosts,stopLoadPosts,receivePosts } from 'src/store/reducer/PostsLis
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  postsLists: state.postsList.postsLists,
+  postsListsDetails: state.postsList.postsListsDetails,
   loading: state.postsList.loading,
 });
 
