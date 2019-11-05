@@ -16,16 +16,60 @@
     transform: translate(-50%, -50%);
 
     &-cat {
-        @extend .button ; 
-        text-transform: uppercase;
-        font-weight: $medium;
-        font-size : 1em; 
-        width : 50%;
-        min-width : 90px; 
-        border-color : #ffdb26;
-        text-align:center;
-        align-self: center;
-        margin-bottom:1em;
+
+        &--don {
+            @extend .button ; 
+            text-transform: uppercase;
+            font-weight: $medium;
+            font-size : 1em; 
+            width : 50%;
+            min-width : 90px; 
+            border-color : $cat-don-color;
+            text-align:center;
+            align-self: center;
+            margin-bottom:1em;
+        }
+
+        &--event {
+            @extend .button ; 
+            text-transform: uppercase;
+            font-weight: $medium;
+            font-size : 1em; 
+            width : 50%;
+            min-width : 90px; 
+            border-color : $cat-event-color;
+            text-align:center;
+            align-self: center;
+            margin-bottom:1em;
+        }
+
+        &--tresor {
+            @extend .button ; 
+            text-transform: uppercase;
+            font-weight: $medium;
+            font-size : 1em; 
+            width : 50%;
+            min-width : 90px; 
+            border-color : $cat-treasure-color;
+            text-align:center;
+            align-self: center;
+            margin-bottom:1em;
+        }
+
+        &--help {
+            @extend .button ; 
+            text-transform: uppercase;
+            font-weight: $medium;
+            font-size : 1em; 
+            width : 50%;
+            min-width : 90px; 
+            border-color : $cat-help-color;
+            text-align:center;
+            align-self: center;
+            margin-bottom:1em;
+        }
+
+       
     
     }
 
