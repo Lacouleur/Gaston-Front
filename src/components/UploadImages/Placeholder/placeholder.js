@@ -1,16 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { MdCloudUpload } from "react-icons/md";
+import { IconContext } from "react-icons";
 
 const Placeholder = ({ getInputProps, getRootProps, error, touched }) => (
+  <>
+  <p className="uploader-desc">
+    Cliquez ou glisser pour ajouter une image</p> 
+    <p className="uploader-desc uploader-desc-types">(jpeg,png,gif,bmp)</p> 
+    
   <div
     {...getRootProps()}
-    className={`placeholder-preview ${error && touched ? "has-error" : ""}`}
+    className={`uploader-placeholder-preview ${error && touched ? "uploader-has-error" : ""}`}
   >
+    
     <input {...getInputProps()} />
-    <MdCloudUpload style={{ fontSize: 100, paddingTop: 85 }} />
-    <p>Click or drag image file to this area to upload.</p>
+    <IconContext.Provider value={{ className: 'uploader-icon' }}>
+      <MdCloudUpload  />
+    </IconContext.Provider>
+
   </div>
+  </>
 );
 
 Placeholder.propTypes = {

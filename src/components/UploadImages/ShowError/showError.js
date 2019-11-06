@@ -4,7 +4,7 @@ import { MdInfoOutline } from "react-icons/md";
 
 const ShowError = ({ error, touched }) =>
   touched && error ? (
-    <div className="error">
+    <div className="uploader-error">
       <MdInfoOutline
         style={{ position: "relative", top: -2, marginRight: 2 }}
       />

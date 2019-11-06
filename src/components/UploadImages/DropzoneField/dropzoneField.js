@@ -11,10 +11,10 @@ const DropZoneField = ({
   imagefile,
   meta: { error, touched }
 }) => (
-  <div className="preview-container">
+  <div className="uploader-preview-container">
     <DropZone
       accept="image/jpeg, image/png, image/gif, image/bmp"
-      className="upload-container"
+      className="uploader-upload-container"
       onDrop={file => handleOnDrop(file, onChange)}
       multiple={false}
     >
