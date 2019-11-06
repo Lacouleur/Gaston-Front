@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { UrlDev, UrlProd } from 'src/store/middlewares/connect_data.js';
-import filterPostList from 'src/Utils/postsList';
+import { filterPostList } from 'src/Utils/postsList';
 // Import Reducer
 import {
   FETCH_POSTS,
@@ -51,6 +51,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
           // console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receivePostsAction = receivePosts(response.data);
+          console.log('===> test', response.data);
           store.dispatch(receivePostsAction);
         })
         .catch((error) => {
