@@ -1,11 +1,12 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 // == Import : local
-
+import { distanceConverter } from 'src/Utils/postsList';
 // == Composant
 const PostsCard = ({ postdetails }) => {
-  // console.log(postdetails);
+  console.log(postdetails);
   const {
     title,
     description,
@@ -13,6 +14,7 @@ const PostsCard = ({ postdetails }) => {
     user,
     addressLabel,
     category,
+    distance,
   } = postdetails;
   // console.log(category);
   return (
@@ -24,7 +26,11 @@ const PostsCard = ({ postdetails }) => {
           alt={picture}
           className="posts-cards-image"
         />
-        <div className="posts-cards-adress">{addressLabel}</div>
+        <div className="posts-cards-adress">
+          <FaMapMarkerAlt />
+          {distanceConverter(distance)}
+          {addressLabel}
+        </div>
       </div>
       <div className="posts-cards-right">
         <header>
