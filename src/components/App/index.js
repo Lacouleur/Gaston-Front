@@ -4,7 +4,7 @@ import React from 'react';
 // == Import : local
 import './app.scss';
 import NavBar from 'src/components/NavBar';
-import MainContent from 'src/components/MainContent';
+import MainContent from 'src/containers/MainContent/mainContentContainer.js';
 
 // == Composant
 class App extends React.Component {

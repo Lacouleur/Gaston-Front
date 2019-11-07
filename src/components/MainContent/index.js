@@ -1,8 +1,7 @@
 // == Import : npm
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-// import { connect } from 'react-redux';
-// import store from 'src/store/store.js';
+import store from 'src/store/store.js';
 
 // == Import : local
 import './maincontent.scss';
@@ -17,6 +16,9 @@ import Forgot from 'src/components/Logs/Forgot';
 import Inscription from 'src/components/Logs/Inscription';
 import AddPost from 'src/components/AddPost';
 import Succeed from 'src/components/AddPost/Succeed.js';
+
+
+
 
 //== Securtity
 import requireAuth from 'src/security/requireAuth';
@@ -40,9 +42,31 @@ class MainContent extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowResize);
   }
+
+
+  mapViewIfLog() {
+    const authenticated = this.props.authenticated;
+    
+    if (authenticated === true ) {
+      return (
+        <div className="mapContainer">
+        <Map />
+       </div>
+      );
+    }else{
+      return (
+        <div className="mapContainer">
+      <div className="mapContainer-image"></div>
+      </div>
+    );
+    }
+  };
+
   render() {
     const user = localStorage.getItem('user');
     const { isMobile } = this.state;
+    console.log( "auth", this.props.authenticated);
+    const authenticated = this.props.authenticated;
     //console.log(isMobile);
     //DEBUG
     // console.log("requireAuth ===> ", requireAuth);
@@ -51,7 +75,7 @@ class MainContent extends React.Component {
     // if (user) {
     //   store.dispatch({ type: AUTHENTICATED });
     // }
-
+    // <Route exact path="/succeed" component={requireAuth(Succeed)}/>
     return (
       <main className="maincontainer">
         <section className="contentContainer">
@@ -64,6 +88,7 @@ class MainContent extends React.Component {
             <Route exact path="/addPost" component={requireAuth(AddPost)}/>
             <Route exact path="/addPost/form" component={requireAuth(AddPostForm)}/>
             <Route exact path="/succeed" component={requireAuth(Succeed)}/>
+
             <Route>
               <div>
                 <AdressSearch />
@@ -72,15 +97,33 @@ class MainContent extends React.Component {
             </Route>
           </Switch>
         </section>
-        {!isMobile && (
-          <div className="mapContainer">
-            <Map />
-          </div>
-        )}
+        {/* {!isMobile && ( */}
+      {authenticated &&  
+        <div className="mapContainer">
+      <Map />
+     </div>}
+     {!authenticated && 
+      <div className="mapContainer">
+      <div className="mapContainer-image"></div>
+      </div>}
+     
+        
       </main>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    authenticated : state.auth.authenticated,
+  };
+};
+
+MainContent.defaultProps = {
+  authenticated : false,
+};
+
+
 
 // == Export
 export default MainContent;
