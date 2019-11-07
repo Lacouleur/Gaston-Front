@@ -15,11 +15,10 @@ import { fetchPosts } from 'src/store/reducer/PostsListReducer/postsListReducer'
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state) => ({
-  lat: state.adressSearch.lat,
-  lon: state.adressSearch.lon,
   viewport: state.user.viewport,
   mapboxApiAccessToken: state.map.mapboxApiAccessToken,
   mapStyle: state.map.mapStyle,
+  postsListsDetails: state.postsList.postsListsDetails,
 });
 
 /* === Actions ===
@@ -36,7 +35,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
   updateViewport: (mapChange) => {
     dispatch(updateViewport(mapChange));
-
   },
 });
 

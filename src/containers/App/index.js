@@ -5,7 +5,11 @@ import { connect } from 'react-redux';
 import App from 'src/components/App';
 
 // Action Creators
-
+import {
+  fetchPosts,
+  stopLoadPosts,
+  fetchPostsDetails,
+} from 'src/store/reducer/PostsListReducer/postsListReducer';
 import { changeView } from 'src/store/reducer/AppReducer/appReducer';
 
 /* === State (données) === */
@@ -28,10 +32,10 @@ const mapDispatchToProps = (dispatch) => ({
   // // doSomething: () => {
   // //   dispatch(doSomething("Coucou"));
   // // }
-  // fetchPosts: (posts) => {
-  //   dispatch(fetchPosts(posts));
-  //   // console.log(mapChange);
-  // },
+  fetchPosts: () => {
+    dispatch(fetchPosts());
+    // console.log(mapChange);
+  },
 // });
 
 });

@@ -3,8 +3,8 @@ const initialState = {
   username: '',
   viewport: {
     // !Order : latitude Longitude!
-    latitude: 42.703004,
-    longitude: 9.449623,
+    latitude: 0,
+    longitude: 0,
     zoom: 15,
   },
 };

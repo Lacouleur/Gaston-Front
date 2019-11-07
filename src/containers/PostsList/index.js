@@ -8,7 +8,6 @@ import PostsList from 'src/components/PostsList';
 import {
   fetchPosts,
   stopLoadPosts,
-  receivePosts,
   fetchPostsDetails,
 } from 'src/store/reducer/PostsListReducer/postsListReducer';
 
@@ -19,10 +18,15 @@ import {
  *  - ownProps : les props passées au container
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
-const mapStateToProps = (state, ownProps) => ({
-  postsListsDetails: state.postsList.postsListsDetails,
-  loading: state.postsList.loading,
-});
+const mapStateToProps = (state, ownProps) => {
+  console.log('Current Store State in PostListsContainer: ', state);
+
+  return {
+    postsListsDetails: state.postsList.postsListsDetails,
+    posts:state.postsList.posts,
+    loading: state.postsList.loading,
+  };
+};
 
 /* === Actions ===
  * - mapDispatchToProps retroune un objet de props pour le composant de présentation
@@ -32,9 +36,9 @@ const mapStateToProps = (state, ownProps) => ({
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchPostsDetailsAction: () => {
-    dispatch(fetchPostsDetails());
-  },
+  // fetchPostsDetailsAction: () => {
+  //   dispatch(fetchPostsDetails());
+  // },
   fetchPostsAction: () => {
     dispatch(fetchPosts());
     // console.log(mapChange);

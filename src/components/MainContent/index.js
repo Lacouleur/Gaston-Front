@@ -16,6 +16,7 @@ import AdressSearch from 'src/components/AdressSearch';
 import Forgot from 'src/components/Logs/Forgot';
 import Inscription from 'src/components/Logs/Inscription';
 import AddPost from 'src/components/AddPost';
+import Succeed from 'src/components/AddPost/Succeed.js';
 
 //== Securtity
 import requireAuth from 'src/security/requireAuth';
@@ -60,8 +61,9 @@ class MainContent extends React.Component {
             <Route path="/sign/in" component={noRequireAuth(Logs)} />
             <Route path="/sign/up" component={noRequireAuth(Inscription)} />
             <Route path="/sign/forgot" component={noRequireAuth(Forgot)} />
-            <Route exact path path="/addPost" component={requireAuth(AddPost)}/>
-            <Route exact path path="/addPost/form" component={requireAuth(AddPostForm)}/>
+            <Route exact path="/addPost" component={requireAuth(AddPost)}/>
+            <Route exact path="/addPost/form" component={requireAuth(AddPostForm)}/>
+            <Route exact path="/succeed" component={requireAuth(Succeed)}/>
             <Route>
               <div>
                 <AdressSearch />

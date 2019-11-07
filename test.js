@@ -5,7 +5,7 @@ import ReactMapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import { PacmanLoader } from 'react-spinners';
 
 // DATA EN DUR
-// import * as parkDate from '../../data/skateboard-parks.json';
+import * as parkDate from '../../data/skateboard-parks.json';
 // CSS MAPBOX
 import 'src/styles/mapbox-gl.css';
 import './map.scss';
@@ -16,19 +16,21 @@ const Map = ({
   mapStyle,
   updateViewport,
   updateFetchPosts,
+  lat,
+  lon,
   postsListsDetails,
 }) => {
+  const latLon = { lat, lon };
+  // console.log('je suis lat lon', latLon);
+  const geolocateStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    margin: 10,
+  };
   // const store = useStore();
   //   console.log(store);
-  // //console.log(
-  //   'POST POUR LA MAP',
-  //   postsListsDetails.map(
-  //     (park) => console.log(park),
-  //     // <Marker key={park.id} latitude={park.lat} longitude={park.lng}>
-  //   ),
-  // );
-
-  // console.log('POST POUR LA MAP QUI EST UNDEFINED?', postsListsDetails);
+  console.log('POST POUR LA MAP', postsListsDetails);
   // IMPORT DES DATA EN DUR
   const [selectedPark, setSelectedPark] = useState(null);
 
@@ -101,19 +103,6 @@ const Map = ({
 
   return (
     <>
-      <div>
-        <ul>
-          {postsListsDetails.map((post) => (
-            <li key={post.id}>
-              {' '}
-              {post.id} {post.lat}
-              {post.lng}
-              {post.title}
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <ReactMapGL
         visible={!mapLoading}
         onLoad={handleLoad}
@@ -136,12 +125,48 @@ const Map = ({
       >
         {postsListsDetails.map((park) => (
           // ICI A VERIFIER PREFERER LAYER A MARKER
-          <Marker key={park.id} latitude={park.lat} longitude={park.lng}>
-            {!mapLoading && (
-              <img src="/public/DumpsterLogos.svg" alt="Dumpsters" />
-            )}
+          <Marker
+            key={park.properties.PARK_ID}
+            latitude={park.geometry.coordinates[1]}
+            longitude={park.geometry.coordinates[0]}
+          >
+            <button
+              className="marker-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedPark(park);
+              }}
+            >
+              {!mapLoading && (
+                <img src="/public/DumpsterLogos.svg" alt="Dumpsters" />
+              )}
+            </button>
           </Marker>
         ))}
+        
+        {selectedPark ? (
+          <Popup
+            latitude={selectedPark.geometry.coordinates[1]}
+            longitude={selectedPark.geometry.coordinates[0]}
+            onClose={() => {
+              setSelectedPark(null);
+            }}
+          >
+            <img className="popup--img" src="public/Images/image1.jpg" />
+            <div className="map-popup">
+              <div className="popup-content">
+                <h2>{selectedPark.properties.NAME}</h2>
+                <p>{selectedPark.properties.DESCRIPTIO}</p>
+                {/* ajouter et configurer l'image dans la vignette */}
+              </div>
+            </div>
+          </Popup>
+        ) : null}
+        <GeolocateControl
+          style={geolocateStyle}
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+        />
       </ReactMapGL>
       <div className="float_center">
         {mapLoading && <PacmanLoader color={'#123abc'} loading={mapLoading} />}
