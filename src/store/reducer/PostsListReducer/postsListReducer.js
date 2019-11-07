@@ -25,19 +25,18 @@ export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 // - Reducer
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case FETCH_POSTS:
-      return {
-        ...state,
-        loading: true,
-      };
+    // case FETCH_POSTS:
+    //   return {
+    //     ...state,
+    //   };
     case RECEIVE_POSTS:
-      // console.log(action);
       return {
         ...state,
         posts: action.posts,
-        loading: true,
+        // postsListsDetails: [...state.postsListsDetails],
       };
     case STORE_POSTS_DETAILS:
+      console.log('JE COMPLETE LES DETAILS DES POSTS');
       return {
         ...state,
         postsListsDetails: [...state.postsListsDetails, action.postDetails],

@@ -15,7 +15,6 @@ import {
 /* === State (données) === */
 const mapStateToProps = (state, ownProps) => {
   return {
-    loading: state.adressSearch.isLoading,
     queryInput: state.adressSearch.queryInput,
     results: state.adressSearch.results,
     isSelected: state.adressSearch.isSelected,

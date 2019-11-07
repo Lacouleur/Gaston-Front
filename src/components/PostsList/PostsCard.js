@@ -51,37 +51,37 @@ const PostsCard = ({ postdetails }) => {
   );
 };
 
-PostsCard.propTypes = {
-  postdetails: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    picture: PropTypes.string.isRequired,
-    addressLabel: PropTypes.string.isRequired,
-    category: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }).isRequired,
-    createdAt: PropTypes.string.isRequired,
-    lat: PropTypes.number.isRequired,
-    lng: PropTypes.number.isRequired,
-    nbLikes: PropTypes.number.isRequired,
-    // postStatus-> statut dispo/indispo
-    postStatus: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }).isRequired,
-    user: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }).isRequired,
-    // visibility-> Visible des amis ou de tout le monde (system d'amis)
-    visibility: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }).isRequired,
-    // wearCondition-> état d'usure d'un trésor (genre a renover, neuf, fonctionnel)
-    wearCondition: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }).isRequired,
-  }),
-};
+// PostsCard.propTypes = {
+//   postdetails: PropTypes.shape({
+//     id: PropTypes.number.isRequired,
+//     title: PropTypes.string.isRequired,
+//     description: PropTypes.string.isRequired,
+//     picture: PropTypes.string.isRequired,
+//     addressLabel: PropTypes.string.isRequired,
+//     category: PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//     }).isRequired,
+//     createdAt: PropTypes.string.isRequired,
+//     lat: PropTypes.number.isRequired,
+//     lng: PropTypes.number.isRequired,
+//     nbLikes: PropTypes.number.isRequired,
+//     // postStatus-> statut dispo/indispo
+//     postStatus: PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//     }).isRequired,
+//     user: PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//     }).isRequired,
+//     // visibility-> Visible des amis ou de tout le monde (system d'amis)
+//     visibility: PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//     }).isRequired,
+//     // wearCondition-> état d'usure d'un trésor (genre a renover, neuf, fonctionnel)
+//     wearCondition: PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//     }).isRequired,
+//   }),
+// };
 
 // == Export
 export default PostsCard;

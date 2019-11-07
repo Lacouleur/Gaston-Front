@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Inscription from 'src/components/Logs/Inscription';
 
 // Action Creators
-import { exampleAction } from 'src/store/reducer/LogsReducer/inscriptionReducer';
+// import { exampleAction } from 'src/store/reducer/LogsReducer/inscriptionReducer';
 
 /* === State (données) === */
 const mapStateToProps = (state, onwProps) => ({
