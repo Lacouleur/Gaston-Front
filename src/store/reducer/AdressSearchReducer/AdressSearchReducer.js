@@ -1,5 +1,4 @@
 const initialState = {
-  isLoading: false,
   queryInput: '',
   results: [],
   isSelected: false,
@@ -27,11 +26,6 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         results: action.results,
-      };
-    case STOP_LOAD:
-      return {
-        ...state,
-        isloading: false,
       };
     case SELECTED_ADRESS:
       // console.log('je suis action', action);

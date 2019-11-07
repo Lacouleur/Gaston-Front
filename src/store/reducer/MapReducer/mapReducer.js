@@ -1,14 +1,8 @@
 const initialState = {
   loading: false,
-  viewport: {
-    // !Order : latitude Longitude!
-    latitude: 36.108378,
-    longitude: -75.6903,
-    zoom: 10,
-  },
   mapboxApiAccessToken:
     'pk.eyJ1IjoiY29vbHNraW4yYiIsImEiOiJjazFtaTBwZ3IwMHdqM3ByMGs1ZW42MjB5In0.4_OP7fER3iedwRMZqfDppg',
-  mapStyle: 'mapbox://styles/coolskin2b/ck22bq57r0qhb1co3tz0yqbd3',
+  mapStyle: 'mapbox://styles/coolskin2b/ck2owomzl0ekk1cqh38czrwbn',
 };
 
 // // - Actions Types

@@ -9,9 +9,11 @@ import {
   FETCH_CATEGORIES,
   STORE_POSTS_DETAILS,
   FETCH_POSTS_DETAILS,
+  RECEIVE_POSTS,
   receivePosts,
   stopLoad,
   storePostsDetails,
+  fetchPostsDetails,
 } from 'src/store/reducer/PostsListReducer/postsListReducer';
 
 import { UPDATE_VIEWPORT } from 'src/store/reducer/PostsListReducer/postsListReducer';
@@ -23,7 +25,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
   const { posts: postsList, postsListsDetails } = storeState.postsList;
   switch (action.type) {
     case FETCH_POSTS:
-      console.log('JE RECOIS LES POSTES §');
+      // console.log('JE RECOIS LES POSTES §');
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
       // console.log("POSTLISTmiddleware(ligne29) / Case: FETCHPOST / la carte à été modifié, j'essaie de mettre à jour"),
       axios({
@@ -37,59 +39,30 @@ const postsListMiddleware = (store) => (next) => (action) => {
           lng: viewport.longitude,
         },
       })
-        // .post(
-        //   'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/map',
-        //   { headers: { Authorization: `Bearer ${JWTToken}` } },
-        //   {
-        // zoom: viewport.zoom,
-        // lat: viewport.latitude,
-        // lng: viewport.longitude,
-        //   },
-        // )
         .then((response) => {
-          console.log('je suis la réponse ZEN');
+          console.log('Reception des posts les plus proche sur La CARTE');
           console.log('succès', response.data);
-          // je veux faire en sorte d'alimenter le state avec la réponse
           const receivePostsAction = receivePosts(response.data);
-          // console.log(
-          //   'post recu depuis la position centre de la carte',
-          //   response.data,
-          // );
           store.dispatch(receivePostsAction);
         })
         .catch((error) => {
           console.log(error);
         })
         .finally(() => {
-          // dans tous les cas j'arrête de considérer qu'on charge
           const actionStopLoad = stopLoad();
           store.dispatch(actionStopLoad);
         });
+
+    // case RECEIVE_POSTS:
+    //   // console.log('JE RECOIS LES POSTES §');
+    //   // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
+    //   // console.log("POSTLISTmiddleware(ligne29) / Case: FETCHPOST / la carte à été modifié, j'essaie de mettre à jour"),
+    //   const fetchPostsDetailsAction = fetchPostsDetails();
+    //   store.dispatch(fetchPostsDetailsAction);
+
     case FETCH_POSTS_DETAILS:
-      // console.log(
-      //   'je suis la liste ID & DIstance des POST avant de prendre les details',
-      //   postsList,
-      //   'Je suis les posts dans le STORE',
-      //   postsListsDetails,
-      // );
-      // var postsList = [
-      //   { id: '269', distance: '0.11454076482501618' },
-      //   { id: '270', distance: '0.12262895737210996' },
-      //   { id: '268', distance: '2.756062287837027' },
-      // ];
-
-      // var postsListsDetails = [
-      //   { id: '269', distance: '0.11454076482501618' },
-      //   { id: '270', distance: '0.12262895737210996' },
-      // ];
-
-      // const result = filterPostList(postsListPREFA, postsListsDetailsPREFA);
-      // posts: postsList, postsListsDetails
-
-      // console.log('[PostsListMW -> l106] => case FETCH_POST_DETAIL -> TABLEAU FILTRÉ (Quel est mon lien avec FetchPost() ?)', result);
       if (
-        !postsList.hasOwnProperty('fail') &&
-        (typeof postsList !== 'undefined' && postsList.length > 0)
+        !postsList.hasOwnProperty('fail')
       ) {
         const props = ['id', 'distance'];
         var result = postsList
@@ -133,10 +106,13 @@ const postsListMiddleware = (store) => (next) => (action) => {
             })
             .finally(() => {
               // dans tous les cas j'arrête de considérer qu'on charge
+              console.log('JAI FINI DE TOUT CHARGER');
               const actionStopLoad = stopLoad();
               store.dispatch(actionStopLoad);
             });
         });
+      } else {
+        console.log('ERREUR TOO MUCH POST');
       }
       break;
     default:

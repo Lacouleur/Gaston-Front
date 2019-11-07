@@ -36,7 +36,7 @@ class AddPostForm extends React.Component {
     };
 
     this.convertToFormData(allValues);
-    this.props.history.push('/postlist');
+    this.props.history.push('/succeed');
     // this.props.addPostAction(allValues, this.props.history);
     // // console.log('Value soumission:', allValues);
   };
