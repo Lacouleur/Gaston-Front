@@ -9,6 +9,7 @@ import { PacmanLoader } from 'react-spinners';
 // CSS MAPBOX
 import 'src/styles/mapbox-gl.css';
 import './map.scss';
+import _dev_URL from 'src/Utils/_dev_URL.js';
 
 const Map = ({
   viewport,
@@ -101,19 +102,6 @@ const Map = ({
 
   return (
     <>
-      <div>
-        <ul>
-          {postsListsDetails.map((post) => (
-            <li key={post.id}>
-              {' '}
-              {post.id} {post.lat}
-              {post.lng}
-              {post.title}
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <ReactMapGL
         visible={!mapLoading}
         onLoad={handleLoad}
@@ -134,14 +122,38 @@ const Map = ({
         // }}
         onViewportChange={handleChange}
       >
-        {postsListsDetails.map((park) => (
+        {postsListsDetails.map((post) => (
           // ICI A VERIFIER PREFERER LAYER A MARKER
-          <Marker key={park.id} latitude={park.lat} longitude={park.lng}>
-            {!mapLoading && (
-              <img src="/public/DumpsterLogos.svg" alt="Dumpsters" />
-            )}
+          <Marker key={post.id} latitude={post.lat} longitude={post.lng}>
+            <button
+              className="marker-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedPark(post);
+              }}
+            >
+              <img src="/public/logo-map.svg" alt="Dumpsters" />
+            </button>
           </Marker>
         ))}
+        {selectedPark ? (
+          <Popup
+            latitude={selectedPark.lat}
+            longitude={selectedPark.lng}
+            onClose={() => {
+              setSelectedPark(null);
+            }}
+          >
+            <img className="popup--img" src={_dev_URL + selectedPark.picture} />
+            <div className="map-popup">
+              <div className="popup-content">
+                <h2>{selectedPark.title}</h2>
+                <p>{selectedPark.description}</p>
+                {/* ajouter et configurer l'image dans la vignette */}
+              </div>
+            </div>
+          </Popup>
+        ) : null}
       </ReactMapGL>
       <div className="float_center">
         {mapLoading && <PacmanLoader color={'#123abc'} loading={mapLoading} />}
