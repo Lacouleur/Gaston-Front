@@ -29,6 +29,17 @@
 
     }
 
+
+    &-button-logout {
+      background-color: #041f31;
+      color : $light-grey-text-color;
+      font-weight : $medium;
+      font-size: 0.8em!important;
+      @extend .button;
+
+    }
+
+
     &-button-postlist {
       background-color: #041f31;
       color : $light-grey-text-color;
