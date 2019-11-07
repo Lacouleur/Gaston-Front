@@ -86,8 +86,7 @@ class Navbar extends React.Component {
           to="/"
           key="logout"
           exact
-          activeClassName="navbar-button-logout"
-          className="navbar-user"
+          // className="navbar-button-logout"
         >
           <button className="navbar-button-logout" onClick={this.signOutAction()} type="button">
             Se déconnecter
