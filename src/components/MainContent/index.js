@@ -60,18 +60,8 @@ class MainContent extends React.Component {
             <Route path="/sign/in" component={noRequireAuth(Logs)} />
             <Route path="/sign/up" component={noRequireAuth(Inscription)} />
             <Route path="/sign/forgot" component={noRequireAuth(Forgot)} />
-            <Route
-              exact
-              path
-              path="/addPost"
-              component={requireAuth(AddPost)}
-            />
-            <Route
-              exact
-              path
-              path="/addPost/form"
-              component={requireAuth(AddPostForm)}
-            />
+            <Route exact path path="/addPost" component={requireAuth(AddPost)}/>
+            <Route exact path path="/addPost/form" component={requireAuth(AddPostForm)}/>
             <Route>
               <div>
                 <AdressSearch />

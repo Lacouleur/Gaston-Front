@@ -11,7 +11,6 @@ import {
   FETCH_POSTS_DETAILS,
   receivePosts,
   stopLoad,
-  fetchPostsDetails,
   storePostsDetails,
 } from 'src/store/reducer/PostsListReducer/postsListReducer';
 
@@ -24,8 +23,9 @@ const postsListMiddleware = (store) => (next) => (action) => {
   const { posts: postsList, postsListsDetails } = storeState.postsList;
   switch (action.type) {
     case FETCH_POSTS:
-      // console.log('JE RECOIS LES POSTES §');
+      console.log('JE RECOIS LES POSTES §');
       // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
+      // console.log("POSTLISTmiddleware(ligne29) / Case: FETCHPOST / la carte à été modifié, j'essaie de mettre à jour"),
       axios({
         method: 'POST',
         url:
@@ -47,11 +47,14 @@ const postsListMiddleware = (store) => (next) => (action) => {
         //   },
         // )
         .then((response) => {
-          // console.log('je suis la réponse ZEN', response);
-          // console.log('succès', response.data);
+          console.log('je suis la réponse ZEN');
+          console.log('succès', response.data);
           // je veux faire en sorte d'alimenter le state avec la réponse
           const receivePostsAction = receivePosts(response.data);
-          console.log('===> test', response.data);
+          // console.log(
+          //   'post recu depuis la position centre de la carte',
+          //   response.data,
+          // );
           store.dispatch(receivePostsAction);
         })
         .catch((error) => {
@@ -63,28 +66,59 @@ const postsListMiddleware = (store) => (next) => (action) => {
           store.dispatch(actionStopLoad);
         });
     case FETCH_POSTS_DETAILS:
-      console.log(postsList, postsListsDetails);
+      // console.log(
+      //   'je suis la liste ID & DIstance des POST avant de prendre les details',
+      //   postsList,
+      //   'Je suis les posts dans le STORE',
+      //   postsListsDetails,
+      // );
+      // var postsList = [
+      //   { id: '269', distance: '0.11454076482501618' },
+      //   { id: '270', distance: '0.12262895737210996' },
+      //   { id: '268', distance: '2.756062287837027' },
+      // ];
 
-      const result = filterPostList(postsList, postsListsDetails);
+      // var postsListsDetails = [
+      //   { id: '269', distance: '0.11454076482501618' },
+      //   { id: '270', distance: '0.12262895737210996' },
+      // ];
 
-      console.log('nouveaux tableau de requete', result);
+      // const result = filterPostList(postsListPREFA, postsListsDetailsPREFA);
+      // posts: postsList, postsListsDetails
+
+      // console.log('[PostsListMW -> l106] => case FETCH_POST_DETAIL -> TABLEAU FILTRÉ (Quel est mon lien avec FetchPost() ?)', result);
       if (
-        Array.isArray(result) &&
-        result.length &&
-        !postsList.hasOwnProperty('fail')
+        !postsList.hasOwnProperty('fail') &&
+        (typeof postsList !== 'undefined' && postsList.length > 0)
       ) {
-        postsList.forEach((element) => {
-          console.log('======->', element);
+        const props = ['id', 'distance'];
+        var result = postsList
+          .filter(function(o1) {
+            // filter out (!) items in result2
+            return !postsListsDetails.some(function(o2) {
+              return o1.id !== o2.id; // assumes unique id
+            });
+          })
+          .map(function(o) {
+            // use reduce to make objects with only the required properties
+            // and map to apply this to the filtered array as a whole
+            return props.reduce(function(newo, distance) {
+              newo[distance] = o[distance];
+              return newo;
+            }, {});
+          });
+        result.forEach((element) => {
+          // console.log('======->', element);
           axios({
             method: 'GET',
             url: `http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/post/${element.id}`,
             headers: { Authorization: `Bearer ${JWTToken}` },
           })
             .then((response) => {
-              console.log('je suis la réponse GET DETAILS DU POST', {
-                ...element,
-                ...response.data,
-              });
+              // console.log('je suis la réponse GET DETAILS DU POST', {
+              //   ...element,
+              //   ...response.data,
+              // });
               const postDetails = {
                 ...element,
                 ...response.data,

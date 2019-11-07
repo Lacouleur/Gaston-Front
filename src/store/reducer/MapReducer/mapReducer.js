@@ -11,18 +11,18 @@ const initialState = {
   mapStyle: 'mapbox://styles/coolskin2b/ck22bq57r0qhb1co3tz0yqbd3',
 };
 
-// - Actions Types
-const UPDATE_VIEWPORT = 'UPDATE_VIEWPORT';
+// // - Actions Types
+// const UPDATE_VIEWPORT = 'UPDATE_VIEWPORT';
 
 // - Reducer
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case UPDATE_VIEWPORT:
-      // console.log(action);
-      return {
-        ...state,
-        viewport: action.viewport,
-      };
+    // case UPDATE_VIEWPORT:
+    //   // console.log(action);
+    //   return {
+    //     ...state,
+    //     viewport: action.viewport,
+    //   };
     default:
       return state;
   }

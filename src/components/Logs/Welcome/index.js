@@ -24,27 +24,25 @@ const Welcome = ({}) => {
       ></img>
       <h1 className="welcome-appTitle"> Gaston </h1>
       <h2 className="welcome-subTitle"> L'appli anti-gaspi</h2>
-      <p className="welcome-text"> </p>
-      <ul>
-        <li className="welcome-text-list">
+      <div className="welcome-text"> 
+        <p className="welcome-text-list">
           * <b>Gaston</b> vous aide à trouver des trésors autour de vous.
-        </li>
-        <li className="welcome-text-list">
+        </p>
+        <p className="welcome-text-list">
           * <b>Gaston</b> lutte contre le gaspillage allimentaire et matériel.{' '}
-        </li>
-        <li className="welcome-text-list">
+        </p>
+        <p className="welcome-text-list">
           * <b>Gaston</b> vous met en contact avec les autres acteurs de la
           lutte anti-gaspillage autour de vous.
-        </li>
-        <li className="welcome-text-list">
+        </p>
+        <p className="welcome-text-list">
           * <b>Gaston</b> vous permet de trouver des événements associatifs dans
           votre ville.
-        </li>
-        <li className="welcome-text-list">
+        </p>
+        <p className="welcome-text-list">
           * Faites comme <b>Gaston</b> , recyclez, partagez, donnez.
-        </li>
-      </ul>
-      
+        </p>
+        </div>
       <NavLink exact to="/sign/in" exact className="welcome-buttonStart">
         Gaston, montre moi des trésors
       </NavLink>

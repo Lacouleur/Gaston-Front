@@ -31,20 +31,7 @@ export const addPostButton = (
   </NavLink>
 );
 
-//signinOUT BUTTON
-export const signOutButton = (
-  <NavLink
-    to="/signout"
-    key="signout"
-    exact
-    activeClassName="navigation-item--active"
-    className="navigation-item"
-  >
-    <button className="navbar-button-addpost" type="button">
-      Se déconnecter
-    </button>
-  </NavLink>
-);
+
 
 //SIGNIN BUTTON
 export const signInButton = (
@@ -76,20 +63,23 @@ export const signUpButton = (
   </NavLink>
 );
 
-//PROFIL USER
-export const profilUserButton = (
-  <NavLink
-    to="/user"
-    key="user"
-    exact
-    activeClassName="navigation-item--active"
-    className="navigation-item"
-  >
-    <img
-      className="navbar-profile"
-      src="/public/petit-raton-laveur.jpg"
-      alt="image profile"
-    />
-  </NavLink>
-);
+// //PROFIL USER
+// export const profilUserButton = (
+//   <NavLink
+//     to="/user"
+//     key="user"
+//     exact
+//     activeClassName="navigation-item--active"
+//     className="navbar-user"
+//   >
+//     <p className="navbar-user-hello"><span className="navbar-user-hello-bold">Bonjour</span> Raton Généreux</p>
+//     <img
+//       className="navbar-user-profile"
+//       src="/public/petit-raton-laveur.jpg"
+//       alt="image profile"
+//     />
+
+
+//   </NavLink>
+// );
 

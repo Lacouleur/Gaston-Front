@@ -7,9 +7,6 @@ import 'src/components/Logs/Inscription/register.scss';
 import { Search, Grid, Header, Segment, Label } from 'semantic-ui-react';
 
 class SearchAdress extends React.Component {
-
-
-
   render() {
     const { queryInput, loading, results, isSelected, css } = this.props;
     // console.log('je suis le queryInput', queryInput);
@@ -47,13 +44,15 @@ class SearchAdress extends React.Component {
           data-placeholder=" "
           multiple
           placeholder="Adresse ?"
+          autoComplete="off"
           // ref={(queryInput) => queryInput}
           onChange={handleInputChange}
         />
         {!isSelected && (
-          <ul>
+          <ul className="inscription-form--citysearch">
             {results.map((result) => (
               <li
+                classeName="li"
                 key={result.properties.id}
                 onClick={HandleClickAdress}
                 data-adress={result.properties.label}

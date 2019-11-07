@@ -10,7 +10,7 @@ b {
         font-family: $typo;
         font-size: $regular;
         color : $black-text-color; 
-        padding : 0 $gutter 0 1em;
+        padding : 0 1.5em 0 1.5em;
         line-height : 1.5em;
 
         &-list {
@@ -44,7 +44,11 @@ b {
 
     &-buttonStart {
         margin : auto;
-        width : 50%;
+        margin-top : 6%;
+        width : 70%;
+        padding : 1em;
+        font-size: 1em;
+        font-weight: $medium;
         text-align: center;
             @extend .button--add ;
             cursor: pointer;
