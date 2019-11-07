@@ -36,7 +36,8 @@ const reducer = (state = initialState, action = {}) => {
         // postsListsDetails: [...state.postsListsDetails],
       };
     case STORE_POSTS_DETAILS:
-      console.log('JE COMPLETE LES DETAILS DES POSTS');
+      console.log('JE COMPLETE LES DETAILS DES POSTS', action);
+
       return {
         ...state,
         postsListsDetails: [...state.postsListsDetails, action.postDetails],
@@ -72,6 +73,7 @@ export const storePostsDetails = (postDetails) => ({
   type: STORE_POSTS_DETAILS,
   postDetails,
 });
+
 // - Selectors
 
 // - Export

@@ -9,6 +9,7 @@ import {
   FETCH_CATEGORIES,
   STORE_POSTS_DETAILS,
   FETCH_POSTS_DETAILS,
+  RECEIVE_POSTS,
   receivePosts,
   stopLoad,
   storePostsDetails,
@@ -48,15 +49,20 @@ const postsListMiddleware = (store) => (next) => (action) => {
           console.log(error);
         })
         .finally(() => {
-          console.log('FINALY fetchPostsDetails---->');
-          const fetchPostsDetailsAction = fetchPostsDetails();
-          store.dispatch(fetchPostsDetailsAction);
+          const actionStopLoad = stopLoad();
+          store.dispatch(actionStopLoad);
         });
+
+    // case RECEIVE_POSTS:
+    //   // console.log('JE RECOIS LES POSTES §');
+    //   // ici je vais réagir à FETCH_RECIPES (qui a été émise depuis componentDidMount dans App)
+    //   // console.log("POSTLISTmiddleware(ligne29) / Case: FETCHPOST / la carte à été modifié, j'essaie de mettre à jour"),
+    //   const fetchPostsDetailsAction = fetchPostsDetails();
+    //   store.dispatch(fetchPostsDetailsAction);
 
     case FETCH_POSTS_DETAILS:
       if (
-        !postsList.hasOwnProperty('fail') &&
-        (typeof postsList !== 'undefined' && postsList.length > 0)
+        !postsList.hasOwnProperty('fail')
       ) {
         const props = ['id', 'distance'];
         var result = postsList
@@ -105,6 +111,8 @@ const postsListMiddleware = (store) => (next) => (action) => {
               store.dispatch(actionStopLoad);
             });
         });
+      } else {
+        console.log('ERREUR TOO MUCH POST');
       }
       break;
     default:
