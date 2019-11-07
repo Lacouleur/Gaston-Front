@@ -8,9 +8,8 @@ import { connect } from 'react-redux';
 import { Receiver } from 'react-file-uploader';
 
 //FOR UPLOAD IMAGES
-import UploadForm from "src/containers/UploadForm";
-import "uikit/dist/css/uikit.min.css";
-
+import UploadForm from 'src/containers/UploadForm';
+import 'uikit/dist/css/uikit.min.css';
 
 // == Import : local
 import AdressSearch from 'src/containers/AdressSearch';
@@ -19,14 +18,11 @@ import './addPostForm.scss';
 //hum ?
 // == Composant
 class AddPostForm extends React.Component {
-
-
-
   submit = (values) => {
     const { addressLabel, imageForm, lat, lng } = this.props;
 
     const { file: image } = imageForm.values.imageToUpload;
-    console.log('what the fuck', image);
+    //console.log('what the fuck', image);
     const { category } = this.props.location.infos;
     const latitude = { lat: parseFloat(lat) };
     const longitude = { lng: parseFloat(lng) };
@@ -40,7 +36,7 @@ class AddPostForm extends React.Component {
     };
 
     this.convertToFormData(allValues);
-
+    this.props.history.push('/postlist');
     // this.props.addPostAction(allValues, this.props.history);
     // // console.log('Value soumission:', allValues);
   };
@@ -56,7 +52,7 @@ class AddPostForm extends React.Component {
           form_data.append(key, fields[key]);
         }
       }
-      this.props.addPostAction(form_data, this.props.history);
+      this.props.addPostAction(form_data);
     }
   };
 
@@ -66,10 +62,8 @@ class AddPostForm extends React.Component {
     const { handleSubmit } = this.props;
     // console.log('CATEGORY', this.props.location.infos);
 
-
     const { stylecss, category, catNum } = this.props.location.infos;
     // console.log ("STYLECSS", stylecss);
-
 
     return (
       <div className="addPostForm">
@@ -113,8 +107,6 @@ class AddPostForm extends React.Component {
 
           <AdressSearch css={`addPostForm-form-adress--${stylecss}`} />
           <UploadForm />
-
-
 
           <button
             className={`addPostForm-form-submit--${stylecss}`}
@@ -167,11 +159,9 @@ export default connect(
 //   )(reduxFormRegister);
 //PropTypes
 
-AddPostForm.propTypes = {
-
-};
+AddPostForm.propTypes = {};
 
 AddPostForm.defaultProps = {
-  stylecss: "don",
-  imageForm: "",
+  stylecss: 'don',
+  imageForm: '',
 };

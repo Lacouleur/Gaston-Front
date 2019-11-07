@@ -2,18 +2,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
 // Import Local
 import './navbar.scss';
 import AdressSearch from 'src/components/AdressSearch';
 import {
   postListButton,
   addPostButton,
-  signOutButton,
-  profilUserButton,
   signInButton,
   signUpButton,
 } from './ressources';
-
+import { UNAUTHENTICATED } from 'src/store/middlewares/loginMiddleware';
 /*
 
 SCHEMA DE LA NAVBAR
@@ -30,6 +29,13 @@ SCHEMA DE LA NAVBAR
 
 class Navbar extends React.Component {
   // const clickHandler = changeView('addPost');
+
+  signOutAction = () => () => {
+    localStorage.clear();
+    return {
+      type: UNAUTHENTICATED,
+    };
+  };
   navbarLinks() {
     //CASE IS CONNECTED
     if (this.props.authenticated) {
@@ -37,8 +43,6 @@ class Navbar extends React.Component {
         //(see ./ressources.js)
         postListButton,
         addPostButton,
-        signOutButton,
-        profilUserButton,
       ];
     }
     //CASE NON-CONNECTE
@@ -47,6 +51,49 @@ class Navbar extends React.Component {
       signInButton,
       signUpButton,
     ];
+  }
+
+  navbarUser() {
+    //CASE IS CONNECTED
+    if (this.props.authenticated) {
+      return (
+        <NavLink
+          to="/user"
+          key="user"
+          exact
+          activeClassName="navigation-item--active"
+          className="navbar-user"
+        >
+          <p className="navbar-user-hello">
+            <span className="navbar-user-hello-bold">Bonjour</span>{' '}
+            {this.props.username}
+          </p>
+          <img
+            className="navbar-user-profile"
+            src="/public/petit-raton-laveur.jpg"
+            alt="image profile"
+          />
+        </NavLink>
+      );
+    }
+  }
+
+  navbarLogOut() {
+    //signinOUT BUTTON
+    if (this.props.authenticated) {
+      return (
+        <NavLink
+          to="/"
+          key="logout"
+          exact
+          // className="navbar-button-logout"
+        >
+          <button className="navbar-button-logout" onClick={this.signOutAction()} type="button">
+            Se déconnecter
+          </button>
+        </NavLink>
+      );
+    }
   }
 
   render() {
@@ -66,23 +113,19 @@ class Navbar extends React.Component {
           />
         </NavLink>
         {this.navbarLinks()}
+        {this.navbarLogOut()}
+        {this.navbarUser()}
       </nav>
     );
   }
 }
 
-export function signOutAction() {
-  localStorage.clear();
-  return {
-    type: UNAUTHENTICATED
-  };
-}
-
 function mapStateToProps(state) {
   return {
     authenticated: state.auth.authenticated,
+    unauthenticated: state.auth.unauthenticated,
+    username: state.user.username,
   };
 }
-
 
 export default connect(mapStateToProps)(Navbar);

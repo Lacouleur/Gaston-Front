@@ -80,6 +80,12 @@ const Map = ({
     };
   }, []);
   const handleChange = (mapChange) => {
+    // console.error(
+    //   '[Map -> index.js l.83] => {<ReactMapGL> appel handlechange} -> handlechange(mapchange) ',
+    // );
+    // console.error(
+    //   "[Map -> index.js l.87] => handlechange(mapchange) => {qui donne l'argument mapchange ??} ",
+    // );
     updateFetchPosts();
     updateViewport(mapChange);
   };
@@ -104,7 +110,6 @@ const Map = ({
         {...viewport}
         width={windowWidth - contentContainerWidth}
         height={windowHeight - navbarHeight}
-        // onResize={handleResize}
         transitionDuration={250}
         mapboxApiAccessToken={mapboxApiAccessToken}
         mapStyle={mapStyle}

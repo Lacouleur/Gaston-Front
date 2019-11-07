@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 // == Import : local
 import { distanceConverter } from 'src/Utils/postsList';
+import { _dev_URL } from 'src/Utils/_dev_URL.js';
 // == Composant
 const PostsCard = ({ postdetails }) => {
-  console.log(postdetails);
+  // console.log(postdetails);
   const {
     title,
     description,
@@ -22,7 +23,7 @@ const PostsCard = ({ postdetails }) => {
       <div className="posts-cards-left">
         <img
           className="posts-cards-image"
-          src={picture}
+          src={_dev_URL + picture}
           alt={picture}
           className="posts-cards-image"
         />

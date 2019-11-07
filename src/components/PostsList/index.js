@@ -14,11 +14,36 @@ import PostsCard from './PostsCard';
 class PostsList extends React.Component {
   componentDidMount() {
     // console.log("je suis ici");
-    const { fetchPosts } = this.props;
-    fetchPosts();
+    const { fetchPostsAction, fetchPostsDetailsAction } = this.props;
+    // fetchPostsAction();
+    // console.log('je refecht les posts');
+    fetchPostsDetailsAction();
+    console.log('DIDMOUNT');
+    const { postsListsDetails } = this.props;
+    console.log(postsListsDetails);
+    console.log('-------------');
+  }
+  componentDidUpdate() {
+    // const { fetchPostsAction, fetchPostsDetailsAction } = this.props;
+    // fetchPostsAction();
+    // fetchPostsDetailsAction();
+    console.log('DIDUPDATE');
+    const { postsListsDetails } = this.props;
+    console.log(postsListsDetails);
+    console.log('-------------');
+  }
+
+  componentWillUnmount() {
+    // const { fetchPostsAction, fetchPostsDetailsAction } = this.props;
+    // fetchPostsAction();
+    // fetchPostsDetailsAction();
+    console.log('WillUnmount');
+    const { postsListsDetails } = this.props;
+    console.log(postsListsDetails);
+    console.log('-------------');
   }
   render() {
-    const { loading,postsListsDetails } = this.props;
+    const { loading, postsListsDetails } = this.props;
     return (
       <>
         <PostsFilters />

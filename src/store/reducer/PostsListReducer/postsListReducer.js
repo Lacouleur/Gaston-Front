@@ -15,35 +15,33 @@ const initialState = {
 
 // - Actions Types
 export const FETCH_POSTS = 'FETCH_POST';
-const RECEIVE_POSTS = 'RECEIVE_POSTS';
+export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 const STOP_LOAD = 'STOP_LOAD';
 export const FETCH_USERS = 'FETCH_USERS';
 export const STORE_POSTS_DETAILS = 'STORE_POSTS_DETAILS';
 export const FETCH_POSTS_DETAILS = 'FETCH_POSTS_DETAILS';
 
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
-
 // - Reducer
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case FETCH_POSTS:
       return {
         ...state,
-        loading: false,
+        loading: true,
       };
     case RECEIVE_POSTS:
       // console.log(action);
       return {
         ...state,
         posts: action.posts,
-        loading: false,
+        loading: true,
       };
     case STORE_POSTS_DETAILS:
-      // console.log(action);
       return {
         ...state,
         postsListsDetails: [...state.postsListsDetails, action.postDetails],
-        loading: false,
+        loading: true,
       };
     case STOP_LOAD:
       return {

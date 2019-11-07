@@ -5,7 +5,12 @@ import { connect } from 'react-redux';
 import PostsList from 'src/components/PostsList';
 
 // Action Creators
-import {fetchPosts,stopLoadPosts,receivePosts } from 'src/store/reducer/PostsListReducer/postsListReducer';
+import {
+  fetchPosts,
+  stopLoadPosts,
+  receivePosts,
+  fetchPostsDetails,
+} from 'src/store/reducer/PostsListReducer/postsListReducer';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -27,11 +32,11 @@ const mapStateToProps = (state, ownProps) => ({
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  // doSomething: () => {
-  //   dispatch(doSomething("Coucou"));
-  // }
-  fetchPosts: (posts) => {
-    dispatch(fetchPosts(posts));
+  fetchPostsDetailsAction: () => {
+    dispatch(fetchPostsDetails());
+  },
+  fetchPostsAction: () => {
+    dispatch(fetchPosts());
     // console.log(mapChange);
   },
 });
