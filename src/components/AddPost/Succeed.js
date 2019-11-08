@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 
 // == Import : local
-import './succeed.scss';
+// import './succeed.scss';
 
 
 // == Composant
