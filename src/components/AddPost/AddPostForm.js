@@ -20,9 +20,7 @@ import './addPostForm.scss';
 class AddPostForm extends React.Component {
   submit = (values) => {
     const { addressLabel, imageForm, lat, lng } = this.props;
-
     const { file: image } = imageForm.values.imageToUpload;
-    //console.log('what the fuck', image);
     const { category } = this.props.location.infos;
     const latitude = { lat: parseFloat(lat) };
     const longitude = { lng: parseFloat(lng) };

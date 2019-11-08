@@ -4,10 +4,11 @@ import querystring from 'querystring';
 export const ADD_POST = 'add_post';
 export const ADDPOST_ERROR = 'addpost_error';
 
-import { UrlDev, UrlProd } from 'src/store/middlewares/connect_data.js';
+import { UrlProd } from 'src/store/middlewares/connect_data.js';
 import {
   RECEIVE_POSTS,
   FETCH_POSTS,
+  addPostFromUser,
 } from 'src/store/reducer/PostsListReducer/postsListReducer';
 export function addPostAction(values) {
   // var bodyFormData = new FormData();
@@ -22,13 +23,23 @@ export function addPostAction(values) {
   };
   return async (dispatch) => {
     try {
-      const res = await axios.post(`${UrlDev}/api/post-new`, values, headers);
+      console.log('Posting post...');
+      const res = await axios.post(
+        `//alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/post-new`,
+        values,
+        headers,
+      );
+      console.log('res.data l26 addPostMiddlzWare =>', res);
+      console.log('res.data l26 addPostMiddlzWare =>', res.data);
+      //res.data
       dispatch({ type: ADD_POST });
       // localStorage.setItem('user', res.data.token);
       //     console.log('je cherche a reprendre la liste des postes apres une publication')
       dispatch({
         type: FETCH_POSTS,
       });
+      const addPostFromUserAction = addPostFromUser(res.data);
+      dispatch(addPostFromUserAction);
     } catch (error) {
       console.log(error);
       dispatch({
