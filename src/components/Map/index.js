@@ -9,7 +9,7 @@ import { PacmanLoader } from 'react-spinners';
 // CSS MAPBOX
 import 'src/styles/mapbox-gl.css';
 import './map.scss';
-import _dev_URL from 'src/Utils/_dev_URL.js';
+import { _dev_URL } from 'src/Utils/_dev_URL.js';
 
 const Map = ({
   viewport,
