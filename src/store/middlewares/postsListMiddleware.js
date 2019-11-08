@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { UrlDev, UrlProd } from 'src/store/middlewares/connect_data.js';
+import { UrlProd} from 'src/store/middlewares/connect_data.js';
 import { filterPostList } from 'src/Utils/postsList';
 // Import Reducer
 import {
@@ -15,6 +15,8 @@ import {
   storePostsDetails,
   fetchPostsDetails,
 } from 'src/store/reducer/PostsListReducer/postsListReducer';
+
+
 
 import { UPDATE_VIEWPORT } from 'src/store/reducer/PostsListReducer/postsListReducer';
 const postsListMiddleware = (store) => (next) => (action) => {
@@ -31,7 +33,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
       axios({
         method: 'POST',
         url:
-          'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/map',
+          `${UrlProd}/api/map`,
         headers: { Authorization: `Bearer ${JWTToken}` },
         data: {
           zoom: viewport.zoom,

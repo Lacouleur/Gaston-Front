@@ -6,6 +6,8 @@ import {
   saveUserInformations,
 } from 'src/store/reducer/UserReducer/userReducer';
 
+import { UrlProd } from "src/store/middlewares/connect_data.js";
+
 const postsListMiddleware = (store) => (next) => (action) => {
   const JWTToken = localStorage.user;
   switch (action.type) {
@@ -13,7 +15,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
       const { username, userID } = action;
       axios
         .get(
-          `//alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/user/${userID}`,
+          `${UrlProd}/api/user/${userID}`,
           { headers: { Authorization: `Bearer ${JWTToken}` } },
         )
         .then((res) => {

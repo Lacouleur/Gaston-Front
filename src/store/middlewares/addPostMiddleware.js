@@ -4,7 +4,7 @@ import querystring from 'querystring';
 export const ADD_POST = 'add_post';
 export const ADDPOST_ERROR = 'addpost_error';
 
-import { UrlDev, UrlProd } from 'src/store/middlewares/connect_data.js';
+import { UrlProd } from 'src/store/middlewares/connect_data.js';
 import {
   RECEIVE_POSTS,
   FETCH_POSTS,
@@ -22,13 +22,15 @@ export function addPostAction(values) {
   };
   return async (dispatch) => {
     try {
-      const res = await axios.post(`${UrlDev}/api/post-new`, values, headers);
-      dispatch({ type: ADD_POST });
-      // localStorage.setItem('user', res.data.token);
-       //     console.log('je cherche a reprendre la liste des postes apres une publication')
-      dispatch({
-        type: FETCH_POSTS,
-      });
+      const res = await axios
+      .post(`${UrlProd}/api/post-new`, values, headers)
+      .then(
+        dispatch({
+        type: FETCH_POSTS}),
+        dispatch({ 
+        type: ADD_POST })
+      );
+      
     } catch (error) {
       console.log(error);
       dispatch({
@@ -36,11 +38,12 @@ export function addPostAction(values) {
         payloadAddPost: 'Erreur Formulaire',
       });
 
+
     } finally {
       // console.log('FINALY a reprendre la liste des postes')
-      dispatch({
-        type: FETCH_POSTS,
-      });
+      
+    
     }
   };
 }
+

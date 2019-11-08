@@ -101,19 +101,6 @@ const Map = ({
 
   return (
     <>
-      <div>
-        <ul>
-          {postsListsDetails.map((post) => (
-            <li key={post.id}>
-              {' '}
-              {post.id} {post.lat}
-              {post.lng}
-              {post.title}
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <ReactMapGL
         visible={!mapLoading}
         onLoad={handleLoad}
