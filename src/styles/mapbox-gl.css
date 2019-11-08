@@ -414,6 +414,7 @@ a.mapboxgl-ctrl-logo.mapboxgl-compact {
   display: flex;
   will-change: transform;
   pointer-events: none;
+  margin-left: 10px;
 }
 
 .mapboxgl-popup-anchor-top,

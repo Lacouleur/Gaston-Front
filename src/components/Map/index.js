@@ -152,6 +152,10 @@ const Map = ({
                 <h2>{selectedPark.title}</h2>
                 <p>{selectedPark.description}</p>
                 {/* ajouter et configurer l'image dans la vignette */}
+                <div className="posts-cards-status">
+                  <button className="button--vanish">Il n'y est plus </button>
+                  <button className="button--got-it">je l'ai récupéré</button>
+                </div>
               </div>
             </div>
           </Popup>
