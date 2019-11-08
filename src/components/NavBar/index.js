@@ -80,6 +80,10 @@ class Navbar extends React.Component {
     }
   }
 
+  dispatchSignOutAction = () => {
+    store.dispatch(this.signOutAction());
+  }
+
   navbarLogOut() {
     //signinOUT BUTTON
     if (this.props.authenticated) {
@@ -92,7 +96,7 @@ class Navbar extends React.Component {
         >
           <button
             className="navbar-button-logout"
-            onClick={() => store.dispatch(this.signOutAction())}
+            onClick={dispatchSignOutAction}
             type="button"
           >
             Se déconnecter

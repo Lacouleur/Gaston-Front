@@ -19,6 +19,7 @@ export default function(state = {}, action) {
     case AUTHENTICATED:
       return { ...state, authenticated: true };
     case UNAUTHENTICATED:
+      localStorage.clear();
       return { ...state, authenticated: false };
     case AUTHENTICATION_ERROR:
       return { ...state, error: action.payload };
