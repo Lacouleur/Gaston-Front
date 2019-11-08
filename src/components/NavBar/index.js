@@ -16,15 +16,10 @@ import { UNAUTHENTICATED } from 'src/store/middlewares/loginMiddleware';
 
 import store from '../../store/store';
 /*
-
 SCHEMA DE LA NAVBAR
-
 #####case CONNECTE######### [PostList] ##### [ajouter une annonce]####### bonjour "Jesus" - se déconnecter - AVATAR
                                                                                   <-----------/
-
-
 #####case NON CONNECTE######### [Se connecte] ##### [s'inscrire]####### PAS DAVATAR
-
 */
 
 //  Composant
@@ -80,10 +75,6 @@ class Navbar extends React.Component {
     }
   }
 
-  dispatchSignOutAction = () => {
-    store.dispatch(this.signOutAction());
-  }
-
   navbarLogOut() {
     //signinOUT BUTTON
     if (this.props.authenticated) {
@@ -96,7 +87,7 @@ class Navbar extends React.Component {
         >
           <button
             className="navbar-button-logout"
-            onClick={dispatchSignOutAction}
+            onClick={() => store.dispatch(this.signOutAction())}
             type="button"
           >
             Se déconnecter
