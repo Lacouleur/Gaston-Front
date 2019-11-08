@@ -13,6 +13,8 @@ import {
   signUpButton,
 } from './ressources';
 import { UNAUTHENTICATED } from 'src/store/middlewares/loginMiddleware';
+
+import store from '../../store/store';
 /*
 
 SCHEMA DE LA NAVBAR
@@ -30,8 +32,7 @@ SCHEMA DE LA NAVBAR
 class Navbar extends React.Component {
   // const clickHandler = changeView('addPost');
 
-  signOutAction = () => () => {
-    localStorage.clear();
+  signOutAction = () => {
     return {
       type: UNAUTHENTICATED,
     };
@@ -55,6 +56,7 @@ class Navbar extends React.Component {
 
   navbarUser() {
     //CASE IS CONNECTED
+
     if (this.props.authenticated) {
       return (
         <NavLink
@@ -88,7 +90,11 @@ class Navbar extends React.Component {
           exact
           // className="navbar-button-logout"
         >
-          <button className="navbar-button-logout" onClick={this.signOutAction()} type="button">
+          <button
+            className="navbar-button-logout"
+            onClick={() => store.dispatch(this.signOutAction())}
+            type="button"
+          >
             Se déconnecter
           </button>
         </NavLink>
