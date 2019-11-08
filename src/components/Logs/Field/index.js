@@ -16,12 +16,12 @@ const Field = ({
   changeHandler
 }) => {
 
-  const className = `fields-input`
+
 
     return (
         <div className="fields">
         <input
-            className= {className}
+            className= "fields-input"
             name={name}
             type={type}
             required 

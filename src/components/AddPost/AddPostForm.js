@@ -20,13 +20,17 @@ import './addPostForm.scss';
 class AddPostForm extends React.Component {
   submit = (values) => {
     const { addressLabel, imageForm, lat, lng } = this.props;
+    const post_status_id = { 'post_status_id': 112 };
+    const visibility_id = { 'visibility_id': 112 };
+    const wear_condition_id = { 'wear_condition_id': 112 };
+    const category_id = { 'category_id': 112 };
 
     const { file: image } = imageForm.values.imageToUpload;
-    //console.log('what the fuck', image);
     const { category } = this.props.location.infos;
     const latitude = { lat: parseFloat(lat) };
     const longitude = { lng: parseFloat(lng) };
     const allValues = {
+
       image,
       ...values,
       category,
@@ -36,7 +40,7 @@ class AddPostForm extends React.Component {
     };
 
     this.convertToFormData(allValues);
-    this.props.history.push('/succeed');
+    this.props.history.push('/postlist');
     // this.props.addPostAction(allValues, this.props.history);
     // // console.log('Value soumission:', allValues);
   };

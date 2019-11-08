@@ -22,28 +22,20 @@ export function addPostAction(values) {
   };
   return async (dispatch) => {
     try {
-      const res = await axios
-      .post(`${UrlProd}/api/post-new`, values, headers)
-      .then(
-        dispatch({
-        type: FETCH_POSTS}),
-        dispatch({ 
-        type: ADD_POST })
-      );
-      
+      const res = await axios.post(`${UrlProd}/api/post-new`, values, headers);
+      dispatch({ type: ADD_POST });
+      // localStorage.setItem('user', res.data.token);
+      //     console.log('je cherche a reprendre la liste des postes apres une publication')
+      dispatch({
+        type: FETCH_POSTS,
+      });
     } catch (error) {
       console.log(error);
       dispatch({
         type: ADDPOST_ERROR,
         payloadAddPost: 'Erreur Formulaire',
       });
-
-
     } finally {
-      // console.log('FINALY a reprendre la liste des postes')
-      
-    
     }
   };
 }
-

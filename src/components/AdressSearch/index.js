@@ -52,7 +52,7 @@ class SearchAdress extends React.Component {
           <ul className="inscription-form--citysearch">
             {results.map((result) => (
               <li
-                classeName="li"
+                className="li"
                 key={result.properties.id}
                 onClick={HandleClickAdress}
                 data-adress={result.properties.label}

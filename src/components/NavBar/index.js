@@ -31,6 +31,7 @@ class Navbar extends React.Component {
   // const clickHandler = changeView('addPost');
 
   signOutAction = () => () => {
+    console.log ("déconnexion !!")
     localStorage.clear();
     return {
       type: UNAUTHENTICATED,
@@ -58,7 +59,7 @@ class Navbar extends React.Component {
     if (this.props.authenticated) {
       return (
         <NavLink
-          to="/user"
+          to="/postlist"
           key="user"
           exact
           activeClassName="navigation-item--active"

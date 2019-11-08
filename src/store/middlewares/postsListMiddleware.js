@@ -86,7 +86,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
           // console.log('======->', element);
           axios({
             method: 'GET',
-            url: `http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/post/${element.id}`,
+            url: `${urlProd}/api/post/${element.id}`,
             headers: { Authorization: `Bearer ${JWTToken}` },
           })
             .then((response) => {
