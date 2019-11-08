@@ -17,7 +17,7 @@ const PostsCard = ({ postdetails }) => {
     category,
     distance,
   } = postdetails;
-  // console.log(category);
+
   return (
     <article className="posts-cards">
       <div className="posts-cards-left">
@@ -28,19 +28,20 @@ const PostsCard = ({ postdetails }) => {
           className="posts-cards-image"
         />
         <div className="posts-cards-adress">
-          <FaMapMarkerAlt />
-          {distanceConverter(distance)}
-          {addressLabel}
+          <p>
+            <FaMapMarkerAlt />
+            {distanceConverter(distance)}m
+          </p>
         </div>
       </div>
       <div className="posts-cards-right">
         <header>
           <h1>{title}</h1>
-          <h3>{user.id}</h3>
+          <h3>{user.username}</h3>
           <p>{description}</p>
         </header>
         <div>
-          <button className="button-category">{category.id}</button>
+          <button className="button-category">Dons</button>
         </div>
         <div className="posts-cards-status">
           <button className="button--vanish">Il n'y est plus </button>

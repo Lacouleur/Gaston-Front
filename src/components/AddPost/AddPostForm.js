@@ -26,6 +26,7 @@ class AddPostForm extends React.Component {
     const { category } = this.props.location.infos;
     const latitude = { lat: parseFloat(lat) };
     const longitude = { lng: parseFloat(lng) };
+    console.log('JE SUIS UNE IMAGE', image);
     const allValues = {
       image,
       ...values,
@@ -58,8 +59,7 @@ class AddPostForm extends React.Component {
 
   render() {
     // const stylecss = 'don';
-    const userName = 'Raton Généreux';
-    const { handleSubmit } = this.props;
+    const { handleSubmit, username } = this.props;
     // console.log('CATEGORY', this.props.location.infos);
 
     const { stylecss, category, catNum } = this.props.location.infos;
@@ -75,7 +75,7 @@ class AddPostForm extends React.Component {
             className="addPostForm-user-avatar"
           />
 
-          <p className="addPostForm-user-username">{userName}</p>
+          <p className="addPostForm-user-username">{username}</p>
           <div className="addPostForm-user-line" />
         </div>
 
@@ -130,6 +130,7 @@ const mapStateToProps = (state, ownProps) => {
     lat: state.adressSearch.lat,
     lng: state.adressSearch.lon,
     imageForm: state.form.UploadImageForm,
+    username: state.user.username,
   };
 };
 

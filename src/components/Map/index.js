@@ -132,7 +132,9 @@ const Map = ({
                 setSelectedPark(post);
               }}
             >
-              <img src="/public/logo-map.svg" alt="Dumpsters" />
+              {!mapLoading && (
+                <img src="/public/logo-map.svg" alt="Dumpsters" />
+              )}
             </button>
           </Marker>
         ))}

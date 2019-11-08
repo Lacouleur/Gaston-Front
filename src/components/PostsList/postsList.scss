@@ -87,9 +87,10 @@
   }
   &-adress {
     font-size: $typo-size-extra-small;
-    font-weight: $light;
+    font-weight: $bold;
     color: $grey-text-color;
     display: inline-block;
+
   }
   &-right {
     margin-left: $small-gutter;
