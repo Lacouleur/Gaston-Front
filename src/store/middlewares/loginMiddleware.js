@@ -8,12 +8,6 @@ export const AUTHENTICATION_ERROR = 'authentication_error';
 
 import { UrlDev, UrlProd } from "src/store/middlewares/connect_data.js";
 
-// export function logOutAction({}, history) {
-//   return (dispatch) => {
-//       dispatch({ type: UNAUTHENTICATED });
-//       history.push('/');
-//   };
-
 export function logInAction({ username, password }, history) {
   return async (dispatch) => {
     try {

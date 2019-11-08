@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 // == Import : local
-import { distanceConverter } from 'src/Utils/postsList';
 import { _dev_URL } from 'src/Utils/_dev_URL.js';
+import { distanceConverter } from 'src/Utils/distancesConverter';
 // == Composant
 const PostsCard = ({ postdetails }) => {
   // console.log(postdetails);
