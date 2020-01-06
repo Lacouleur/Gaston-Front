@@ -11,7 +11,7 @@ import { UrlDev, UrlProd } from "src/store/middlewares/connect_data.js";
 export function logInAction({ username, password }, history) {
   return async (dispatch) => {
     try {
-      const res = await axios.post(`${UrlDev}/api/login_check`, {
+      const res = await axios.post(`${UrlProd}/api/login_check`, {
         username,
         password,
       });

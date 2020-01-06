@@ -13,7 +13,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
       const { username, userID } = action;
       axios
         .get(
-          `//alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/user/${userID}`,
+          `http://backend.dumpsters.grxl.fr/api/user/${userID}`,
           { headers: { Authorization: `Bearer ${JWTToken}` } },
         )
         .then((res) => {

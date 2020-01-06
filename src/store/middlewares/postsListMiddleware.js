@@ -26,7 +26,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
       axios({
         method: 'POST',
         url:
-          'http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/map',
+          'http://backend.dumpsters.grxl.fr/api/map',
         headers: { Authorization: `Bearer ${JWTToken}` },
         data: {
           zoom: viewport.zoom,
@@ -67,7 +67,7 @@ const postsListMiddleware = (store) => (next) => (action) => {
         result.forEach((element) => {
           axios({
             method: 'GET',
-            url: `http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/post/${element.id}`,
+            url: `http://backend.dumpsters.grxl.fr/api/post/${element.id}`,
             headers: { Authorization: `Bearer ${JWTToken}` },
           })
             .then((response) => {

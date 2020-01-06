@@ -1,8 +1,7 @@
 
 //DEV
-export const UrlDev = "http://alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public" ;
+export const UrlDev = "http://backend.dumpsters.grxl.fr" ;
 
 
 //PROD
 export const UrlProd = 'http://backend.dumpsters.grxl.fr'
-

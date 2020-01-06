@@ -25,7 +25,7 @@ export function addPostAction(values) {
     try {
       console.log('Posting post...');
       const res = await axios.post(
-        `//alexis-le-trionnaire.vpnuser.lan/projet-Gaston/website-skeleton/public/api/post-new`,
+        'http://backend.dumpsters.grxl.fr/api/post-new',
         values,
         headers,
       );

@@ -27,7 +27,7 @@ export function registerAction(values) {
   return async (dispatch) => {
     //https://github.com/O-clock-Universe/react-e17-challenge-github-login-Lacouleur-v2-/blob/master/src/store/middlewares/ajaxMiddleware.js
     try {
-      const res = await axios.post(`${UrlDev}/user-new`, {
+      const res = await axios.post(`${UrlProd}/user-new`, {
         ...values,
       });
       dispatch({ type: REGISTRED });
